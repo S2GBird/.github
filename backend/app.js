@@ -12,12 +12,18 @@ connectDB();
 // Homepage
 app.get("/", async function (req, res) {
   res.send("Hello World!");
+
+
+
+
+
+
 });
 
 // routes for authentication?
-app.get("/login", async function (req, res) {});
+app.get("/login", async function (req, res) { });
 
-app.get("/register", async function (req, res) {});
+app.get("/register", async function (req, res) { });
 
 // Demo for pulling all user data
 app.get("/users", async (req, res) => {
