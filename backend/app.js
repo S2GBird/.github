@@ -1,17 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const connectDB = require('./database/db');
+const connectDB = require("./database/db");
 const User = require("./models/userModel");
 const app = express();
 
-require('dotenv').config()
+require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // Homepage
 app.get("/", async function (req, res) {
-    res.send('Hello World!')
+  res.send("Hello World!");
 });
 
 // routes for authentication?
@@ -82,7 +82,6 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
-  
 app.listen(process.env.PORT, () => {
-console.log(`Node.js app running on port ${process.env.PORT}`);
+  console.log(`Node.js app running on port ${process.env.PORT}`);
 });
