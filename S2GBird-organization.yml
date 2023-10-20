@@ -1,10 +1,9 @@
 name: S2G-organization
 
 on:
-  push:
-    branches: [ $Frontend-Main-Merge-branch ]
-  pull_request:
-    branches: [ $Frontend-Main-Merge-branch ]
+  push
+  pull_request
+
 
 jobs:
   build:
