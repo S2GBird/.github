@@ -1,6 +1,6 @@
 # Getting Started with Chirp's React Frontend
 
-![Chirp Bird Watching Banner]('./src/Images/ChirpBanner.png')
+![Chirp Bird Watching Banner](./src/Images/ChirpBanner.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
