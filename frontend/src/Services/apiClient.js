@@ -23,7 +23,7 @@ class ApiClient{
             return { data: response.data, error: null }
         } catch (error){
             //If a request is unsucessful, send back an object containing the error message
-            console.error({errorResponse: error.response})
+            console.error({errorResponse: error})
             const message = error?.response?.data?.error?.message;
             return { data: null, error: message || String(error) }
         }
@@ -31,7 +31,7 @@ class ApiClient{
 
     //-------------------------BACKEND HEALTH CHECK REQUESTS------------------------------
     async healthCheck() {
-        return await this.request({ endpoint: `/`, method: `GET` })
+        return await this.request({ endpoint: ``, method: `GET` })
     }
     //-------------------------AUTHENTICATION REQUESTS------------------------------
 }

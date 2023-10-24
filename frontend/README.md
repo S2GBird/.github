@@ -13,11 +13,10 @@ Before adjusting or making changes to any of the code, please branch out on your
 ```sh
   cd frontend
 ```
-3. If this a new environment and you have not downloaded any dependencies, download them using this command: 
+3. If this a new environment and you have not downloaded any dependencies, download them using this command. Do not use any **--force** commands. Essentially, this command overrides all the current dependencies and changes them which could cause breaking changes due to some packages having to configure to specific versions of other packages.
 ```sh
   npm install --legacy-peer-deps
 ```
-    - Do not use any **--force** commands. Essentially, this command overrides all the current dependencies and changes them which could cause breaking changes due to some packages having to configure to specific versions of other packages.
 4. Run this command to start up the interface in localhost:
 ```sh
   npm start
