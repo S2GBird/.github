@@ -29,6 +29,10 @@ class ApiClient{
         }
     }
 
+    //-------------------------BACKEND HEALTH CHECK REQUESTS------------------------------
+    async healthCheck() {
+        return await this.request({ endpoint: `/`, method: `GET` })
+    }
     //-------------------------AUTHENTICATION REQUESTS------------------------------
 }
 
