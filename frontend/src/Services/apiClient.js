@@ -1,0 +1,36 @@
+import axios from 'axios';
+import API_BASE_URL from './constants';
+
+class ApiClient{
+    constructor(remoteHostUrl){
+        this.remoteHostUrl = remoteHostUrl; 
+    }
+
+    //----------------------GENERAL REQUEST HANDLING -----------------------------
+    /*Purpose: To standardize the method at which axios requests are made from frontend to backend, and 
+    centralize the error handling so it does not need to be handled within the individual components.*/
+
+    async request({ endpoint, method = 'GET', data={} }){
+        const url = `${this.remoteHostUrl}/${endpoint}`;
+        const headers = {
+            "Content-Type": "application/json",
+            //Future Authorization Headers will go here.
+        }
+
+        try{
+            //If a request is sucessful, send back an object containing the response
+            const response = await axios({ url, method, data, headers })
+            return { data: response.data, error: null }
+        } catch (error){
+            //If a request is unsucessful, send back an object containing the error message
+            console.error({errorResponse: error.response})
+            const message = error?.response?.data?.error?.message;
+            return { data: null, error: message || String(error) }
+        }
+    }
+
+    //-------------------------AUTHENTICATION REQUESTS------------------------------
+}
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default new ApiClient(API_BASE_URL);
