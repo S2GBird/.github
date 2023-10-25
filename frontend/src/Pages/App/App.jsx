@@ -5,7 +5,7 @@ import ExamplePage from '../Example Page/ExamplePage';
 
 export default function App() {
   return (
-    <div className={AppStyles.App}>
+    <div className={AppStyles['app-page']}>
       <BrowserRouter>
         <Routes>
           <Route path='/example' element={<ExamplePage />}></Route> {/**This is an example route, and the style to which future routes should follow. */}

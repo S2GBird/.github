@@ -17,7 +17,7 @@ function ExamplePage() {
   };
 
   return (
-    <div className={ExampleStyles.Example}> {/**Example on how to attach your css styling to these components */}
+    <div className={ExampleStyles['example-page']}> {/**Example on how to attach your css styling to these components */}
       <h2>HELLO WORLD, THIS IS THE EXAMPLE PAGE</h2>
       <button onClick={fetchExampleMessage}> Click this button to show message</button>
       {message && <p>This is my message: { message }</p>}
