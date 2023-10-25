@@ -1,6 +1,6 @@
 # Chirp - The Social Media Platform
 
-![Chirp Bird Watching Banner #2](./frontend/src/Images/ChirpBanner#2.png)
+![Chirp Bird Watching Banner #2](./frontend/src/Images/ChirpBanner2.png)
 
 ## Problem Statement
 Have you ever been told to touch grass? Encouraged to go explore nature? Tired of staring at your computer all day? Looking for something fun, inexpensive and can be done anywhere, anytime? Then, you can’t go wrong with some bird watching! The bird watching community is huge and a lot of enthusiasts do it purely for fun by ”keeping a life list - a birding term for the running list of all the different birds they see.” 
