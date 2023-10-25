@@ -1,7 +1,7 @@
-import axios from 'axios';
-import API_BASE_URL from './constants';
+import axios from 'axios'
+import API_BASE_URL from './constants'
 
-class ApiClient{
+class ApiClient {
     constructor(remoteHostUrl){
         this.remoteHostUrl = remoteHostUrl; 
     }
@@ -36,5 +36,4 @@ class ApiClient{
     //-------------------------AUTHENTICATION REQUESTS------------------------------
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default new ApiClient(API_BASE_URL);

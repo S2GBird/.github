@@ -27,8 +27,8 @@ Before adjusting or making changes to any of the code, please branch out on your
 Throughout the project, Chirp developers hope to follow a more standardized form for structuring the React Components to make it easier for development and testing in the future.
 
 - To see an example on how to structure the react component, go to the example folder under **src / Pages / Example Page** to see both .module.css file and .jsx file
-- Files under this folder shows how to make requst calls from frontend to backend, how to call css styling into the components, how to handle optimization of useStates, and how to structure handler functions.
-- To see the component in action on the interface, redirect to this route in your frontend localhost: 
+- Files under this folder shows how to make requst calls from frontend to backend, how to call CSS styling into the components, how to handle optimization of useStates, and how to structure handler functions.
+- To see the component in action on the interface, redirect to this route in your frontend localhost:
 ```sh
   http://localhost:3000/example
 ```
@@ -36,7 +36,7 @@ Throughout the project, Chirp developers hope to follow a more standardized form
 ## Making Axios Requests From Frontend to Backend
 To centralize all axios requests and prevent error handling functions from cluttering larger React component files, any calls made to frontend to the backend are being handled in the apiClient class. This call be found under **src / Services / apiClient.js**
 
-1. Before writing the logic in your individual component, write up an async request in the apiClient : 
+1. Before writing the logic in your individual component, write up an async request in the apiClient :
 ```sh
     async **insert a name for the request call like: signup, login, getAllPosts etc.**() {
         return await this.request({ endpoint: `**insert the endpoint for your backend with including the localhost extension**`, method: `**insert the type of request like: POST, GET, DELETE etc.**` })
