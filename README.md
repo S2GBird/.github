@@ -2,7 +2,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
-[![Apache License][license-shield]][license-url]
 
 ![Chirp Bird Watching Banner #2](./frontend/src/Images/ChirpBanner2.png)
 
@@ -67,5 +66,3 @@ Other Software Platforms Being Used:
 [forks-url]: https://github.com/S2GBird/.github/network/members
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/S2GBird/.github/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/S2GBird/.github/blob/main/LICENSE.txt
