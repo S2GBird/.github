@@ -3,8 +3,8 @@
 ![Chirp Bird Watching Banner #2](./frontend/src/Images/ChirpBanner2.png)
 
 ## Problem Statement
-Have you ever been told to touch grass? Encouraged to go explore nature? Tired of staring at your computer all day? Looking for something fun, inexpensive and can be done anywhere, anytime? Then, you can’t go wrong with some bird watching! The bird watching community is huge and a lot of enthusiasts do it purely for fun by ”keeping a life list - a birding term for the running list of all the different birds they see.” 
-
+Have you ever been told to touch grass? Encouraged to go explore nature? Tired of staring at your computer all day? Looking for something fun, inexpensive and can be done anywhere, anytime? Then, you can’t go wrong with some bird watching!
+The bird watching community is huge and a lot of enthusiasts do it purely for fun by ”keeping a life list - a birding term for the running list of all the different birds they see.”
 However, keeping in touch with the bird watching community and finding people who enjoy this hobby just as much as you do is incredibly difficult especially as a newcomer just wanting to learn more about bird watching or birding veterans wanting to share all the awesome adventures they’ve been on. What if we brought the community together through a social media app made just for birdwatchers? 
 
 **Our app, Chirp, brings that community aspect by encouraging bird enthusiasts to share posts about their birds, learn new things, find the best places to bird watch, and participate in events made just for the community! Let’s make bird watching a hobby for everyone!**
@@ -24,7 +24,6 @@ However, keeping in touch with the bird watching community and finding people wh
 Chirp is currently being developer using the **MERN stack** which allows the platform to have more flexibility in terms of integrating third party lagnuages, frameworks, or software and a larger opportunity to scale the app in future interations with consideration of potential mobile application development of the Chirp platform.
 
 **Development Timeline: Long-Term Project with projected MVP to be completed within 6 months (maybe extended based on project and member vote)**
-
 Our Languages: 
 [![React][React.js]][React-url]
 [![Mongo][MongoDB]][Mongo-url]
