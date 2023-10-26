@@ -50,7 +50,8 @@ function LoginPage () {
     <div className={LoginStyles['login-page']}> {/** Example on how to attach your css styling to these components */}
       <div className={LoginStyles['login-header']}>
         <div className={LoginStyles['login-header-name']}>
-          <div>Logo</div>
+          {/* <div>Logo</div> */}
+          <div className={LoginStyles['login-logo']}>Logo</div>
           <div>Chirp</div>
         </div>
         <ul className={LoginStyles['login-header-info']}>
@@ -64,13 +65,15 @@ function LoginPage () {
           <div>Picture</div>
           <div>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
+              <div>Logo</div>
               <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
               <label>Email</label>
               <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
               <label>Password</label>
               <button>Login</button>
             </form>
-            <p>{error}</p>
+            <p className={LoginStyles['login-error']}>{error}</p>
+            <div>static social media buttons</div>
           </div>
         </div>
       </div>

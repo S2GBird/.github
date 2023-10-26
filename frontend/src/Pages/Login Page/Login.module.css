@@ -61,3 +61,12 @@
     align-items: center;
     gap:10px;
 }
+
+.login-error{
+    background-color: red;
+}
+
+.login-logo{
+    width: 27px;
+    height: 27px;
+}
