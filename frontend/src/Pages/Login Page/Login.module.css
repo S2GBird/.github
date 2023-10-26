@@ -2,10 +2,16 @@
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+}
+
+.login-body-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .login-body{
@@ -13,7 +19,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 100px; 
 }
 
 .login-header{

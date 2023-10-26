@@ -32,9 +32,11 @@ function LoginPage () {
           <li><a href='/#'>Sign Up</a></li>
         </ul>
       </div>
-      <div className={LoginStyles['login-body']}>
-        <div>Picture</div>
-        <div>Login Form</div>
+      <div className={LoginStyles['login-body-container']}>
+        <div className={LoginStyles['login-body']}>
+          <div>Picture</div>
+          <div>Login Form</div>
+        </div>
       </div>
       {/* <button onClick={fetchExampleMessage}> Click this button to show message</button>
       {message && <p>This is my message: {message}</p>} */}
