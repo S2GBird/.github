@@ -3,6 +3,8 @@ const cors = require('cors')
 const connectDB = require('./database/db')
 const User = require('./models/userModel')
 const app = express()
+const { auth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
 
 require('mongoose')
 require('dotenv').config()
@@ -11,10 +13,36 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 connectDB()
 
-// Homepage
-app.get('/', async function (req, res) {
-  res.send('Hello World!')
-})
+// Secret key for auth0 authentication, needs to be same for everybody
+const SECRET_KEY = process.env.SECRET_KEY
+const CLIENT_ID = process.env.CLIENT_ID
+const BASE_URL = process.env.BASE_URL
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: SECRET_KEY,
+  baseURL: 'http://localhost:3000',
+  clientID: CLIENT_ID,
+  issuerBaseURL: BASE_URL
+};
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out')
+});
+
+// requiresAuth() is a middleware that checks whether the user is logged in
+app.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+
+// // Homepage
+// app.get('/', async function (req, res) {
+//   res.send('Hello World!')
+// })
 
 // routes for authentication?
 app.get('/login', async function (req, res) { })
