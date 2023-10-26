@@ -1,9 +1,11 @@
 import LoginStyles from './Login.module.css'
 // import apiClient from '../../Services/apiClient'
-// import { useState, memo } from 'react'
+import { useState} from 'react'
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
 //   // FUNCTION : When the login button is clicked, send a call to the backend to verify the information is correct
   // const login = async () => {
@@ -36,9 +38,9 @@ function LoginPage () {
         <div className={LoginStyles['login-body']}>
           <div>Picture</div>
           <form className={LoginStyles['login-form']}>
-            <input type='text'></input>
+            <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
             <label>Email</label>
-            <input type='text'></input>
+            <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
             <label>Password</label>
             <button>Login</button>
           </form>
