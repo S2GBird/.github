@@ -1,3 +1,4 @@
+
 .login-page{
     height: 100vh;
     margin: 0;
@@ -23,7 +24,7 @@
 }
 
 .login-header{
-    background-color: grey;
+    background-color: #181F39;
     display: flex;
     justify-content: space-between;
     padding: 16px;
@@ -42,12 +43,16 @@ a {
     color: black;
 }
 
+.login-header-info a, .login-footer, .login-header{
+    color: white;
+}
+
 .login-header-info a:hover {
-    color:blue;
+    color:#6cd4f0;
 }
 
 .login-footer{
-    background-color: grey;
+    background-color: #181F39;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,4 +83,8 @@ a {
 .login-social-media {
     justify-content: center;
     align-items: center;
+}
+
+button{
+    background-color: #1B7D4F;
 }
