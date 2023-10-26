@@ -1,6 +1,7 @@
 import LoginStyles from './Login.module.css'
 // import apiClient from '../../Services/apiClient'
 import { useState, memo } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -8,20 +9,22 @@ function LoginPage () {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [valid, setValid] = useState(0) 
+  const navigate = useNavigate()
 
   function handleLogin(event) {
     event.preventDefault()
     setError('')
+    setValid(1) // temporary should be set after checking with db
     // check to see if both email and password were entered
       // return error message if either were missing
     if(email !== "" && password !== "") {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
-      setValid(1) // temporary 
       if(valid) { 
-        console.log(email, password)
-        console.log("redirect to dashboard")
+        // console.log(email, password)
+        // console.log("redirect to dashboard")
+        navigate('/dashboard')
       }
       else {
         setError('incorrect email or password')
