@@ -22,11 +22,15 @@ function LoginPage () {
   return (
     <div className={LoginStyles['login-page']}> {/** Example on how to attach your css styling to these components */}
       <div className={LoginStyles['login-header']}>
-        <div>Logo</div>
-        <div>Name</div>
-        <div>About</div>
-        <div>Login</div>
-        <div>Sign Up</div>
+        <div className={LoginStyles['login-header-name']}>
+          <div>Logo</div>
+          <div>Name of App</div>
+        </div>
+        <ul className={LoginStyles['login-header-info']}>
+          <li><a href='/#'>About</a></li>
+          <li><a href='/login'>Login</a></li>
+          <li><a href='/#'>Sign Up</a></li>
+        </ul>
       </div>
       <div className={LoginStyles['login-body']}>
         <div>Picture</div>
