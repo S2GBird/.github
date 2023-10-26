@@ -66,7 +66,7 @@ function LoginPage () {
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
           <div>Picture</div>
-          <div>
+          <div className={LoginStyles['login-form-container']}>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
               <div>Logo</div>
               <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
@@ -76,7 +76,13 @@ function LoginPage () {
               <button>Login</button>
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
-            <div>static social media buttons</div>
+            <p>static social media buttons (will add icons later)</p>
+            <div className={LoginStyles['login-social-media']}>
+              <button><a href='https://www.google.com'>Google</a></button>
+              <button><a href='https://www.instagram.com'>Instagram</a></button>
+              <button><a href='https://www.linkedin.com'>LinkedIn</a></button>
+              <button><a href='https://www.facebook.com'>Facebook</a></button>
+            </div>
           </div>
         </div>
       </div>
