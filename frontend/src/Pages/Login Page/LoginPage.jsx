@@ -35,7 +35,13 @@ function LoginPage () {
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
           <div>Picture</div>
-          <div>Login Form</div>
+          <form className={LoginStyles['login-form']}>
+            <input type='text'></input>
+            <label>Email</label>
+            <input type='text'></input>
+            <label>Password</label>
+            <button>Login</button>
+          </form>
         </div>
       </div>
       {/* <button onClick={fetchExampleMessage}> Click this button to show message</button>

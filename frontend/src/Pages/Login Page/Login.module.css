@@ -53,3 +53,11 @@
     justify-content: center;
     padding: 16px;
 }
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
