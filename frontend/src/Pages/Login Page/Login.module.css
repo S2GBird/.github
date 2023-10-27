@@ -20,7 +20,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 100px; 
+    gap:500px;
 }
 
 .login-header{
@@ -76,9 +76,9 @@ a {
     height: 27px;
 }
 
-.login-form-container{
+/* .login-form-container{
     text-align: center;
-}
+} */
 
 .login-social-media {
     justify-content: center;
@@ -88,3 +88,14 @@ a {
 button{
     background-color: #1B7D4F;
 }
+
+.login-column{
+    flex:50%;
+    text-align: center;
+}
+
+/* @media screen and (max-width: 600px) {
+    .login-column {
+      width: 100%;
+    }
+  } */

@@ -54,7 +54,8 @@ function LoginPage () {
       <div className={LoginStyles['login-header']}>
         <div className={LoginStyles['login-header-name']}>
           {/* <div>Logo</div> */}
-          <div className={LoginStyles['login-logo']}>Logo</div>
+          {/* <div className={LoginStyles['login-logo']}>Logo</div> */}
+          <img className={LoginStyles['login-logo']} src={require('../../Images/logo.png')} alt='logo'/>
           <div>Chirp</div>
         </div>
         <ul className={LoginStyles['login-header-info']}>
@@ -65,10 +66,13 @@ function LoginPage () {
       </div>
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
-          <div>Picture</div>
-          <div className={LoginStyles['login-form-container']}>
+          <div className={LoginStyles['login-column']}>
+            {/* <img className={LoginStyles['login-column']} src={require('../../Images/login-pic.png')} alt='bird pic'/> */}
+            picture
+          </div>
+          <div className={LoginStyles['login-column']}>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
-              <div>Logo</div>
+              <img src={require('../../Images/logo.png')} alt='logo'/>
               <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
               <label>Email</label>
               <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
@@ -88,7 +92,7 @@ function LoginPage () {
       </div>
       {/* <button onClick={fetchExampleMessage}> Click this button to show message</button>
       {message && <p>This is my message: {message}</p>} */}
-      <div className={LoginStyles['login-footer']}>Footer</div>
+      <div className={LoginStyles['login-footer']}>Chirp</div>
     </div>
   )
 };
