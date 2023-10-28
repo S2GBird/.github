@@ -55,7 +55,8 @@ function LoginPage () {
         <div className={LoginStyles['login-header-name']}>
           {/* <div>Logo</div> */}
           {/* <div className={LoginStyles['login-logo']}>Logo</div> */}
-          <img className={LoginStyles['login-logo']} src={require('../../Images/logo.png')} alt='logo'/>
+          {/* <img className={LoginStyles['login-logo']} src={require('../../Images/logo.png')} alt='logo'/> */}
+          <svg className={LoginStyles['login-logo']} src={require('../../Images/ChirpLogo.svg')} alt='logo'></svg> 
           <div>Chirp</div>
         </div>
         <ul className={LoginStyles['login-header-info']}>
@@ -72,7 +73,7 @@ function LoginPage () {
           </div>
           <div className={LoginStyles['login-column']}>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
-              <img src={require('../../Images/logo.png')} alt='logo'/>
+              {/* <img src={require('../../Images/logo.png')} alt='logo'/> */}
               <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
               <label>Email</label>
               <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
