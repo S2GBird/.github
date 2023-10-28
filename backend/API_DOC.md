@@ -27,7 +27,7 @@ Gets bird list v2
 curl -X 'GET' \
   'https://nuthatch.lastelm.software/v2/birds?page=1&pageSize=1&operator=AND' \
   -H 'accept: application/json' \
-  -H 'API-Key: 85917e25-20b8-4e29-bd13-d976ab27dd24'
+  -H 'API-Key: YOUR_API_KEY_HERE'
 ```
 
 # Sample Response
