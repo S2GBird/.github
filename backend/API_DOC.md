@@ -1,12 +1,12 @@
 # Nuthatch API
-Contains information about birds including minimum and maximum length, common name, scientific name, region, family, order, and status. Region is currently limited to North America and Western Europe. 
+Contains information about birds including minimum and maximum length, common name, scientific name, region, family, order, and status. Region is currently limited to North America and Western Europe.
 
-# Endpoints
+## Endpoints
 `GET` **/v2/birds**
 
 Gets bird list v2
 
-# Query String Parameters
+## Query String Parameters
 
 | Name  | Description | Data Type |
 | ----- | ----------- | --- |
@@ -19,19 +19,19 @@ Gets bird list v2
 |status | conservation status | string |
 |region | geographical region (only North America and Western Europe avaiable) | string |
 | hasImg | filter by only birds that have images | boolean
-| operator | operator to use (AND/OR; default AND) | 
+| operator | operator to use (AND/OR; default AND) |
 
 
-# Sample Request
-```
+## Sample Request
+```bash
 curl -X 'GET' \
   'https://nuthatch.lastelm.software/v2/birds?page=1&pageSize=1&operator=AND' \
   -H 'accept: application/json' \
   -H 'API-Key: YOUR_API_KEY_HERE'
 ```
 
-# Sample Response
-```
+## Sample Response
+```bash
 {
   "entities": [
     {
@@ -67,15 +67,15 @@ curl -X 'GET' \
 | lengthMin | minimum length of bird from tip of the bill to tip of the tail | integer |
 | lengthMax | maximum length of bird from tip of the bill to tip of the tail | integer |
 | name | commenly used name of bird (e.g., rock pigeon) | string |
-| id | identification number from database | integer |
+| ID | identification number from database | integer |
 | sciName | scientific name of bird (e.g., columba livia) | string |
 | region | region bird resides in (i.e., North America, Western Europe) | string |
 | family | lower classification of birds by nature or characteristics (e.g., Anatidae are Anseriform birds that spend more time in the water than land, and they migrate.)| string |
 | order | higher classification of bird by nature or characteristics (e.g., Anseriform birds are medium to large birds that inhabit aquatic environments and are herbivorous.) | string |
 | status | conservation status of bird (i.e., low concern, declining, restriced range, red watch list) | string |
 
-# Try it out
-Here is the link to the [Swagger](https://nuthatch.lastelm.software/swagger.html). 
+## Try it out
+Here is the link to the [Swagger](https://nuthatch.lastelm.software/swagger.html).
 
 
-Get an API key to authorize the use of the server and try out different parameters to view responses. 
+Get an API key to authorize the use of the server and try out different parameters to view responses.
