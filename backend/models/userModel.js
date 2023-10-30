@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, 'Password missing'],
+    required: [true, 'Password missing']
   },
   fName: {
     type: String
