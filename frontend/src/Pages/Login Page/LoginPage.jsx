@@ -1,7 +1,9 @@
 import LoginStyles from './Login.module.css'
 // import apiClient from '../../Services/apiClient'
 import { useState, memo } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import ChirpLogo from '../../Images/ChirpLogo.svg'
+// import LoginPic from '../../Images/login-pic.png'
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -54,9 +56,7 @@ function LoginPage () {
       <div className={LoginStyles['login-header']}>
         <div className={LoginStyles['login-header-name']}>
           {/* <div>Logo</div> */}
-          {/* <div className={LoginStyles['login-logo']}>Logo</div> */}
-          {/* <img className={LoginStyles['login-logo']} src={require('../../Images/logo.png')} alt='logo'/> */}
-          <svg className={LoginStyles['login-logo']} src={require('../../Images/ChirpLogo.svg')} alt='logo'></svg> 
+          <img className={LoginStyles['login-logo']} src={ChirpLogo} alt='logo'/>
           <div>Chirp</div>
         </div>
         <ul className={LoginStyles['login-header-info']}>
@@ -73,7 +73,7 @@ function LoginPage () {
           </div>
           <div className={LoginStyles['login-column']}>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
-              {/* <img src={require('../../Images/logo.png')} alt='logo'/> */}
+              <img src={ChirpLogo} alt='logo'/>
               <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
               <label>Email</label>
               <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
