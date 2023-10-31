@@ -30,8 +30,7 @@ passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
 // Configuring Passport local strategy
-const LocalStrategy = require('passport-local').Strategy
-passport.use(new LocalStrategy(User.authenticate()))
+passport.use(User.createStrategy())
 
 // // Homepage
 // app.get('/', async function (req, res) {
