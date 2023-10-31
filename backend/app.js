@@ -7,6 +7,7 @@ const passport = require('passport')
 const session = require('express-session')
 const { register, logout } = require('./controllers/auth.controller')
 const { login } = require('./controllers/auth.controller')
+const helmet = require('helmet')
 
 require('mongoose')
 require('dotenv').config()
@@ -37,6 +38,7 @@ passport.use(new LocalStrategy(User.authenticate()))
 //   res.send('Hello World!')
 // })
 
+app.use(helmet())
 // Route for user authentication
 app.post('/register', register)
 
