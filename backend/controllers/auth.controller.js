@@ -31,7 +31,7 @@ const register = async (req, res) => {
   }
 }
 
-// Login Route
+// Login Route - 
 const login = async (req, res) => {
   const { email, password } = req.body
 
