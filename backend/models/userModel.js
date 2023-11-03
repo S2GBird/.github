@@ -1,14 +1,17 @@
 const mongoose = require('mongoose')
+const passportLocalMongoose = require('passport-local-mongoose')
 
 const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: [true, 'Username missing'],
+    unique: true
+  },
   email: {
     type: String,
-    required: [true, 'Email missing']
-  },
-
-  password: {
-    type: String,
-    required: [true, 'Password missing']
+    required: [true, 'Email missing'],
+    match: /.+@.+\..+/,
+    unique: true
   },
   fName: {
     type: String
@@ -20,9 +23,11 @@ const userSchema = new mongoose.Schema({
     type: String
   },
   settings: {
-    type: Object
+    type: Map
   }
 })
+
+userSchema.plugin(passportLocalMongoose)
 
 const User = mongoose.model('User', userSchema)
 
