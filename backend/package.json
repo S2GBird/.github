@@ -3,6 +3,7 @@
     "standard": "*"
   },
   "scripts": {
+    "start": "nodemon app.js",
     "test": "standard"
     
   },

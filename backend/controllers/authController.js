@@ -19,7 +19,7 @@ const register = async (req, res) => {
     // call userSchema's register method to save user in Mongo and salt/hash passowrd
     User.register(new User(newUser), req.body.password, function (error, user) {
       if (error) {
-        console.log('error in registering user')
+        console.error('error in registering user', error.message)
         res.json({ success: false, message: error })
         return
       }
@@ -27,7 +27,7 @@ const register = async (req, res) => {
       // establish a login session for newly registered user
       req.login(user, (error) => {
         if (error) {
-          console.log('after registering, login error')
+          console.error('after registering, login error', error.message)
           res.json({ success: false, message: error })
           return
         }
@@ -36,7 +36,7 @@ const register = async (req, res) => {
       })
     })
   } catch (error) {
-    console.log('error caught at beginning of registration function')
+    console.error('error caught at beginning of registration function', error.message)
     res.json({ success: false, message: error })
   }
 }
