@@ -1,3 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 .landing-page{
-    background-color: red;
+    width: 100%;
+}
+
+.landing-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to left, rgba(24, 31, 57, 0), rgba(9, 12, 21, 0.8)), url("../../Images/landing-hero3.jpg");
+}
+
+.landing-hero-content{
+    width: 40%;
+    padding-left: 100px;
+}
+
+.landing-hero-content h1{
+    font-size: 100px;
+    font-family: Poppins;
+    font-weight: bold;
+    margin: -10px 0px -10px 0px;
+}
+
+.landing-hero-button{
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #1d217500;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 10px 30px 10px 30px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.landing-hero-button:hover{
+    border: 2px solid #ffffff;;
+}
+
+
+
+
+
+
+.landing-info-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0px 40px 0px;
+}
+
+.landing-info-section-content{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.landing-info-section-content button{
+    background-color: #1B7D4F;
+    width: fit-content;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    color: #ffffff;
+}
+
+.landing-info-section-content p{
+    color: #7a7a7a;
+}
+
+.landing-info-section-content hr{
+    border: 1.5px solid #1B7D4F;
+    width: 20%;
+    margin-left: 0;
+    margin-top: -30px;
+}
+
+.landing-info-section-img{
+    width: 50%;
+    text-align: center;
+    display: flex;
+}
+
+.landing-info-section-img img{
+    filter: drop-shadow(10px 10px 10px #a9a9a9)
+}
+
+.landing-info-img{
+    width: 100%;
+}
+
+.landing-info-binoculars{
+    position: absolute;
+    margin: 250px 0px 0px -70px;
+    width: 30%;
+    height: 40%;
+}
+
+
+
+.landing-features-section{
+    background-color: #181F39;
+    color: #ffffff;
+    margin-top: 50px;
 }
