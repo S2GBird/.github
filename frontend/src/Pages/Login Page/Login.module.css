@@ -54,6 +54,10 @@ a {
     align-items: center;
     justify-content: center;
     padding: 16px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .login-form{
@@ -97,6 +101,8 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 80%;
+    width: 100%;
   /* width: 50%; */
 }
 

@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { TextField, Button } from '@mui/material';
+import LoginPic from '../../Images/login.jpg'
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -74,7 +75,7 @@ function LoginPage () {
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
           <div className={LoginStyles['login-pic-container']}>
-            some pic
+            <img src={LoginPic} alt='bird pic' />
           </div>
           <div>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
