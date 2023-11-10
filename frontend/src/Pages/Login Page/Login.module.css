@@ -10,17 +10,13 @@
 .login-body-container{
     flex: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
 .login-body{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap:500px;
+    display:block;
+    padding:1rem;
 }
 
 .login-header{
@@ -76,10 +72,6 @@ a {
     height: 27px;
 }
 
-/* .login-form-container{
-    text-align: center;
-} */
-
 .login-social-media {
     justify-content: center;
     align-items: center;
@@ -94,8 +86,9 @@ button{
     text-align: center;
 }
 
-/* @media screen and (max-width: 600px) {
-    .login-column {
-      width: 100%;
+@media (min-width:768px) {
+    .login-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-  } */
+}

@@ -4,10 +4,14 @@ import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
 // import LoginPic from '../../Images/login-pic.png'
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [valid, setValid] = useState(0) 
@@ -19,7 +23,7 @@ function LoginPage () {
     setValid(1) // temporary should be set after checking with db
     // check to see if both email and password were entered
       // return error message if either were missing
-    if(email !== "" && password !== "") {
+    if(username !== "" && password !== "") {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
@@ -29,11 +33,11 @@ function LoginPage () {
         navigate('/dashboard')
       }
       else {
-        setError('incorrect email or password')
+        setError('incorrect username or password')
       } 
     }
     else {
-      setError('missing email or password')
+      setError('missing username or password')
     } 
   }
 
@@ -74,19 +78,18 @@ function LoginPage () {
           <div className={LoginStyles['login-column']}>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
               <img src={ChirpLogo} alt='logo'/>
-              <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}></input>
-              <label>Email</label>
+              <input type='text' value={username} onChange={(event) => setUsername(event.target.value)}></input>
+              <label>Username</label>
               <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
               <label>Password</label>
               <button>Login</button>
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
-            <p>static social media buttons (will add icons later)</p>
             <div className={LoginStyles['login-social-media']}>
-              <button><a href='https://www.google.com'>Google</a></button>
-              <button><a href='https://www.instagram.com'>Instagram</a></button>
-              <button><a href='https://www.linkedin.com'>LinkedIn</a></button>
-              <button><a href='https://www.facebook.com'>Facebook</a></button>
+              <a href='https://www.google.com'><GoogleIcon color="primary"/></a>
+              <a href='https://www.instagram.com'><InstagramIcon color="primary"/></a>
+              <a href='https://www.linkedin.com'><LinkedInIcon color="primary"/></a>
+              <a href='https://www.facebook.com'><FacebookIcon color="primary"/></a>
             </div>
           </div>
         </div>
