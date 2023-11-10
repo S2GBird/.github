@@ -14,13 +14,12 @@ function LoginPage () {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const [valid, setValid] = useState(0) 
+  const [valid, setValid] = useState(1) 
   const navigate = useNavigate()
 
   function handleLogin(event) {
     event.preventDefault()
-    setError('')
-    setValid(1) // temporary should be set after checking with db
+    setError("")
     // check to see if both email and password were entered
       // return error message if either were missing
     if(username !== "" && password !== "") {
@@ -30,7 +29,7 @@ function LoginPage () {
       const user = {
         username: username,
         password: password
-      }
+      } // send to backend
       if(valid) { 
         // console.log(email, password)
         // console.log("redirect to dashboard")
@@ -67,9 +66,9 @@ function LoginPage () {
           <div>Chirp</div>
         </div>
         <ul className={LoginStyles['login-header-info']}>
-          <li><a href='/#'>About</a></li>
+          <li><a href='/about'>About</a></li>
           <li><a href='/login'>Login</a></li>
-          <li><a href='/#'>Sign Up</a></li>
+          <li><a href='/signup'>Sign Up</a></li>
         </ul>
       </div>
       <div className={LoginStyles['login-body-container']}>
@@ -96,11 +95,10 @@ function LoginPage () {
               <a href='https://www.linkedin.com'><LinkedInIcon color="primary"/></a>
               <a href='https://www.facebook.com'><FacebookIcon color="primary"/></a>
             </div>
+            <a href='/#'>Forgot Password?</a>
           </div>
         </div>
       </div>
-      {/* <button onClick={fetchExampleMessage}> Click this button to show message</button>
-      {message && <p>This is my message: {message}</p>} */}
       <div className={LoginStyles['login-footer']}>Chirp</div>
     </div>
   )
