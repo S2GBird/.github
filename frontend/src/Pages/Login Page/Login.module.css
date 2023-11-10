@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .login-body{
@@ -20,7 +21,7 @@
 }
 
 .login-header{
-    background-color: #181F39;
+    background-color: #1B7D4F;
     display: flex;
     justify-content: space-between;
     padding: 16px;
@@ -48,7 +49,7 @@ a {
 }
 
 .login-footer{
-    background-color: #181F39;
+    background-color: #1B7D4F;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,11 +61,12 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:10px;
+    gap:15px;
 }
 
 .login-error{
-    background-color: red;
+    color: red;
+    text-align: center;
 }
 
 .login-logo{
@@ -77,13 +79,39 @@ a {
     align-items: center;
 }
 
-button{
-    background-color: #1B7D4F;
+.login-pic-container{
+    /* flex:50%; */
+    /* text-align: center;
+    height: 100%;
+    width: 100%; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-column{
-    flex:50%;
-    text-align: center;
+.login-pic-container img{
+    /* height: 100%;
+    width: 100%; */
+    object-fit: cover;
+    /* vertical-align:bottom; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  /* width: 50%; */
+}
+
+.login-pic{
+    /* min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto; */
+    /* display: block;
+    width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    /* margin: auto; */
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media (min-width:768px) {
