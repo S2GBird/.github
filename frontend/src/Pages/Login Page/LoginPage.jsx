@@ -3,11 +3,11 @@ import LoginStyles from './Login.module.css'
 import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
-// import LoginPic from '../../Images/login-pic.png'
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { TextField, Button } from '@mui/material';
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -27,6 +27,10 @@ function LoginPage () {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
+      const user = {
+        username: username,
+        password: password
+      }
       if(valid) { 
         // console.log(email, password)
         // console.log("redirect to dashboard")
@@ -59,7 +63,6 @@ function LoginPage () {
     <div className={LoginStyles['login-page']}> {/** Example on how to attach your css styling to these components */}
       <div className={LoginStyles['login-header']}>
         <div className={LoginStyles['login-header-name']}>
-          {/* <div>Logo</div> */}
           <img className={LoginStyles['login-logo']} src={ChirpLogo} alt='logo'/>
           <div>Chirp</div>
         </div>
@@ -71,18 +74,20 @@ function LoginPage () {
       </div>
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
-          <div className={LoginStyles['login-column']}>
-            {/* <img className={LoginStyles['login-column']} src={require('../../Images/login-pic.png')} alt='bird pic'/> */}
-            picture
+          <div className={LoginStyles['login-pic-container']}>
+            some pic
           </div>
-          <div className={LoginStyles['login-column']}>
+          <div>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
               <img src={ChirpLogo} alt='logo'/>
-              <input type='text' value={username} onChange={(event) => setUsername(event.target.value)}></input>
-              <label>Username</label>
-              <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
-              <label>Password</label>
-              <button>Login</button>
+              {/* <input type='text' value={username} onChange={(event) => setUsername(event.target.value)}></input> */}
+              <TextField style={{width: "75%", height:"15%"}} id="filled-basic" label="Username" variant="filled" value={username} onChange={(event) => setUsername(event.target.value)}/>
+              {/* <label>Username</label> */}
+              {/* <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input> */}
+              <TextField style={{width: "75%", height:"15%"}} id="filled-basic" label="Password" type='password' variant="filled" value={password} onChange={(event) => setPassword(event.target.value)}/>
+              {/* <label>Password</label> */}
+              {/* <button>Login</button> */}
+              <Button variant="contained" type='submit' style={{backgroundColor: "#1B7D4F", width: "75%", height:"20%"}}>Login</Button>
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
             <div className={LoginStyles['login-social-media']}>
