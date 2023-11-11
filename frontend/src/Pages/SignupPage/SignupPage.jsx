@@ -56,55 +56,55 @@ function SignupPage() {
     }
 
     return (
-    <Grid container >
+    <Grid container>
         {/*left half page*/}
-        <Grid item xs={6}>
+        <Grid item xs={6} sx={{ maxWidth:"100%", hieght:"auto"}}>
         <img src={bird} alt="image1" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
         </Grid>
         {/*righ half page*/}
-    <Grid item xs={6} >
+    <Grid item xs={6} sx={{ maxWidth:"100%", hieght:"auto"}}>
     <Grid style={{display:"flex", flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
         <img src={ChirpLogo} alt="logoImage" />
             <Typography variant="h4" fontWeight="bold">
-                Register An Account
+            Register An Account
             </Typography>
         <Grid container style={{marginTop:"20px", alignItems:"center",justifyContent:"center"}}>
             <form onSubmit={handleSignup}>
             <Grid item style={{display:"flex", flexDirection:"row"}}>
                 <Grid item style={{display:"flex", flexDirection:"column"}}>
                     <InputLabel htmlFor="firstName" style={{fontWeight:"bold"}}>First Name</InputLabel>
-                        <TextField id="firstName" label="Enter first name" variant="filled" name="fName" onChange={handleInput} value={userInfo.fName} error={!!error.fName} helperText={error.fName} InputProps={{style:{width: 250}}}/>
+                    <TextField id="firstName" label="Enter first name" variant="filled" name="fName" onChange={handleInput} value={userInfo.fName} error={!!error.fName} helperText={error.fName} InputProps={{style:{width: 250}}}/>
                 </Grid>
                     <Grid item style={{marginLeft:50}}>
-                        <Grid item style={{display:"flex", flexDirection:"column"}}>
-                            <InputLabel htmlFor="lastName" style={{fontWeight:"bold"}}>Last Name</InputLabel>
-                            <TextField id="lastName" label="Enter last name" variant="filled" name="lName" onChange={handleInput} value={userInfo.lName} error={!!error.lName} helperText={error.lName} InputProps={{style:{width: 250} }}/>
-                            </Grid>
+                    <Grid item style={{display:"flex", flexDirection:"column"}}>
+                        <InputLabel htmlFor="lastName" style={{fontWeight:"bold"}}>Last Name</InputLabel>
+                        <TextField id="lastName" label="Enter last name" variant="filled" name="lName" onChange={handleInput} value={userInfo.lName} error={!!error.lName} helperText={error.lName} InputProps={{style:{width: 250} }}/>
                         </Grid>
+                    </Grid>
                 </Grid>
-                    <Grid item style={{marginTop:20}}>
-                        <Grid item style={{display:"flex", flexDirection:"column"}}>
-                            <InputLabel htmlFor="username" style={{fontWeight:"bold"}}>Username</InputLabel>
+                <Grid item style={{marginTop:20}}>
+                    <Grid item style={{display:"flex", flexDirection:"column"}}>
+                        <InputLabel htmlFor="username" style={{fontWeight:"bold"}}>Username</InputLabel>
                         <TextField id="username" label="Enter email" variant="filled" name="username" onChange={handleInput} value={userInfo.username} error={!!error.username} helperText={error.username} InputProps={{style:{width: 550} }}/>
-                        </Grid>
-                    </Grid>
-                    <Grid item style={{marginTop:20}}>
-                        <Grid item style={{display:"flex", flexDirection:"column"}}>
-                            <InputLabel htmlFor="email" style={{fontWeight:"bold"}}>Email</InputLabel>
-                            <TextField id="email" label="Enter email" variant="filled" name="email" onChange={handleInput} value={userInfo.email} error={!!error.email} helperText={error.email} InputProps={{style:{width: 550} }}/>
-                        </Grid>
-                    </Grid>
-                    <Grid item style={{marginTop:20}}>
-                        <Grid item style={{display:"flex", flexDirection:"column"}}>
-                            <InputLabel htmlFor="password" style={{fontWeight:"bold"}}>Password</InputLabel>
-                            <TextField id="password" type='password' label="Enter password" variant="filled" name="password" onChange={handleInput} value={userInfo.password} error={!!error.password} helperText={error.password} InputProps={{style:{width: 550} }}/>
                     </Grid>
                     </Grid>
-                    <Grid item style={{marginTop:20}}>
-                        <Grid item style={{display:"flex", flexDirection:"column"}}>
-                            <InputLabel htmlFor="confirmpassword" style={{fontWeight:"bold"}}>Confirm Password</InputLabel>
-                            <TextField id="confirm password" type='password' label="Enter password" variant="filled" name="confirmPassword" onChange={handleInput} value={userInfo.confirmPassword} error={!!error.confirmPassword} helperText={error.confirmPassword} InputProps={{style:{width: 550} }}/>
-                        </Grid>
+                <Grid item style={{marginTop:20}}>
+                    <Grid item style={{display:"flex", flexDirection:"column"}}>
+                        <InputLabel htmlFor="email" style={{fontWeight:"bold"}}>Email</InputLabel>
+                        <TextField id="email" label="Enter email" variant="filled" name="email" onChange={handleInput} value={userInfo.email} error={!!error.email} helperText={error.email} InputProps={{style:{width: 550} }}/>
+                    </Grid>
+                    </Grid>
+                <Grid item style={{marginTop:20}}>
+                    <Grid item style={{display:"flex", flexDirection:"column"}}>
+                        <InputLabel htmlFor="password" style={{fontWeight:"bold"}}>Password</InputLabel>
+                        <TextField id="password" type='password' label="Enter password" variant="filled" name="password" onChange={handleInput} value={userInfo.password} error={!!error.password} helperText={error.password} InputProps={{style:{width: 550} }}/>
+                    </Grid>
+                    </Grid>
+                <Grid item style={{marginTop:20}}>
+                    <Grid item style={{display:"flex", flexDirection:"column"}}>
+                        <InputLabel htmlFor="confirmpassword" style={{fontWeight:"bold"}}>Confirm Password</InputLabel>
+                        <TextField id="confirm password" type='password' label="Enter password" variant="filled" name="confirmPassword" onChange={handleInput} value={userInfo.confirmPassword} error={!!error.confirmPassword} helperText={error.confirmPassword} InputProps={{style:{width: 550} }}/>
+                    </Grid>
                     </Grid>
             <Grid item style={{display:"flex", flexDirection:"column",alignItems:"flex-start",justifyContent:"flex-end"}}>
                 <InputLabel style={{marginTop:20}}>
