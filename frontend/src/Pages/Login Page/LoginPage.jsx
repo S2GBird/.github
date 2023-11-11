@@ -7,15 +7,13 @@ import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { TextField, Button } from '@mui/material';
-import LoginPic from '../../Images/login.jpg'
+import { TextField, Button} from '@mui/material';
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const [valid, setValid] = useState(1) 
   const navigate = useNavigate()
 
   function handleLogin(event) {
@@ -27,11 +25,11 @@ function LoginPage () {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
-      const user = {
-        username: username,
-        password: password
-      } // send to backend
-      if(valid) { 
+      // const user = {
+      //   username: username,
+      //   password: password
+      // } // send to backend
+      if(1) { 
         // console.log(email, password)
         // console.log("redirect to dashboard")
         navigate('/dashboard')
@@ -74,20 +72,13 @@ function LoginPage () {
       </div>
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
-          <div className={LoginStyles['login-pic-container']}>
-            <img src={LoginPic} alt='bird pic' />
-          </div>
+            <div className={LoginStyles['login-pic-container']}></div>
           <div>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
               <img src={ChirpLogo} alt='logo'/>
-              {/* <input type='text' value={username} onChange={(event) => setUsername(event.target.value)}></input> */}
-              <TextField style={{width: "75%", height:"15%"}} id="filled-basic" label="Username" variant="filled" value={username} onChange={(event) => setUsername(event.target.value)}/>
-              {/* <label>Username</label> */}
-              {/* <input type='password' value={password} onChange={(event) => setPassword(event.target.value)}></input> */}
-              <TextField style={{width: "75%", height:"15%"}} id="filled-basic" label="Password" type='password' variant="filled" value={password} onChange={(event) => setPassword(event.target.value)}/>
-              {/* <label>Password</label> */}
-              {/* <button>Login</button> */}
-              <Button variant="contained" type='submit' style={{backgroundColor: "#1B7D4F", width: "75%", height:"20%"}}>Login</Button>
+              <TextField style={{width: "75%", height:"15%"}} id="filled-basic username" label="Username" variant="filled" value={username} onChange={(event) => setUsername(event.target.value)}/>
+              <TextField style={{width: "75%", height:"15%"}} id="filled-basic pwd" label="Password" type='password' variant="filled" value={password} onChange={(event) => setPassword(event.target.value)}/>
+              <Button variant="contained" type='submit' style={{backgroundColor: "#1B7D4F", width: "75%", height:"30%"}}>Login</Button>
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
             <div className={LoginStyles['login-social-media']}>
