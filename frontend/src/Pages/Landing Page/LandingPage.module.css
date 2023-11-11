@@ -111,4 +111,17 @@
     background-color: #181F39;
     color: #ffffff;
     margin-top: 50px;
+    text-align: center;
+    padding: 40px 80px;
+}
+
+.landing-features-section-icons{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.landing-features-section-icons img{
+    width: 100px;
 }

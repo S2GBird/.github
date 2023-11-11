@@ -1,6 +1,12 @@
 import LandingStyle from './LandingPage.module.css';
 import InfoSectionBird from '../../Images/landing-page-birds.jpg';
 import BinocularsImg from '../../Images/landing-page-binoculars.jpg';
+import BirdIcon from '../../Images/bird-icon.svg';
+import EarthIcon from '../../Images/earth-icon.svg';
+import MagnifierIcon from '../../Images/magnifier-icon.svg';
+import MountainIcon from '../../Images/mountain-icon.svg';
+import MusicIcon from '../../Images/music-icon.svg';
+import TreeLine from '../../Images/treeline-img.svg';
 
 function LandingPage(){
     return(
@@ -35,11 +41,36 @@ function LandingPage(){
             </div>
 
             <div className={LandingStyle['landing-features-section']}>
-                <h2>How Chirp Works</h2>
+                <h2>Explore The Features Chirp Offers</h2>
                 <p>
-                    
+                    Lorem ipsum dolor sit amet, consecutetur adipscing elit, sed do elusmod tempor incidicunt ut labore et
+                    Lorem ipsum dolor sit amet, consecutetur adipscing elit, sed do elusmod tempor incidicunt ut labore et
+                    Lorem ipsum dolor sit amet, consecutetur adipscing elit, sed do elusmod tempor incidicunt ut labore et
                 </p>
+                <div className={LandingStyle['landing-features-section-icons']}>
+                    <div>
+                        <img src={MountainIcon} alt='Mountain Icon'/>
+                        <p>EXPLORE</p>
+                    </div>
+                    <div>
+                        <img src={MagnifierIcon} alt='Magnifier Icon'/>
+                        <p>DISCOVER</p>
+                    </div>
+                    <div>
+                        <img src={MusicIcon} alt='Music Icon'/>
+                        <p>LISTEN</p>
+                    </div>
+                    <div>
+                        <img src={EarthIcon} alt='Earth Icon'/>
+                        <p>COLLABORATE</p>
+                    </div>
+                    <div>
+                        <img src={BirdIcon} alt='Bird Icon'/>
+                        <p>BIRDWATCH</p>
+                    </div>
+                </div>
             </div>
+            {/* <img src={TreeLine} alt='tree line'/> */}
         </div>
     )
 };
