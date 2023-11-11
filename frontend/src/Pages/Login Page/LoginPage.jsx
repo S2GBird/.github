@@ -38,8 +38,14 @@ function LoginPage () {
         setError('incorrect username or password')
       } 
     }
-    else {
-      setError('missing username or password')
+    else if(username === "" && password !== "") {
+      setError('missing username')
+    } 
+    else if(username !== "" && password === "") {
+      setError('missing password')
+    } 
+    else if(username === "" && password === "") {
+      setError('missing username and password')
     } 
   }
 
