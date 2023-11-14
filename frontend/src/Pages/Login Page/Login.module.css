@@ -99,7 +99,7 @@ a {
     
 }
 
-@media (min-width:768px) {
+@media (width >= 768px) {
     .login-body {
         display: grid;
         grid-template-columns: 1fr 1fr;
