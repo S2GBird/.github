@@ -77,7 +77,7 @@ function LandingPage () {
       </div>
 
       <div className={LandingStyle['landing-action-section']}>
-        <img src={TreeLine} alt='tree line' className={LandingStyle['landing-action-treeLine']} />
+        <img src={TreeLine} alt='tree line' className={LandingStyle['landing-action-tree-line']} />
         <div className={LandingStyle['landing-info-section-action']}>
           <div className={LandingStyle['landing-action-images']}>
             <img src={ActionSectionBird} alt='Bird Sitting On Branch' className={LandingStyle['landing-action-img']} />
