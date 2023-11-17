@@ -15,7 +15,7 @@
     content: "";
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to left, rgba(24, 31, 57, 0%), rgba(9, 12, 21, 80%)), url("../../Images/LandingPage/landing-hero3.jpg");
+    background-image: linear-gradient(to left, rgb(24 31 57 / 0%), rgb(9 12 21 / 80%)), url("../../Images/LandingPage/landing-hero3.jpg");
 }
 
 .landing-hero-content{
