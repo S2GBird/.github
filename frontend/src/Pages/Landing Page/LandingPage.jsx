@@ -1,15 +1,18 @@
+//IMPORTS ---------------------------------------------------------------------------------------------------------------------------
 import LandingStyle from './LandingPage.module.css';
-import InfoSectionBird from '../../Images/landing-page-birds.jpg';
-import BinocularsImg from '../../Images/landing-page-binoculars.jpg';
-import ActionSectionBird from '../../Images/landing-page-birds3.jpg';
-import BirdWatcher from '../../Images/bird-watching.jpg';
-import BirdIcon from '../../Images/bird-icon.svg';
-import EarthIcon from '../../Images/earth-icon.svg';
-import MagnifierIcon from '../../Images/magnifier-icon.svg';
-import MountainIcon from '../../Images/mountain-icon.svg';
-import MusicIcon from '../../Images/music-icon.svg';
-import TreeLine from '../../Images/treeline-img.svg';
+import InfoSectionBird from '../../Images/LandingPage/landing-page-birds.jpg';
+import BinocularsImg from '../../Images/LandingPage/landing-page-binoculars.jpg';
+import ActionSectionBird from '../../Images/LandingPage/landing-page-birds3.jpg';
+import BirdWatcher from '../../Images/LandingPage/bird-watching.jpg';
+import BirdIcon from '../../Images/LandingPage/bird-icon.svg';
+import EarthIcon from '../../Images/LandingPage/earth-icon.svg';
+import MagnifierIcon from '../../Images/LandingPage/magnifier-icon.svg';
+import MountainIcon from '../../Images/LandingPage/mountain-icon.svg';
+import MusicIcon from '../../Images/LandingPage/music-icon.svg';
+import TreeLine from '../../Images/LandingPage/treeline-img.svg';
 
+
+//MAIN LANDING PAGE FUNCTION ---------------------------------------------------------------------------------------------------------------------------
 function LandingPage(){
     return(
         <div className={LandingStyle['landing-page']}>
@@ -82,14 +85,15 @@ function LandingPage(){
                         <img src={BirdWatcher} alt='Bird Watcher' className={LandingStyle['bird-watcher-img']} />
                     </div>
                     <div className={LandingStyle['landing-info-section-content']}>
-                        <h2>Discover The Joy Of Birding</h2>
+                        <h2>Embark On A Journey Of Discovery</h2>
                         <hr />
                         <p>
-                            The Bird Watching Community is buzzing with excitement and we want you to be a part of it! The Chirp Platform
-                            seeks to connect with you with other bird enthusiasts, post about your favorite sightings, and discover new adventures
-                            as you share your journey on Chirp!
+                            From city parks to mountain trails, there's a whole new world of avian adventures waiting for you and we 
+                            want you to be part of that excitement! The Chirp platform seeks to help you document all your favorite
+                            bird sightings and share your discoveries on the platform whether that be apost, a picture, or a journal 
+                            of all your birds!
                         </p>
-                        <button>Learn More</button>
+                        <button>Discover More</button>
                     </div>
                 </div>
             </div>
