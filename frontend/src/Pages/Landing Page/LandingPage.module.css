@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-/*GENERAL LANDING PAGE DESIGN AND HERO CONTENT -----------------------------------------------------------------------------------------*/
+/* GENERAL LANDING PAGE DESIGN AND HERO CONTENT ----------------------------------------------------------------------------------------- */
 .landing-page{
     width: 100%;
 }
@@ -15,7 +15,7 @@
     content: "";
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to left, rgba(24, 31, 57, 0), rgba(9, 12, 21, 0.8)), url("../../Images/LandingPage/landing-hero3.jpg");
+    background-image: linear-gradient(to left, rgba(24, 31, 57, 0%), rgba(9, 12, 21, 80%)), url("../../Images/LandingPage/landing-hero3.jpg");
 }
 
 .landing-hero-content{
@@ -25,9 +25,9 @@
 
 .landing-hero-content h1{
     font-size: 6.25em;
-    font-family: Poppins, 'Helvetica Neue';
+    font-family: Poppins, 'Helvetica Neue', sans-serif;
     font-weight: bold;
-    margin: -10px 0px;
+    margin: -10px 0;
 }
 
 .landing-hero-button{
@@ -45,13 +45,13 @@
     border: 2px solid #fff;
 }
 
-/*LANDING INFO SECTION DESIGN -----------------------------------------------------------------------------------------------------*/
+/* LANDING INFO SECTION DESIGN ----------------------------------------------------------------------------------------------------- */
 
 .landing-info-section{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 2.5em 0px;
+    padding: 2.5em 0;
 }
 
 .landing-info-section-content{
@@ -79,7 +79,7 @@
 .landing-info-section-content hr{
     border: 1.5px solid #1B7D4F;
     width: 20%;
-    margin-left: 0px;
+    margin-left: 0;
     margin-top: -1.875em;
 }
 
@@ -99,12 +99,12 @@
 
 .landing-info-binoculars{
     position: absolute;
-    margin: 15.625em 0px 0px -4.375em;
+    margin: 15.625em 0 0 -4.375em;
     width: 30%;
     height: 40%;
 }
 
-/*LANDING INFO SECTION FOR FEATURES DESIGNS -----------------------------------------------------------------------------------------------*/
+/* LANDING INFO SECTION FOR FEATURES DESIGNS ----------------------------------------------------------------------------------------------- */
 
 .landing-features-section{
     background-color: #181F39;
@@ -131,7 +131,7 @@
     color: #6CD4F0;
 }
 
-/*LANDING ACTION SECTION DESIGN -------------------------------------------------------------------------------------------------------------*/
+/* LANDING ACTION SECTION DESIGN ------------------------------------------------------------------------------------------------------------- */
 
 .landing-action-section{
     width: 100%;
@@ -166,7 +166,7 @@
 
 .bird-watcher-img{
     position: absolute;
-    margin: 16.875em 0px 0px -18.75em;
+    margin: 16.875em 0 0 -18.75em;
     width: 25%;
     height: 40%;
 }
