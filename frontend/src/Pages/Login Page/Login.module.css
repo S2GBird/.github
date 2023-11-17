@@ -24,7 +24,7 @@
     background-color: #1B7D4F;
     display: flex;
     justify-content: space-between;
-    padding: 16px;
+    padding: 1rem;
 }
 
 .login-header-name, .login-header-info, .login-social-media{
@@ -32,7 +32,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 16px
+    gap: 1rem;
 }
 
 a {
@@ -53,7 +53,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 1rem;
     z-index: 10;
     position: fixed;
     left: 0;
@@ -66,7 +66,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:30px;
+    gap:1.875rem;
 }
 
 .login-error{
@@ -75,8 +75,8 @@ a {
 }
 
 .login-logo{
-    width: 27px;
-    height: 27px;
+    width: 1.6875rem;
+    height: 1.6875rem;
 }
 
 .login-social-media {
@@ -93,13 +93,13 @@ a {
     background-image: url('../../Images/login.jpg');
     background-repeat: no-repeat;
     border: #1B7D4F;
-    border-width: 7px;
+    border-width: 0.4375rem;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     
 }
 
-@media (width >= 768px) {
+@media (width >= 48rem) {
     .login-body {
         display: grid;
         grid-template-columns: 1fr 1fr;
