@@ -8,7 +8,7 @@ export default function App () {
     <div className={AppStyles['app-page']}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LandingPage/>} />
+          <Route path='/' element={<LandingPage />} />
           <Route path='/example' element={<ExamplePage />} /> {/** This is an example route, and the style to which future routes should follow. */}
         </Routes>
       </BrowserRouter>
