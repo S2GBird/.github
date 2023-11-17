@@ -113,6 +113,7 @@
     margin-top: 50px;
     text-align: center;
     padding: 40px 80px;
+    padding-bottom: 200px;
 }
 
 .landing-features-section-icons{
@@ -124,4 +125,48 @@
 
 .landing-features-section-icons img{
     width: 100px;
+}
+
+.landing-features-section-icons p{
+    font-weight: bold;
+    color: #6CD4F0;
+}
+
+
+.landing-action-section{
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.landing-info-section-action{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px;
+    margin-top: -80px;
+}
+
+.landing-action-treeLine{
+    width: 100%;
+    margin-top: -260px;
+}
+
+.landing-action-images{
+    width: 50%;
+    padding-bottom: 70px;
+}
+
+.landing-action-images img{
+    filter: drop-shadow(10px 10px 10px #a9a9a9)
+}
+
+.landing-action-img{
+    width: 100%;
+}
+
+.bird-watcher-img{
+    position: absolute;
+    margin: 270px 0px 0px -300px;
+    width: 25%;
+    height: 40%;
 }
