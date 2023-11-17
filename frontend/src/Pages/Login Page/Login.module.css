@@ -82,6 +82,7 @@ a {
 .login-social-media {
     justify-content: center;
     align-items: center;
+    padding-bottom:0.4375rem;
 }
 
 .login-pic-container{
