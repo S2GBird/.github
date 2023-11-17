@@ -4,9 +4,6 @@ import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
 import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { TextField, Button} from '@mui/material';
 
 function LoginPage () {
@@ -88,10 +85,7 @@ function LoginPage () {
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
             <div className={LoginStyles['login-social-media']}>
-              <a href='https://www.google.com'><GoogleIcon color="primary"/></a>
-              <a href='https://www.instagram.com'><InstagramIcon color="primary"/></a>
-              <a href='https://www.linkedin.com'><LinkedInIcon color="primary"/></a>
-              <a href='https://www.facebook.com'><FacebookIcon color="primary"/></a>
+              <Button href='https://www.google.com' style={{backgroundColor: "lightgray", width: "75%", height:"30%"}} startIcon={<GoogleIcon color="primary"/>}>Sign in with Google</Button>
             </div>
             <a href='/#'>Forgot Password?</a>
           </div>
