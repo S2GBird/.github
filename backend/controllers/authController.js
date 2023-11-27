@@ -44,7 +44,7 @@ const register = async (req, res) => {
 // Login user
 const login = async (req, res) => {
   try {
-    // Authenticate user with passport's local strategy
+      // Authenticate user with passport's local strategy
     passport.authenticate('local', function (error, user, info) {
       // Early return for login errors
       if (error) {
@@ -81,8 +81,20 @@ const logout = async (req, res) => {
   res.clearCookie('login_token').sendStatus(200)
 }
 
+//initiate google login
+const googleAuth = passport.authenticate('google',{scope: ['profile','email']});
+
+// handle google redirect
+const googleAuthRedirect = passport.authenticate('google',{
+    failureRedirect: '/login',
+    successRedirect: '/'
+})
+
+
 module.exports = {
   register,
   login,
-  logout
+  logout,
+  googleAuth,
+  googleAuthRedirect,
 }
