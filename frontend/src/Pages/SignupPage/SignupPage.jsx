@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import {Grid, Typography, TextField, InputLabel, Checkbox, FormControlLabel, Button, IconButton, Divider} from '@mui/material';
 import ChirpLogo from '../../Images/ChirpLogo.svg';
 import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import bird from '../../Images/bird.jpg';
 
 function SignupPage() {
@@ -123,7 +120,7 @@ function SignupPage() {
                 <div style={{display:"flex",marginTop:20}}>
                 <Typography variant="body" style={{marginLeft:"125px"}}>
                     Already have an account?</Typography>
-                    <Button variant="text" style={{color:"black", fontWeight:"bold"}}>Sign in!</Button>
+                    <Button variant="text" style={{color:"black", fontWeight:"bold",marginTop:-5}}>Sign in!</Button>
                 </div>
                 </Grid>
                 </form>
@@ -139,18 +136,6 @@ function SignupPage() {
                         <Grid item >
                             <IconButton color="primary">
                                 <GoogleIcon/></IconButton>
-                        </Grid>
-                        <Grid item>
-                            <IconButton color="primary">
-                                <InstagramIcon/></IconButton>
-                        </Grid>
-                        <Grid item>
-                            <IconButton color="primary">
-                                <LinkedInIcon/></IconButton>
-                        </Grid>
-                        <Grid item>
-                            <IconButton color="primary">
-                                <FacebookIcon/></IconButton>
                         </Grid>
                     </Grid>
                 </Grid>
