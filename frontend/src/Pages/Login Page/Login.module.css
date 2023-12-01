@@ -144,7 +144,7 @@ a {
   
   .gsi-material-button .gsi-material-button-contents {
     flex-grow: 1;
-    font-family: 'Roboto', arial, sans-serif;
+    font-family: Roboto, arial, sans-serif;
     font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
