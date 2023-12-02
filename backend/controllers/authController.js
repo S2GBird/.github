@@ -81,7 +81,7 @@ const logout = async (req, res) => {
   res.clearCookie('login_token').sendStatus(200)
 }
 
-  // initiate google login
+// initiate google login
 const googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] })
 
 // handle google redirect
