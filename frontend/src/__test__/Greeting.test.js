@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-//adjust path if needed but don't touch anything else
-import Greeting from 'frontend/src/Greeting.jsx';
+
+import Greeting from 'frontend/src/Greeting.jsx'; // Adjust the path if needed
 
 describe('Greeting Component', () => {
   test('renders Hello, World! when name is World', () => {
@@ -17,3 +17,4 @@ describe('Greeting Component', () => {
     expect(greetingElement).toBeInTheDocument();
   });
 });
+
