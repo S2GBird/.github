@@ -17,4 +17,3 @@ describe('Greeting Component', () => {
     expect(greetingElement).toBeInTheDocument();
   });
 });
-
