@@ -3,7 +3,7 @@ import apiClient from '../../Services/apiClient'
 import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
-import { TextField, Button} from '@mui/material';
+import { TextField, Button} from '@mui/material'
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -84,9 +84,6 @@ function LoginPage () {
               <Button variant="contained" type='submit' style={{backgroundColor: "#1B7D4F", width: "75%", height:"30%"}}>Login</Button>
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
-            <div className={LoginStyles['separator-container']}>
-              <p className={LoginStyles['separator']}>Or</p>
-            </div>
             <div className={LoginStyles['login-social-media']}>
               <button className={LoginStyles["gsi-material-button"]}>
                 <a href="https://www.google.com">
