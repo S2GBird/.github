@@ -1,9 +1,9 @@
 import LoginStyles from './Login.module.css'
-import apiClient from '../../Services/apiClient'
+// import apiClient from '../../Services/apiClient'
 import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
-import { TextField, Button} from '@mui/material';
+import { TextField, Button} from '@mui/material'
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -21,18 +21,17 @@ function LoginPage () {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
-      const user = {
-        username: username,
-        password: password
-      } // send to backend
-      const res = apiClient.login(user)
-      if(res.success) { 
+      // const user = {
+      //   username: username,
+      //   password: password
+      // } // send to backend
+      if(1) {  
         // console.log(email, password)
         // console.log("redirect to dashboard")
         navigate('/dashboard')
       }
       else {
-        setError(res.message)
+        setError('incorrect username or password')
       } 
     }
     else if(username === "" && password !== "") {
