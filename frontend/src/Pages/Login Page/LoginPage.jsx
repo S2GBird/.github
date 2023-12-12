@@ -3,11 +3,11 @@ import LoginStyles from './Login.module.css'
 import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { TextField, Button} from '@mui/material';
+import GoogleIcon from '@mui/icons-material/Google'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import { TextField, Button } from '@mui/material'
 
 function LoginPage () {
 //   const [message, setMessage] = useState('')
@@ -16,12 +16,12 @@ function LoginPage () {
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
-  function handleLogin(event) {
+  function handleLogin (event) {
     event.preventDefault()
-    setError("")
+    setError('')
     // check to see if both email and password were entered
-      // return error message if either were missing
-    if(username !== "" && password !== "") {
+    // return error message if either were missing
+    if (username !== '' && password !== '') {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
@@ -29,27 +29,23 @@ function LoginPage () {
       //   username: username,
       //   password: password
       // } // send to backend
-      if(1) { 
+      if (1) {
         // console.log(email, password)
         // console.log("redirect to dashboard")
         navigate('/dashboard')
-      }
-      else {
+      } else {
         setError('incorrect username or password')
-      } 
-    }
-    else if(username === "" && password !== "") {
+      }
+    } else if (username === '' && password !== '') {
       setError('missing username')
-    } 
-    else if(username !== "" && password === "") {
+    } else if (username !== '' && password === '') {
       setError('missing password')
-    } 
-    else if(username === "" && password === "") {
+    } else if (username === '' && password === '') {
       setError('missing username and password')
-    } 
+    }
   }
 
-//   // FUNCTION : When the login button is clicked, send a call to the backend to verify the information is correct
+  //   // FUNCTION : When the login button is clicked, send a call to the backend to verify the information is correct
   // const login = async () => {
   //   const { data, error } = await apiClient.login() // Use api client to call the endpoint I want
   //   if (data) { // If I get data back (successful request)
@@ -67,7 +63,7 @@ function LoginPage () {
     <div className={LoginStyles['login-page']}> {/** Example on how to attach your css styling to these components */}
       <div className={LoginStyles['login-header']}>
         <div className={LoginStyles['login-header-name']}>
-          <img className={LoginStyles['login-logo']} src={ChirpLogo} alt='logo'/>
+          <img className={LoginStyles['login-logo']} src={ChirpLogo} alt='logo' />
           <div>Chirp</div>
         </div>
         <ul className={LoginStyles['login-header-info']}>
@@ -78,20 +74,20 @@ function LoginPage () {
       </div>
       <div className={LoginStyles['login-body-container']}>
         <div className={LoginStyles['login-body']}>
-            <div className={LoginStyles['login-pic-container']}></div>
+          <div className={LoginStyles['login-pic-container']} />
           <div>
             <form className={LoginStyles['login-form']} onSubmit={handleLogin}>
-              <img src={ChirpLogo} alt='logo'/>
-              <TextField style={{width: "75%", height:"15%"}} id="filled-basic username" label="Username" variant="filled" value={username} onChange={(event) => setUsername(event.target.value)}/>
-              <TextField style={{width: "75%", height:"15%"}} id="filled-basic pwd" label="Password" type='password' variant="filled" value={password} onChange={(event) => setPassword(event.target.value)}/>
-              <Button variant="contained" type='submit' style={{backgroundColor: "#1B7D4F", width: "75%", height:"30%"}}>Login</Button>
+              <img src={ChirpLogo} alt='logo' />
+              <TextField style={{ width: '75%', height: '15%' }} id='filled-basic username' label='Username' variant='filled' value={username} onChange={(event) => setUsername(event.target.value)} />
+              <TextField style={{ width: '75%', height: '15%' }} id='filled-basic pwd' label='Password' type='password' variant='filled' value={password} onChange={(event) => setPassword(event.target.value)} />
+              <Button variant='contained' type='submit' style={{ backgroundColor: '#1B7D4F', width: '75%', height: '30%' }}>Login</Button>
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
             <div className={LoginStyles['login-social-media']}>
-              <a href='https://www.google.com'><GoogleIcon color="primary"/></a>
-              <a href='https://www.instagram.com'><InstagramIcon color="primary"/></a>
-              <a href='https://www.linkedin.com'><LinkedInIcon color="primary"/></a>
-              <a href='https://www.facebook.com'><FacebookIcon color="primary"/></a>
+              <a href='https://www.google.com'><GoogleIcon color='primary' /></a>
+              <a href='https://www.instagram.com'><InstagramIcon color='primary' /></a>
+              <a href='https://www.linkedin.com'><LinkedInIcon color='primary' /></a>
+              <a href='https://www.facebook.com'><FacebookIcon color='primary' /></a>
             </div>
             <a href='/#'>Forgot Password?</a>
           </div>
