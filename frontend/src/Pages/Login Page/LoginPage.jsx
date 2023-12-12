@@ -1,5 +1,5 @@
 import LoginStyles from './Login.module.css'
-// import apiClient from '../../Services/apiClient'
+import apiClient from '../../Services/apiClient'
 import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
@@ -21,17 +21,18 @@ function LoginPage () {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
-      // const user = {
-      //   username: username,
-      //   password: password
-      // } // send to backend
-      if(1) { 
+      const user = {
+        username: username,
+        password: password
+      } // send to backend
+      const res = apiClient.login(user)
+      if(res.success) { 
         // console.log(email, password)
         // console.log("redirect to dashboard")
         navigate('/dashboard')
       }
       else {
-        setError('incorrect username or password')
+        setError(res.message)
       } 
     }
     else if(username === "" && password !== "") {
