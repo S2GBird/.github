@@ -25,15 +25,18 @@ function LoginPage () {
         username: username,
         password: password
       } // send to backend
-      const res = apiClient.login(user)
-      if(res.success) { 
-        // console.log(email, password)
-        // console.log("redirect to dashboard")
-        navigate('/dashboard')
-      }
-      else {
-        setError(res.message)
-      } 
+      apiClient.login(user).then( res => {
+        console.log('data ', res)
+        if(res.data === 'OK') { 
+          // console.log(email, password)
+          // console.log("redirect to dashboard")
+          navigate('/dashboard')
+        }
+        else {
+          setError(res.data.message)
+        }
+      })
+       
     }
     else if(username === "" && password !== "") {
       setError('missing username')
