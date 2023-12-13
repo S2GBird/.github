@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* GENERAL LANDING PAGE DESIGN AND HERO CONTENT ----------------------------------------------------------------------------------------- */
+.landing-page{
+    width: 100%;
+}
+
+.landing-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to left, rgb(24 31 57 / 0%), rgb(9 12 21 / 80%)), url("../../Images/LandingPage/landing-hero3.jpg");
+}
+
+.landing-hero-content{
+    width: 40%;
+    padding-left: 6.25em;
+}
+
+.landing-hero-content h1{
+    font-size: 6.25em;
+    font-family: Poppins, 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    margin: -10px 0;
+}
+
+.landing-hero-button{
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #1d217500;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.625em 1.875em;
+    border-radius: 0.938em;
+    margin-top: 0.625em;
+}
+
+.landing-hero-button:hover{
+    border: 2px solid #fff;
+}
+
+/* LANDING INFO SECTION DESIGN ----------------------------------------------------------------------------------------------------- */
+
+.landing-info-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2.5em 0;
+}
+
+.landing-info-section-content{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.875em;
+}
+
+.landing-info-section-content button{
+    background-color: #1B7D4F;
+    width: fit-content;
+    padding: 0.625em 2.5em;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    color: #fff;
+}
+
+.landing-info-section-content p{
+    color: #7a7a7a;
+}
+
+.landing-info-section-content hr{
+    border: 1.5px solid #1B7D4F;
+    width: 20%;
+    margin-left: 0;
+    margin-top: -1.875em;
+}
+
+.landing-info-section-img{
+    width: 50%;
+    text-align: center;
+    display: flex;
+}
+
+.landing-info-section-img img{
+    filter: drop-shadow(0.625em 0.625em 0.625em #a9a9a9)
+}
+
+.landing-info-img{
+    width: 100%;
+}
+
+.landing-info-binoculars{
+    position: absolute;
+    margin: 15.625em 0 0 -4.375em;
+    width: 30%;
+    height: 40%;
+}
+
+/* LANDING INFO SECTION FOR FEATURES DESIGNS ----------------------------------------------------------------------------------------------- */
+
+.landing-features-section{
+    background-color: #181F39;
+    color: #fff;
+    margin-top: 3.125em;
+    text-align: center;
+    padding: 2.5em 5em;
+    padding-bottom: 12.5em;
+}
+
+.landing-features-section-icons{
+    padding-top: 2.5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.landing-features-section-icons img{
+    width: 6.25em;
+}
+
+.landing-features-section-icons p{
+    font-weight: bold;
+    color: #6CD4F0;
+}
+
+/* LANDING ACTION SECTION DESIGN ------------------------------------------------------------------------------------------------------------- */
+
+.landing-action-section{
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.landing-info-section-action{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2.5em;
+    margin-top: -5em;
+}
+
+.landing-action-tree-line{
+    width: 100%;
+    margin-top: -16.25em;
+}
+
+.landing-action-images{
+    width: 48%;
+    padding-bottom: 4.375em;
+}
+
+.landing-action-images img{
+    filter: drop-shadow(0.625em 0.625em 0.625em #a9a9a9)
+}
+
+.landing-action-img{
+    width: 100%;
+}
+
+.bird-watcher-img{
+    position: absolute;
+    margin: 16.875em 0 0 -18.75em;
+    width: 25%;
+    height: 40%;
+}
