@@ -51,9 +51,25 @@ const deleteUser = async (req, res) => {
   }
 }
 
+// change user profile (first name, last name, email)
+const updateMe = async (req, res, next) => {
+  try {
+    const {fname, lname, email}  = req.body
+    const newUser = {fname, lname, email}
+    const updatedUser = await User.findByIdAndUpdate(req.user._id, newUser, {
+      new: true,
+      runValidators: true,
+    })
+    res.status(200).json({ status: "success", results: {updatedUser}})
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
 module.exports = {
   getAllUsers,
   getById,
   editUser,
-  deleteUser
+  deleteUser,
+  updateMe
 }
