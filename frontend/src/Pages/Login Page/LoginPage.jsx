@@ -26,7 +26,7 @@ function LoginPage () {
         password: password
       } // send to backend
       apiClient.login(user).then( res => {
-        console.log('data ', res)
+        // console.log('data ', res)
         if(res.data === 'OK') { 
           // console.log(email, password)
           // console.log("redirect to dashboard")
@@ -45,6 +45,13 @@ function LoginPage () {
     } else if (username === '' && password === '') {
       setError('missing username and password')
     }
+  }
+
+  function handleGoogleLogin(event) {
+    event.preventDefault()
+    apiClient.googleLogin().then( res => {
+      console.log(res.data)
+    })
   }
 
   //   // FUNCTION : When the login button is clicked, send a call to the backend to verify the information is correct
@@ -89,8 +96,8 @@ function LoginPage () {
               <p className={LoginStyles['separator']}>Or</p>
             </div>
             <div className={LoginStyles['login-social-media']}>
-              <button className={LoginStyles["gsi-material-button"]}>
-                <a href="https://www.google.com">
+              <button className={LoginStyles["gsi-material-button"]} onClick={handleGoogleLogin}>
+                {/* <a href="https://www.google.com"> */}
                   <div className={LoginStyles["gsi-material-button-state"]}></div>
                   <div className={LoginStyles["gsi-material-button-content-wrapper"]}>
                     <div className={LoginStyles["gsi-material-button-icon"]}>
@@ -105,7 +112,7 @@ function LoginPage () {
                     <span className={LoginStyles["gsi-material-button-contents"]}>Sign in with Google</span>
                     <span style={{display: "none"}}>Sign in with Google</span>
                   </div>
-                </a>
+                {/* </a> */}
               </button>
             </div>
             <a href='/#'>Forgot Password?</a>
