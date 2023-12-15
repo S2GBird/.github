@@ -78,7 +78,7 @@ const changePassword = async (req,res) => {
         if (err) {
           res.send(err)
         } else {
-          res.status(200).json({message: 'password successfully changes'})
+          res.status(200).json({message: 'password successfully changed'})
         }
       })
     }
@@ -86,18 +86,6 @@ const changePassword = async (req,res) => {
       res.status(500).json({ message: error.message })
   }
 } 
-
-/*const forgotPassword = (req, res) => {
-  User.findOne({ _id: req.user.username })
-  .then((u) => {
-      u.setPassword(req.body.newPassword,(err, u) => {
-          if (err) return next(err);
-          u.save();
-          res.status(200).json({ message: 'password change successful' });
-      });
-
-  })
-}*/
 
 module.exports = {
   getAllUsers,
