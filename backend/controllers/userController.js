@@ -54,9 +54,10 @@ const deleteUser = async (req, res) => {
 // change user profile (first name, last name, email)
 const updateMe = async (req, res, next) => {
   try {
-    const {fname, lname, email}  = req.body
-    const newUser = {fname, lname, email}
-    const updatedUser = await User.findByIdAndUpdate(req.user._id, newUser, {
+    const { id } = req.params
+    const {fName, lName, email}  = req.body
+    const newUser = {fName, lName, email}
+    const updatedUser = await User.findByIdAndUpdate(id, newUser, {
       new: true,
       runValidators: true,
     })
@@ -66,10 +67,44 @@ const updateMe = async (req, res, next) => {
   }
 }
 
+const changePassword = async (req,res) => {
+  try {
+    const {id} = req.params
+    const user = await User.findById(id)
+    if (!user) {
+      res.status(404).json({ message: `user ID ${id} does not exist` })
+    } else {
+      user.changePassword(req.body.oldpassword, req.body.newpassword, function(err) {
+        if (err) {
+          res.send(err)
+        } else {
+          res.status(200).json({message: 'password successfully changes'})
+        }
+      })
+    }
+  } catch(error) {
+      res.status(500).json({ message: error.message })
+  }
+} 
+
+/*const forgotPassword = (req, res) => {
+  User.findOne({ _id: req.user.username })
+  .then((u) => {
+      u.setPassword(req.body.newPassword,(err, u) => {
+          if (err) return next(err);
+          u.save();
+          res.status(200).json({ message: 'password change successful' });
+      });
+
+  })
+}*/
+
 module.exports = {
   getAllUsers,
   getById,
   editUser,
   deleteUser,
-  updateMe
+  updateMe,
+  changePassword,
+  // forgotPassword
 }
