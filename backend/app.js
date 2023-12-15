@@ -5,6 +5,7 @@ const passport = require('passport')
 const connectDB = require('./database/db')
 const User = require('./models/userModel')
 const app = express()
+require('./config/googleAuthConfig')
 
 require('mongoose')
 require('dotenv').config()
