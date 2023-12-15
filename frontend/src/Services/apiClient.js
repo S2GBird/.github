@@ -36,7 +36,7 @@ class ApiClient {
   // -------------------------AUTHENTICATION REQUESTS------------------------------
   async login(user) {
     // user: {username: username, password: password}
-    return await this.request({ endpoint: 'login', method: 'POST', data:{user} })
+    return await this.request({ endpoint: 'login', method: 'POST', data:{username:user.username, password:user.password} })
   }
 }
 
