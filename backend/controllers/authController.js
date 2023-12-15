@@ -46,6 +46,7 @@ const login = async (req, res) => {
   try {
     // Authenticate user with passport's local strategy
     passport.authenticate('local', function (error, user, info) {
+      console.log(user)
       // Early return for login errors
       if (error) {
         res.json({ success: false, message: error })

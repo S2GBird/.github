@@ -21,18 +21,24 @@ function LoginPage () {
       // check if email and password are valid w/ db
       // if valid redirect to dashboard
       // return error message if incorrect email or password
-      // const user = {
-      //   username: username,
-      //   password: password
-      // } // send to backend
-      if(1) {  
-        // console.log(email, password)
-        // console.log("redirect to dashboard")
-        navigate('/dashboard')
-      } else {
-        setError('incorrect username or password')
-      }
-    } else if (username === '' && password !== '') {
+      const user = {
+        username: username,
+        password: password
+      } // send to backend
+      apiClient.login(user).then( res => {
+        console.log('data ', res)
+        if(res.data === 'OK') { 
+          // console.log(email, password)
+          // console.log("redirect to dashboard")
+          navigate('/dashboard')
+        }
+        else {
+          setError(res.data.message)
+        }
+      })
+       
+    }
+    else if(username === "" && password !== "") {
       setError('missing username')
     } else if (username !== '' && password === '') {
       setError('missing password')
