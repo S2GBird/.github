@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-userSchema.methods.createResetToken = function() {
+userSchema.methods.createResetToken = function () {
   const resetToken = crypto.randomBytes(32).toString('hex')
 
   this.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex')

@@ -1,6 +1,8 @@
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 const User = require('../models/userModel')
+const sendEmail = require('../utils/email')
+const crypto = require('crypto')
 
 // Registering new users
 const register = async (req, res) => {
@@ -92,13 +94,13 @@ const googleAuthRedirect = passport.authenticate('google', {
 
 // generate and send token to user
 const forgotPassword = async (req, res, next) => {
-  const user = await User.findOne({email: req.body.email})
+  const user = await User.findOne({ email: req.body.email })
   if (!user) {
     res.json({ success: false, message: 'email not found' })
   }
 
   const resetToken = user.createResetToken()
-  await user.save({validateBeforeSave: false})
+  await user.save({ validateBeforeSave: false })
 
   const resetUrl = `${req.protocol}://${req.get('host')}/resetPassword/${resetToken}`
   const message = `Please use link below to reset your password.\n\n${resetUrl}\n\nThis link will expire in 10 minutes.`
@@ -110,30 +112,30 @@ const forgotPassword = async (req, res, next) => {
       message: message
     })
 
-    res.status(200).json({ message: 'reset link sent to user email'})
+    res.status(200).json({ message: 'reset link sent to user email' })
   } catch(error) {
     user.passwordResetToken = undefined
     user.passwordResetTokenExpires = undefined
     user.save({validateBeforeSave: false})
 
-    return next(res.json({ success: false, message: 'error sending reset link, try again later'}))
+    return next(res.json({ success: false, message: 'error sending reset link, try again later' }))
   }
   
 }
 
 const resetPassword = async (req, res, next) => {
   const token = crypto.createHash('sha256').update(req.params.token).digest('hex')
-  const user = await User.findOne({passwordResetToken: token, passwordResetTokenExpires: {$gt: Date.now()}})
+  const user = await User.findOne({ passwordResetToken: token, passwordResetTokenExpires: { $gt: Date.now() } })
   if (!user) {
     res.json({ success: false, message: 'token invalid or expired'})
   }
 
   // insert saving password using setPassword
-  user.setPassword(req.body.newpassword,(err, user) => {
-    if (err) return next(err);
-      user.save();
-      res.status(200).json({ message: 'password change successful' });
-  });
+  user.setPassword(req.body.newpassword, (err, user) => {
+    if (err) return next(err)
+      user.save()
+      res.status(200).json({ message: 'password change successful' })
+  })
 
   user.passwordResetToken = undefined
   user.passwordResetTokenExpires = undefined
@@ -143,5 +145,9 @@ const resetPassword = async (req, res, next) => {
 module.exports = {
   register,
   login,
-  logout
+  logout,
+  googleAuth,
+  googleAuthRedirect,
+  forgotPassword,
+  resetPassword
 }
