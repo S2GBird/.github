@@ -13,9 +13,9 @@ const sendEmail = async (option) => {
 
   const emailOptions = {
     from: 'Chirp support<support@chirp.com>',
-      to: option.email,
-      subject: option.subject,
-      text: option.message
+    to: option.email,
+    subject: option.subject,
+    text: option.message
   }
 
   transporter.sendMail(emailOptions)

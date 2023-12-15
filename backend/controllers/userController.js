@@ -74,7 +74,7 @@ const changePassword = async (req, res) => {
     if (!user) {
       res.status(404).json({ message: `user ID ${id} does not exist` })
     } else {
-      user.changePassword (req.body.oldpassword, req.body.newpassword, function(err) {
+      user.changePassword(req.body.oldpassword, req.body.newpassword, function (err) {
         if (err) {
           res.send(err)
         } else {
