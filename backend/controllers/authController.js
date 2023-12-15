@@ -83,6 +83,7 @@ const logout = async (req, res) => {
   res.clearCookie('login_token').sendStatus(200)
 }
 
+<<<<<<< HEAD
 // generate and send token to user
 const forgotPassword = async (req, res, next) => {
   const user = await User.findOne({email: req.body.email})
@@ -132,11 +133,26 @@ const resetPassword = async (req, res, next) => {
   user.passwordResetTokenExpires = undefined
   user.save()
 }
+=======
+// initiate google login
+const googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] })
+
+// handle google redirect
+const googleAuthRedirect = passport.authenticate('google', {
+  failureRedirect: '/login',
+  successRedirect: '/'
+})
+>>>>>>> main
 
 module.exports = {
   register,
   login,
   logout,
+<<<<<<< HEAD
   forgotPassword,
   resetPassword
+=======
+  googleAuth,
+  googleAuthRedirect
+>>>>>>> main
 }
