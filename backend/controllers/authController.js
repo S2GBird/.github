@@ -66,7 +66,13 @@ const login = async (req, res) => {
         sameSite: true,
         expires
       })
-        .sendStatus(200)
+      // Sending user info back to frontend
+      return res.status(200).json({
+        success: true,
+        message: 'User Authenticated',
+        userId: user._id,
+        username: user.username
+      })
     })(req, res)
   } catch (error) {
     res.json({
