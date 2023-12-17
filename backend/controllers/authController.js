@@ -69,7 +69,7 @@ const login = async (req, res) => {
       // Sending user info back to frontend
       return res.status(200).json({
         success: true,
-        message: 'User Authenticated',
+        message: 'user authenticated',
         userId: user._id,
         username: user.username
       })
