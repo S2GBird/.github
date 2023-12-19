@@ -17,12 +17,12 @@ function LoginPage () {
   function handleLogin (event) {
     event.preventDefault()
     setError('')
-    // check to see if both email and password were entered
+    // check to see if both username and password were entered
     // return error message if either were missing
     if (username !== '' && password !== '') {
-      // check if email and password are valid w/ db
+      // check if username and password are valid w/ db
       // if valid redirect to dashboard
-      // return error message if incorrect email or password
+      // return error message if incorrect username or password
       const user = {
         username: username,
         password: password
@@ -30,8 +30,6 @@ function LoginPage () {
       apiClient.login(user).then( res => {
         // console.log('data ', res)
         if(res.data.success) { 
-          // console.log(email, password)
-          // console.log("redirect to dashboard")
           console.log('userId ', res.data.userId)
           console.log('username ', res.data.username)
           navigate('/dashboard')
