@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, memo} from 'react';
 import {Grid, Typography, TextField, InputLabel, Checkbox, FormControlLabel, Button, IconButton, Divider} from '@mui/material';
 import ChirpLogo from '../../Images/ChirpLogo.svg';
 import GoogleIcon from '@mui/icons-material/Google';
 import bird from '../../Images/bird.jpg';
 
 function SignupPage() {
-
-      
     const [userInfo, setUserInfo] = useState({fName:"",lName:"",username:"",email:"",password:"",confirmPassword:""});
     const handleInput = (input) => {
         const {name, value} = input.target;
@@ -86,7 +84,7 @@ function SignupPage() {
                 </Grid>
                 <Grid>
                         <InputLabel  htmlFor="username" style={{fontWeight:"bold"}}>Username</InputLabel>
-                        <TextField id="username" label="Enter email" variant="filled" name="username" onChange={handleInput} 
+                        <TextField id="username" label="Enter username" variant="filled" name="username" onChange={handleInput} 
                         value={userInfo.username} error={!!error.username} helperText={error.username} InputProps={{style:{width: 550} }}/>
                </Grid>
                 <Grid>
@@ -117,7 +115,7 @@ function SignupPage() {
                 backgroundColor:"#1B7D4F", marginLeft:"125px", marginTop:"20px",width:300}}>
                     Register
                 </Button>
-                <div style={{display:"flex",marginTop:20}}>
+                <div style={{display:"flex",marginTop:10}}>
                 <Typography variant="body" style={{marginLeft:"125px"}}>
                     Already have an account?</Typography>
                     <Button variant="text" style={{color:"black", fontWeight:"bold",marginTop:-5}}>Sign in!</Button>
@@ -145,4 +143,5 @@ function SignupPage() {
     );
 }
 
-export default SignupPage;
+export default memo(SignupPage);
+
