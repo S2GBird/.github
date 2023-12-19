@@ -29,9 +29,11 @@ function LoginPage () {
       } // send to backend
       apiClient.login(user).then( res => {
         // console.log('data ', res)
-        if(res.data === 'OK') { 
+        if(res.data.success) { 
           // console.log(email, password)
           // console.log("redirect to dashboard")
+          console.log('userId ', res.data.userId)
+          console.log('username ', res.data.username)
           navigate('/dashboard')
         }
         else {
