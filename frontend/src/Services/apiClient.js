@@ -38,10 +38,6 @@ class ApiClient {
     // user: {username: username, password: password}
     return await this.request({ endpoint: 'login', method: 'POST', data:{username:user.username, password:user.password} })
   }
-
-  async googleLogin() {
-    return await this.request({endpoint: 'login/auth/google', method: 'GET'})
-  }
 }
 
 export default new ApiClient(API_BASE_URL)
