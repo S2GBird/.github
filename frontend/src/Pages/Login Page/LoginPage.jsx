@@ -19,14 +19,14 @@ function LoginPage () {
     // check to see if both username and password were entered
     // return error message if either were missing
     if (username !== '' && password !== '') {
-      const user = {
+      const loginInfo = {
         username: username,
         password: password
       } 
       // send username and password to login func in apiClient
       // apiClient sends a req to backend login endpoint to check if username and password matches an existing user in the db
       // if it matches, user is navigated to dashboard
-      apiClient.login(user).then( res => {
+      apiClient.login(loginInfo).then( res => {
         // console.log('data ', res)
         if(res.data.success) { 
           console.log('userId ', res.data.userId)
