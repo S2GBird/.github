@@ -8,7 +8,6 @@ import DEVELOPMENT_API_BASE_URL from '../../Services/constants'
 import React from 'react'
 
 function LoginPage () {
-//   const [message, setMessage] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -20,13 +19,13 @@ function LoginPage () {
     // check to see if both username and password were entered
     // return error message if either were missing
     if (username !== '' && password !== '') {
-      // check if username and password are valid w/ db
-      // if valid redirect to dashboard
-      // return error message if incorrect username or password
       const user = {
         username: username,
         password: password
-      } // send to backend
+      } 
+      // send username and password to login func in apiClient
+      // apiClient sends a req to backend login endpoint to check if username and password matches an existing user in the db
+      // if it matches, user is navigated to dashboard
       apiClient.login(user).then( res => {
         // console.log('data ', res)
         if(res.data.success) { 
@@ -49,22 +48,8 @@ function LoginPage () {
     }
   }
 
-  //   // FUNCTION : When the login button is clicked, send a call to the backend to verify the information is correct
-  // const login = async () => {
-  //   const { data, error } = await apiClient.login() // Use api client to call the endpoint I want
-  //   if (data) { // If I get data back (successful request)
-  //     // redirect to dashboard
-  //   }
-  //   if (error) { // If I get an error instead from the backend (unsuccessful request)
-  //     console.log(error) // Print my error
-  //     // display error message to page
-  //     // ex: there is no account with this email
-  //     // ex: incorrect password
-  //   }
-  // }
-
   return (
-    <div className={LoginStyles['login-page']}> {/** Example on how to attach your css styling to these components */}
+    <div className={LoginStyles['login-page']}> 
       <div className={LoginStyles['login-header']}>
         <div className={LoginStyles['login-header-name']}>
           <img className={LoginStyles['login-logo']} src={ChirpLogo} alt='logo' />
@@ -92,6 +77,7 @@ function LoginPage () {
             </div>
             <div className={LoginStyles['login-social-media']}>
               <button className={LoginStyles['gsi-material-button']}>
+                {/* send user to google user flow for signing in if succesful user is navigated to dashboard */}
                 <a href={DEVELOPMENT_API_BASE_URL+'/login/auth/google'}>
                   <div className={LoginStyles['gsi-material-button-state']}></div>
                   <div className={LoginStyles['gsi-material-button-content-wrapper']}>
