@@ -18,7 +18,7 @@ function SignupPage() {
     };
     const navigate = useNavigate();
     const handleNavigate = () => {
-        navigate('/login');
+        navigate('/dashboard');
     };
     const [error,setError] = useState({});
     // error checking
@@ -134,7 +134,7 @@ function SignupPage() {
                 <div style={{display:"flex",marginTop:10}}>
                 <Typography variant="body" style={{marginLeft:"140px"}}>
                     Already have an account?</Typography>
-                    <Button variant="text" style={{color:"black", fontWeight:"bold",marginTop:-5}} onClick={handleNavigate}>Sign in!</Button>
+                    <Button variant="text" style={{color:"black", fontWeight:"bold",marginTop:-5}} href='/login'>Sign in!</Button>
                 </div>
                 </Grid>
                 </form>

@@ -22,7 +22,7 @@ async function (accessToken, profile, done) {
         fName: profile.name.givenName,
         lName: profile.name.familyName,
         //profilePicture: profile.photos[0].value,
-        profilePicture: "",
+        profilePicture: '',
         settings: {
           dark: false
         }
