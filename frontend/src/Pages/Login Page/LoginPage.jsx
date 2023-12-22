@@ -4,7 +4,7 @@ import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
 import { TextField, Button } from '@mui/material'
-import DEVELOPMENT_API_BASE_URL from '../../Services/constants'
+import API_BASE_URL from '../../Services/constants'
 import React from 'react'
 
 function LoginPage () {
@@ -82,7 +82,7 @@ function LoginPage () {
             <div className={LoginStyles['login-social-media']}>
               <button className={LoginStyles['gsi-material-button']}>
                 {/* send user to google user flow for signing in if succesful user is navigated to dashboard */}
-                <a href={DEVELOPMENT_API_BASE_URL+'/login/auth/google'}>
+                <a href={ API_BASE_URL + '/login/auth/google' }>
                   <div className={LoginStyles['gsi-material-button-state']}></div>
                   <div className={LoginStyles['gsi-material-button-content-wrapper']}>
                     <div className={LoginStyles['gsi-material-button-icon']}>
