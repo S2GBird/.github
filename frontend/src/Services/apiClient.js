@@ -39,7 +39,7 @@ class ApiClient {
     return await this.request({ endpoint: 'login', method: 'POST', data:{username:user.username, password:user.password} })
   }
    async register(user) {
-    return await this.request({ endpoint: `signup`, method: `POST`,
+    return await this.request({ endpoint: `register`, method: `POST`,
     data:{
       fName:user.fName, lName:user.lName, username:user.username, email:user.email, password:user.password} })
   }
