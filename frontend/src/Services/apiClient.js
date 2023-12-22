@@ -33,15 +33,15 @@ class ApiClient {
   async healthCheck () {
     return await this.request({ endpoint: '', method: 'GET' })
   }
+
   // -------------------------AUTHENTICATION REQUESTS------------------------------
   // commented out for now until implemented
-  async login (user) {
-    return await this.request({ endpoint: 'login', method: 'POST', data:{username:user.username, password:user.password} })
-  }
-   async register (userInfo) {
-    return await this.request({ endpoint: `register`, method: `POST`,
-    data:{
-      fName:userInfo.fName, lName:userInfo.lName, username:userInfo.username, email:userInfo.email, password:userInfo.password } })
+  async register (userInfo) {
+    return await this.request({
+      endpoint: 'register',
+      method: 'POST',
+      data: { fName: userInfo.fName, lName: userInfo.lName, username: userInfo.username, email: userInfo.email, password: userInfo.password }
+    })
   }
 }
 
