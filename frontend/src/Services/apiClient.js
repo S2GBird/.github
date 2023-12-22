@@ -33,7 +33,7 @@ class ApiClient {
   async healthCheck () {
     return await this.request({ endpoint: '', method: 'GET' })
   }
-  
+
   // -------------------------AUTHENTICATION REQUESTS------------------------------
   async login (user) {
     // user: {username: username, password: password}
