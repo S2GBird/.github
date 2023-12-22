@@ -13,7 +13,7 @@ export default function App () {
           <Route path='/' element={<LandingPage />} />
           <Route path='/example' element={<ExamplePage />} /> {/** This is an example route, and the style to which future routes should follow. */}
           <Route path='/signup' element={<SignupPage />} />
-          <Route path='/login' element={<LoginPage />} /> 
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </div>

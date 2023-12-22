@@ -35,9 +35,14 @@ class ApiClient {
   }
   // -------------------------AUTHENTICATION REQUESTS------------------------------
   // commented out for now until implemented
-  // async login() {
-  //   return await this.request({ endpoint: `localhost:3000/login`, method: `POST` })
-  // }
+  async login(user) {
+    return await this.request({ endpoint: 'login', method: 'POST', data:{username:user.username, password:user.password} })
+  }
+   async register(user) {
+    return await this.request({ endpoint: `signup`, method: `POST`,
+    data:{
+      fName:user.fName, lName:user.lName, username:user.username, email:user.email, password:user.password} })
+  }
 }
 
 export default new ApiClient(API_BASE_URL)
