@@ -38,10 +38,10 @@ class ApiClient {
   // async login(credentials) {
   //   return await this.request({ endpoint: `/login`, method: `POST`, data: credentials })
   // }
-  
-  //Logout a User completely from site
-  async logout (){
-    return await this.request({ endpoint: '/logout', method: 'POST'})
+
+  // Logout a User completely from site
+  async logout () {
+    return await this.request({ endpoint: '/logout', method: 'POST' })
   }
 }
 

@@ -5,7 +5,7 @@ import { useState, memo } from 'react'
 
 function ExamplePage () {
   const [message, setMessage] = useState('')
-  const {user, setUser, globalError, setGlobalError} = useAuthContext(); //example of how to use Auth Context Provider
+  const { user, setUser, globalError, setGlobalError } = useAuthContext() // example of how to use Auth Context Provider
 
   // FUNCTION : When the button is clicked, send a call to the backend to get a message from backend health check
   const fetchExampleMessage = async () => {

@@ -5,9 +5,7 @@ import LandingPage from '../Landing Page/LandingPage'
 import LoginPage from '../Login Page/LoginPage'
 import { AuthContextProvider } from '../../Services/authProvider'
 
-
 export default function App () {
-
   return (
     <AuthContextProvider>
       <div className={AppStyles['app-page']}>
