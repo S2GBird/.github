@@ -31,6 +31,10 @@ function LoginPage () {
         if(res.data.success) { 
           console.log('userId ', res.data.userId)
           console.log('username ', res.data.username)
+          // const user = {
+          //   userId: res.data.userId,
+          //   username: res.data.user
+          // }
           navigate('/dashboard')
         }
         else {
