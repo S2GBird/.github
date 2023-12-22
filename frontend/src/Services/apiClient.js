@@ -37,7 +37,7 @@ class ApiClient {
   async login(user) {
     // user: {username: username, password: password}
     // username and password is sent to backend to check if user exists/entered the correct information
-    return await this.request({ endpoint: 'login', method: 'POST', data:{username:user.username, password:user.password} })
+    return await this.request({ endpoint: 'login', method: 'POST', data:{ username: user.username, password: user.password } })
   }
 }
 
