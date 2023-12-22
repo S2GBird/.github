@@ -3,11 +3,14 @@ import apiClient from './apiClient';
 const AuthContext = createContext(null);
 
 export const AuthContextProvider = ({ children }) => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({username: '', userId:''});
     const [globalError, setGlobalError] = useState('');
 
+    //Logout a user completely from site and clear all objects
     const logoutUser = async () => {
-        //SET FUNCTIONALITY FOR LOGGING OUT THE USER
+        setUser({username: '', userId:''});
+        setGlobalError('');
+        await apiClient.logout();
     };
 
     const authContextValues = {
