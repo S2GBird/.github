@@ -10,17 +10,12 @@
 </head>
 
 <body>
-
+  <header>
     <div class="profile-header">
       <div class="profile-info">
         <div class="profile-name">Username</div>
         <div class="profile-actions">
-         
-          
-      
-
-
-          
+ 
       </div>
       <div class="profile-stats">
         <div class="stat">Posts<br><span>0</span></div>
@@ -58,10 +53,16 @@
 
   <main>
     <div class="toggle-container">
-      <label class="toggle-label">Profile Visibility</label>
-      <input type="checkbox" id="visibilityToggle" class="toggle-switch">
-      <div class="toggle-slider"></div>
+      <label class="toggle-label">Profile Visibility:</label>
+      <div class="toggle">
+        <input type="checkbox" id="visibilityToggle" onchange="toggleVisibility()">
+        <label for="visibilityToggle" class="toggle-switch"></label>
+      </div>
+      <span id="visibilityLabel">Public</span>
     </div>
+
+
+
 
     
     <div class="profile-circle">
@@ -86,7 +87,7 @@
     </div>
   </main>
 
-  <script src="script.js"></script>
+
 
   <div id="editPopup" class="popup">
     <div class="popup-content">
@@ -108,11 +109,12 @@
 
 
   
-  
-</body>
+  <script src="script.js"></script>
+  </body>
 
 
     
 
 
 </html>
+
