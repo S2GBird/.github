@@ -1,3 +1,4 @@
+
 function showEditPopup() {
   const popup = document.getElementById('editPopup');
   popup.style.display = 'block';
@@ -33,18 +34,38 @@ function saveChanges() {
 }
 
 function toggleMenu() {
+  console.log('Toggle Menu Clicked!');
   const dropdown = document.querySelector('.dropdown-content');
+  const settingsDropdown = document.getElementById('settingsDropdown');
+
+  // Hide settings dropdown if it's visible
+  if (settingsDropdown.style.display === 'block') {
+    settingsDropdown.style.display = 'none';
+  }
+
+  // Toggle the menu dropdown
   dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
 }
 
 function toggleSettings() {
   const settingsDropdown = document.getElementById('settingsDropdown');
+  const dropdown = document.querySelector('.dropdown-content');
+
+  // Hide menu dropdown if it's visible
+  if (dropdown.style.display === 'block') {
+    dropdown.style.display = 'none';
+  }
+
+  // Toggle the settings dropdown
   settingsDropdown.style.display = (settingsDropdown.style.display === 'block') ? 'none' : 'block';
 }
 
-const visibilityToggle = document.getElementById('visibilityToggle');
 
-visibilityToggle.addEventListener('change', function () {
-  const visibilityText = document.querySelector('.toggle-label');
-  visibilityText.textContent = this.checked ? 'Private' : 'Public';
-});
+function toggleVisibility() {
+  const visibilityLabel = document.getElementById('visibilityLabel');
+  const visibilityToggle = document.getElementById('visibilityToggle');
+
+  visibilityLabel.textContent = visibilityToggle.checked ? 'Private' : 'Public';
+}
+
+
