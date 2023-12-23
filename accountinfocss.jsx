@@ -33,19 +33,7 @@ header {
   align-items: center;
 }
 
-.toggle-container {
-  margin-right: 20px;
-}
 
-.toggle-switch {
-  display: none;
-}
-
-.toggle-icon {
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-}
 
 .drawer-icon,
 .settings-icon {
@@ -264,16 +252,7 @@ button:hover {
 
 
 
-.toggle-icon {
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-  transition: color 0.3s, transform 0.3s;
-}
 
-.toggle-icon:hover {
-  color: #3498db;
-}
 
 .settings-icon:hover,
 .menu-icon:hover {
@@ -335,41 +314,63 @@ button:hover {
 
 
 .toggle-container {
-  position: fixed;
-  top: 100px; 
-  right: 16px;
-  display: flex;
+  margin-bottom: 16px;
+  display:inline-flex;
   align-items: center;
-  color: #333;
+  margin-left: auto; 
 }
+
 
 .toggle-label {
-  margin-right: 8px;
-  font-size: 14px;
+  margin-right: 5px; 
+  margin-left: auto; 
 }
+
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+}
+
 
 .toggle-switch {
-  display: none;
-}
-
-.toggle-slider {
-  position: relative;
-  width: 40px;
-  height: 20px;
-  background-color: #ccc;
-  border-radius: 10px;
-}
-
-.toggle-slider:before {
-  content: '';
   position: absolute;
-  width: 18px;
-  height: 18px;
-  background-color: #3498db;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color 0.3s;
+}
+
+
+.toggle-switch:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: black;
   border-radius: 50%;
   transition: transform 0.3s;
 }
 
-.toggle-switch:checked + .toggle-slider:before {
-  transform: translateX(20px);
+
+#visibilityToggle:checked + .toggle-switch {
+  background-color: #0077b5; 
+}
+
+
+#visibilityToggle:checked + .toggle-switch:before {
+  transform: translateX(26px);
+}
+
+
+#visibilityLabel {
+  margin-left: 5px; 
 }
