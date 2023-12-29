@@ -13,19 +13,27 @@ const createPost = async (req, res) => {
   }
 }
 
+// funtion to check if a post exists
+const checkPostExistence = async (postID) => {
+    try {
+      const post = await Post.findById(postID);
+      if (!post) {
+        throw new Error(`Post with ID ${postID} not found`);
+      }
+      return post;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
+
 // Demo for adding a comment to a post
 const addComment = async (req, res) => {
   try {
     const { userID, commentText } = req.body
     const { postID } = req.params
 
-    // Check if the postID is valid
-    const post = await Post.findById(postID)
-    if (!post) {
-      return res
-        .status(404)
-        .json({ message: `Post with ID ${postID} not found` })
-    }
+    // Check if the post exists
+    const post = await checkPostExistence(postID);
 
     // Create a new comment
     const comment = new Comment({ userID, commentText, postID })
@@ -47,13 +55,8 @@ const likePost = async (req, res) => {
     const { userID } = req.body
     const { postID } = req.params
 
-    // Check if the postID is valid
-    const post = await Post.findById(postID)
-    if (!post) {
-      return res
-        .status(404)
-        .json({ message: `Post with ID ${postID} not found` })
-    }
+    // Check if the post exists
+    const post = await checkPostExistence(postID);
 
     // Attach the user to the specified post
     if (!post.likes.includes(userID)) {
