@@ -40,6 +40,10 @@ class ApiClient {
     // username and password is sent to backend to check if user exists/entered the correct information
     return await this.request({ endpoint: 'login', method: 'POST', data: { username: user.username, password: user.password } })
   }
+
+  async getUserInfo (userId) {
+    return await this.request({ endpoint:`users/${userId}`, method: 'GET' })
+  }
 }
 
 export default new ApiClient(API_BASE_URL)
