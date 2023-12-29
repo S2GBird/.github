@@ -20,7 +20,7 @@ const checkPostExistence = async (postID) => {
     if (!post) {
       throw new Error(`Post with ID ${postID} not found`)
     }
-    return post;
+    return post
   } catch (error) {
     throw new Error(error.message)
   }
