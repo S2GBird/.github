@@ -20,10 +20,13 @@ const postSchema = new mongoose.Schema(
         ref: 'User'
       }
     ],
-    comment: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Comment'
-    },
+    comments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+      }
+    ]
+    ,
     saves: [
       {
         type: mongoose.Schema.Types.ObjectId,
