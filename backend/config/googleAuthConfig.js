@@ -21,7 +21,7 @@ async function (accessToken, profile, done) {
         email: profile.emails[0].value,
         fName: profile.name.givenName,
         lName: profile.name.familyName,
-        profilePicture: profile.photos[0].value,
+        profilePicture: '',
         settings: {
           dark: false
         }
