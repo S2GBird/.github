@@ -106,5 +106,5 @@ module.exports = {
   addComment,
   likePost,
   getAllCommentsForPost,
-  getAllLikesForPost,
+  getAllLikesForPost
 }
