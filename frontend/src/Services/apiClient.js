@@ -42,7 +42,7 @@ class ApiClient {
   }
 
   async getUserInfo (userId) {
-    return await this.request({ endpoint:`users/${userId}`, method: 'GET' })
+    return await this.request({ endpoint: `users/${userId}`, method: 'GET' })
   }
 }
 
