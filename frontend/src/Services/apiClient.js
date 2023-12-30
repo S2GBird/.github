@@ -43,6 +43,7 @@ class ApiClient {
       data: { fName: userInfo.fName, lName: userInfo.lName, username: userInfo.username, email: userInfo.email, password: userInfo.password }
     })
   }
+
   async login (user) {
     // user: {username: username, password: password}
     // username and password is sent to backend to check if user exists/entered the correct information
