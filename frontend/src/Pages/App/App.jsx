@@ -4,6 +4,7 @@ import ExamplePage from '../Example Page/ExamplePage'
 import SignupPage from '../SignupPage/SignupPage'
 import LandingPage from '../Landing Page/LandingPage'
 import LoginPage from '../Login Page/LoginPage'
+import Dashboard from '../Dashboard/Dashboard'
 
 export default function App () {
   return (
@@ -14,6 +15,7 @@ export default function App () {
           <Route path='/example' element={<ExamplePage />} /> {/** This is an example route, and the style to which future routes should follow. */}
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/login' element={<LoginPage />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

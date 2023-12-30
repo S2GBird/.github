@@ -1,11 +1,12 @@
-import React, { useState, memo } from 'react'
-import { Grid, Typography, TextField, InputLabel, Checkbox, FormControlLabel, Button, Divider } from '@mui/material'
-import ChirpLogo from '../../Images/ChirpLogo.svg'
-import bird from '../../Images/bird.jpg'
-import LoginStyles from '../Login Page/Login.module.css'
-import apiClient from '../../Services/apiClient'
-import { useNavigate } from 'react-router-dom'
-import DEVELOPMENT_API_BASE_URL from '../../Services/constants'
+import React, { useState, memo } from 'react';
+import { Grid, Typography, TextField, InputLabel, Checkbox, FormControlLabel, Button, Divider } from '@mui/material';
+import ChirpLogo from '../../Images/ChirpLogo.svg';
+import bird from '../../Images/bird.jpg';
+import {sxStyle, image, gridStyle, formContainer, inputLabelStyle, signinButton, buttonContainer,registerButton,buttonContainer2} from './Signup.module.js';
+import LoginStyles from '../Login Page/Login.module.css';
+import apiClient from '../../Services/apiClient';
+import { useNavigate } from 'react-router-dom';
+import DEVELOPMENT_API_BASE_URL from '../../Services/constants';
 
 function SignupPage () {
   const [userInfo, setUserInfo] = useState({ fName: '', lName: '', username: '', email: '', password: '', confirmPassword: '' })
@@ -69,23 +70,23 @@ function SignupPage () {
 
   return (
     <main>
-      <Grid container style={{ display: 'flex' }}>
+      <Grid container style={sxStyle}>
         {/* left half page */}
-        <Grid item xs={6} sx={{ display: 'flex', hieght: 'auto' }}>
-          <img src={bird} alt='image1' style={{ display: 'flex', width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Grid item xs={6} sx={sxStyle}>
+          <img src={bird} alt='image1' style={image} />
         </Grid>
         {/* righ half page */}
-        <Grid item xs={6} sx={{ display: 'flex', hieght: 'auto' }}>
-          <Grid style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginLeft: '75px' }}>
+        <Grid item xs={6} sx={sxStyle}>
+          <Grid style={gridStyle}>
             <img src={ChirpLogo} alt='logoImage' />
             <Typography variant='h4' fontWeight='bold'>
               Register An Account
             </Typography>
-            <Grid container style={{ marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
+            <Grid container style={formContainer}>
               <form onSubmit={handleSignup}>
                 <Grid item style={{ display: 'flex', flexDirection: 'row' }}>
                   <Grid item style={{ display: 'flex', flexDirection: 'column' }}>
-                    <InputLabel htmlFor='firstName' style={{ fontWeight: 'bold' }}>First Name</InputLabel>
+                    <InputLabel htmlFor='firstName' style={inputLabelStyle}>First Name</InputLabel>
                     <TextField
                     id='firstName' label='Enter first name' variant='filled' name='fName' onChange={handleInput}
                     value={userInfo.fName} error={!!error.fName} helperText={error.fName} InputProps={{ style: { width: 250 } }}
@@ -93,7 +94,7 @@ function SignupPage () {
                   </Grid>
                   <Grid item style={{ display: 'flex', marginLeft: 50 }}>
                     <Grid item style={{ display: 'flex', flexDirection: 'column' }}>
-                    <InputLabel htmlFor='lastName' style={{ fontWeight: 'bold' }}>Last Name</InputLabel>
+                    <InputLabel htmlFor='lastName' style={inputLabelStyle}>Last Name</InputLabel>
                     <TextField
                     id='lastName' label='Enter last name' variant='filled' name='lName' onChange={handleInput}
                     value={userInfo.lName} error={!!error.lName} helperText={error.lName} InputProps={{ style: { width: 250 } }}/>
@@ -101,63 +102,53 @@ function SignupPage () {
                   </Grid>
                 </Grid>
                 <Grid>
-                  <InputLabel htmlFor='username' style={{ fontWeight: 'bold' }}>Username</InputLabel>
+                  <InputLabel htmlFor='username' style={inputLabelStyle}>Username</InputLabel>
                   <TextField
                     id='username' label='Enter username' variant='filled' name='username' onChange={handleInput}
                     value={userInfo.username} error={!!error.username} helperText={error.username} InputProps={{ style: { width: 550 } }}/>
                 </Grid>
                 <Grid>
-                  <InputLabel htmlFor='email' style={{ fontWeight: 'bold' }}>Email</InputLabel>
+                  <InputLabel htmlFor='email' style={inputLabelStyle}>Email</InputLabel>
                   <TextField
                     id='email' label='Enter email' variant='filled' name='email' onChange={handleInput}
                     value={userInfo.email} error={!!error.email} helperText={error.email} InputProps={{ style: { width: 550 } }}
                   />
                 </Grid>
                 <Grid>
-                  <InputLabel htmlFor='password' style={{ fontWeight: 'bold' }}>Password</InputLabel>
+                  <InputLabel htmlFor='password' style={inputLabelStyle}>Password</InputLabel>
                   <TextField
                     id='password' type='password' label='Enter password' variant='filled' name='password' onChange={handleInput}
                     value={userInfo.password} error={!!error.password} helperText={error.password} InputProps={{ style: { width: 550 } }}/>
                 </Grid>
                 <Grid>
-                  <InputLabel htmlFor='confirmpassword' style={{ fontWeight: 'bold' }}>Confirm Password</InputLabel>
+                  <InputLabel htmlFor='confirmpassword' style={inputLabelStyle}>Confirm Password</InputLabel>
                   <TextField
                     id='confirmpassword' type='password' label='Enter password' variant='filled' name='confirmPassword' onChange={handleInput}
                     value={userInfo.confirmPassword} error={!!error.confirmPassword} helperText={error.confirmPassword} InputProps={{ style: { width: 550 } }}
                   />
                 </Grid>
-                <Grid item style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-end' }}>
                   <InputLabel style={{ marginTop: 20 }}>
                     <FormControlLabel
                         control={<Checkbox checked={checked} onChange={isChecked} />}
                         label={
                             <Typography>
-                        I have read and accept <span style={{ fontWeight: 'bold' }}>Terms and Conditions</span>
+                        I have read and accept <span style={inputLabelStyle}>Terms and Conditions</span>
                       </Typography>}/>
                   </InputLabel>
-                  <Button
-                    variant='contained' type='submit' style={{
-                        alignItems: 'center',
-                        color: 'black',
-                        fontWeight: 'bold',
-                        backgroundColor: '#1B7D4F',
-                        marginLeft: '125px',
-                        marginTop: '10px',
-                        width: 300
-                      }}>
+                  <div style={buttonContainer}>
+                  <Button style={registerButton} variant='contained' type='submit'>
                     Register
                   </Button>
+                  </div>
                   <div style={{ display: 'flex', marginTop: 10 }}>
                     <Typography variant='body' style={{ marginLeft: '140px' }}>
                         Already have an account?</Typography>
-                    <Button variant='text' style={{ color: 'black', fontWeight: 'bold', marginTop: -5 }} href='/login'>Sign in!</Button>
+                    <Button variant='text' style={signinButton} href='/login'>Sign in!</Button>
                   </div>
-                </Grid>
               </form>
             </Grid>
-            <Grid container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <Grid container style={buttonContainer2}>
               <Divider sx={{ borderBottomWidth: 3, width: '90%' }} />
-              <Grid container spacing={3} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                 <Grid item style={{ marginTop: 15 }}>
                   <button className={LoginStyles['gsi-material-button']}>
                     <a href={DEVELOPMENT_API_BASE_URL + '/login/auth/google'}>
@@ -178,13 +169,12 @@ function SignupPage () {
                       </a>
                   </button>
                 </Grid>
-              </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
     </main>
-  )
+  );
 }
 
 export default memo(SignupPage)

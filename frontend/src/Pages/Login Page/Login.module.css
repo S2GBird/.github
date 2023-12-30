@@ -96,8 +96,7 @@ a {
   border: #1B7D4F;
   border-width: 0.4375rem;
   border-style: solid;
-  border-radius: 0.3125rem;
-  
+  border-radius: 0.3125rem; 
 }
 
 .separator-container {
@@ -200,7 +199,7 @@ background-repeat: no-repeat;
   background-color: #303030;
   opacity: 0.08;
 }
-
+  
 
 @media (width >= 48rem) {
   .login-body {
