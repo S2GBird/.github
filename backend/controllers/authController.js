@@ -94,8 +94,8 @@ const googleAuth = passport.authenticate('google', { scope: ['profile', 'email']
 
 // handle google redirect
 const googleAuthRedirect = passport.authenticate('google', {
-  failureRedirect: 'http://localhost:3000/signup',
-  successRedirect: 'http://localhost:3000/login'
+  failureRedirect: 'http://localhost:3000/login',
+  successRedirect: 'http://localhost:3000/dashboard'
 })
 
 // generate and send token to user
