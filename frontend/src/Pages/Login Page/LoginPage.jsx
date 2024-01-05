@@ -1,6 +1,7 @@
 import LoginStyles from './Login.module.css'
 import apiClient from '../../Services/apiClient'
-import React, { useState, memo } from 'react'
+import { useAuthContext } from '../../Services/authProvider'
+import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
 import { TextField, Button } from '@mui/material'
@@ -10,6 +11,7 @@ function LoginPage () {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const { setUser } = useAuthContext()
   const navigate = useNavigate()
 
   function handleLogin (event) {
@@ -27,13 +29,14 @@ function LoginPage () {
       // if it matches, user is navigated to dashboard
       apiClient.login(loginInfo).then(res => {
         // console.log('data ', res)
-        if (res.data.success) {
-          console.log('userId ', res.data.userId)
-          console.log('username ', res.data.username)
+        if(res.data.success) { 
+          // console.log('userId ', res.data.userId)
+          // console.log('username ', res.data.username)
           // const user = {
           //   userId: res.data.userId,
           //   username: res.data.user
           // }
+          setUser({ username: res.data.username, userId: res.data.userId })
           navigate('/dashboard')
         } else {
           setError(res.data.message)
