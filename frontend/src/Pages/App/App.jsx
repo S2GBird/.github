@@ -14,7 +14,7 @@ export default function App () {
           <Route path='/example' element={<ExamplePage />} /> {/** This is an example route, and the style to which future routes should follow. */}
           <Route path='/login' element={<LoginPage />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
