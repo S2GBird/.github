@@ -35,9 +35,13 @@ class ApiClient {
   }
 
   // -------------------------AUTHENTICATION REQUESTS------------------------------
-  // Logout a User completely from site
-  async logout () {
-    return await this.request({ endpoint: '/logout', method: 'POST' })
+  // commented out for now until implemented
+  async register (userInfo) {
+    return await this.request({
+      endpoint: 'register',
+      method: 'POST',
+      data: { fName: userInfo.fName, lName: userInfo.lName, username: userInfo.username, email: userInfo.email, password: userInfo.password }
+    })
   }
 
   async login (user) {
