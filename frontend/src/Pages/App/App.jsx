@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage'
 import LandingPage from '../Landing Page/LandingPage'
 import LoginPage from '../Login Page/LoginPage'
 import Dashboard from '../Dashboard/Dashboard'
+import { AuthContextProvider } from '../../Services/authProvider'
 
 export default function App () {
   return (

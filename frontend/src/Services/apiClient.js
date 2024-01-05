@@ -11,7 +11,7 @@ class ApiClient {
     centralize the error handling so it does not need to be handled within the individual components. */
 
   async request ({ endpoint, method = 'GET', data = {} }) {
-    const url = `${this.remoteHostUrl}/${endpoint}`
+    const url = `${this.remoteHostUrl}${endpoint}`
     const headers = {
       'Content-Type': 'application/json'
       // Future Authorization Headers will go here.
@@ -31,7 +31,7 @@ class ApiClient {
 
   // -------------------------BACKEND HEALTH CHECK REQUESTS------------------------------
   async healthCheck () {
-    return await this.request({ endpoint: '', method: 'GET' })
+    return await this.request({ endpoint: '/', method: 'GET' })
   }
 
   // -------------------------AUTHENTICATION REQUESTS------------------------------
