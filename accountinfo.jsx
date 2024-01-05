@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+// accountinfo.jsx
+import React, { useState, useEffect } from 'react';
+import AccountInfoCss from './accountinfocss.jsx'; // Adjust the import path as needed
+import apiClient from '../../Services/apiClient';
+import { useAuthContext } from '../../Services/authProvider';
+import { memo } from 'react';
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Account info page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+function AccountInfo() {
+  const [message, setMessage] = useState('');
+  const { user, setUser, globalError, setGlobalError } = useAuthContext();
 
-<body>
-  <header>
+  
+  const fetchExampleMessage = async () => {
+    try {
+      const { data } = await apiClient.healthCheck();
+      setMessage(data); // Handle the response
+    } catch (error) {
+      console.log(error); // Handle errors
+    }
+  };
+
+  return (
+    <div className={AccountInfoCss['account-info']}>
+      <h2>ACCOUNT INFO PAGE</h2>
+      <button onClick={fetchExampleMessage}>Click this button to show message</button>
+      {message && <p>This is my message: {message}</p>}
+
+      {/* HTML content */}
+    <header>
     <div class="profile-header">
       <div class="profile-info">
         <div class="profile-name">Username</div>
@@ -106,11 +122,12 @@
       <button onclick="saveChanges()">Save Changes</button>
     </div>
   </div>
+        
+      </div>
 
-
-
-  
-function showEditPopup() {
+      {/* JavaScript */}
+      <script>
+  function showEditPopup() {
   const popup = document.getElementById('editPopup');
   popup.style.display = 'block';
 
@@ -188,7 +205,19 @@ function toggleVisibility() {
     
 
 
-</html>
+
+
+      </script>
+    </div>
+  );
+}
+
+export default memo(AccountInfo);
+
+
+
+
+
 
 
 
