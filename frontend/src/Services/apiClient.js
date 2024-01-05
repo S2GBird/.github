@@ -38,7 +38,7 @@ class ApiClient {
   // commented out for now until implemented
   async register (userInfo) {
     return await this.request({
-      endpoint: 'register',
+      endpoint: '/register',
       method: 'POST',
       data: { fName: userInfo.fName, lName: userInfo.lName, username: userInfo.username, email: userInfo.email, password: userInfo.password }
     })
