@@ -7,9 +7,11 @@ import LoginStyles from '../Login Page/Login.module.css'
 import apiClient from '../../Services/apiClient'
 import { useNavigate } from 'react-router-dom'
 import DEVELOPMENT_API_BASE_URL from '../../Services/constants'
+import { useAuthContext } from '../../Services/authProvider'
 
 function SignupPage () {
   const [userInfo, setUserInfo] = useState({ fName: '', lName: '', username: '', email: '', password: '', confirmPassword: '' })
+  const { setUser } = useAuthContext()
   const handleInput = (input) => {
     const { name, value } = input.target
     setUserInfo({
@@ -58,7 +60,8 @@ function SignupPage () {
         if (res.data.success) {
           // console.log('userId ', res.data.userId);
           // console.log('username ', res.data.username);
-          handleNavigate() // navigate to login page
+          setUser({ username: res.data.username, userId: res.data.userId })
+          handleNavigate() // navigate to dashboard
         } else {
           console.warn(res.data.message)
         }
