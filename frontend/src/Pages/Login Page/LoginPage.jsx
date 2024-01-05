@@ -77,7 +77,7 @@ function LoginPage () {
             </form>
             <p className={LoginStyles['login-error']}>{error}</p>
             <div className={LoginStyles['separator-container']}>
-              <p className={LoginStyles['separator']}>Or</p>
+              <p className={LoginStyles.separator}>Or</p>
             </div>
             <div className={LoginStyles['login-social-media']}>
               <button className={LoginStyles['gsi-material-button']}>
