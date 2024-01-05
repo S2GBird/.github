@@ -1,23 +1,25 @@
-// accountinfo.jsx
-import React, { useState, useEffect } from 'react';
 import AccountInfoCss from './accountinfocss.jsx'; 
 import apiClient from '../../Services/apiClient';
 import { useAuthContext } from '../../Services/authProvider';
-import { memo } from 'react';
+import { useState, memo } from 'react'
+
 
 function AccountInfo() {
-  const [message, setMessage] = useState('');
-  const { user, setUser, globalError, setGlobalError } = useAuthContext();
+  const [message, setMessage] = useState('')
+  const { user, setUser, globalError, setGlobalError } = useAuthContext() 
+
 
   
-  const fetchExampleMessage = async () => {
-    try {
-      const { data } = await apiClient.healthCheck();
-      setMessage(data); // Handle the response
-    } catch (error) {
-      console.log(error); // Handle errors
+    const fetchExampleMessage = async () => {
+    const { data, error } = await apiClient.healthCheck() 
+    if (data) { 
+      setMessage(data) 
     }
-  };
+    if (error) { 
+      console.log(error) 
+    }
+  }
+
 
   return (
     <div className={AccountInfoCss['account-info']}>
@@ -122,11 +124,12 @@ function AccountInfo() {
       <button onclick="saveChanges()">Save Changes</button>
     </div>
   </div>
+  </html>
         
-      </div>
+      
 
       {/* JavaScript */}
-      <script>
+  <script>
   function showEditPopup() {
   const popup = document.getElementById('editPopup');
   popup.style.display = 'block';
@@ -199,20 +202,12 @@ function toggleVisibility() {
 
 
   <script src="script.js"></script>
-  </body>
-
-
-    
-
-
-
-
-      </script>
-    </div>
+ 
+   
   );
 }
 
-export default memo(AccountInfo);
+export default memo(AccountInfo)
 
 
 
