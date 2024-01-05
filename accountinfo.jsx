@@ -1,6 +1,6 @@
 // accountinfo.jsx
 import React, { useState, useEffect } from 'react';
-import AccountInfoCss from './accountinfocss.jsx'; // Adjust the import path as needed
+import AccountInfoCss from './accountinfocss.jsx'; 
 import apiClient from '../../Services/apiClient';
 import { useAuthContext } from '../../Services/authProvider';
 import { memo } from 'react';
