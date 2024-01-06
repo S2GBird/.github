@@ -80,7 +80,7 @@ function ViewAllCommentsPopup ( { PostId } ) {
     bgcolor: 'background.paper',
     boxShadow: 24,
     borderRadius: '0.5rem',
-    padding: '2rem'
+    padding: '1.5rem'
   }
 
   function handleToggle() {
