@@ -12,20 +12,20 @@
 .notfound-image {
     height: 40%;
     width: 25%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .notfound-h1 {
     font-size: 80px;
     font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .notfound-h2 {
     font-size: 20px;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .button-container {
