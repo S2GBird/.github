@@ -20,7 +20,7 @@ function Comment ( { username, comment } ) {
           <span><b>{username}</b> {comment}</span>
         </div>
         <div onClick={handleLike}>
-          {like ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          {like ? <FavoriteIcon style={{color: 'red'}} /> : <FavoriteBorderIcon />}
         </div>
       </div>
     </div>
