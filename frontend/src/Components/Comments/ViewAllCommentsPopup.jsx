@@ -90,7 +90,7 @@ function ViewAllCommentsPopup ( { postId } ) {
   }
 
   function handleAddComment(event) {
-    if(event.key === 'Enter') {
+    if(event.keyCode === 13 && !event.shiftKey) {
       event.preventDefault()
       console.log('Comment ', comment)
       setComment('')
