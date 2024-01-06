@@ -72,14 +72,12 @@ function AccountInfoPage() {
     <div>
       {/* HTML code */}
       <header>
-        <div className="profile-header">
-           <div class="profile-header">
+          <div class="profile-header">
       <div class="profile-info">
         <div class="profile-name">Username</div>
         <div class="profile-actions">
-         
-      
       </div>
+        
       <div class="profile-stats">
         <div class="stat">Posts<br><span>0</span></div>
         <div class="stat">Chirping<br><span>0</span></div>
