@@ -1,5 +1,3 @@
-import React, { memo } from 'react';
-
 function AccountInfoPage() {
   function showEditPopup() {
     const popup = document.getElementById('editPopup');
