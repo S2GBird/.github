@@ -5,7 +5,6 @@ import CloseIcon from '@mui/icons-material/Close'
 // import apiClient from '../../Services/apiClient'
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 const comments = [
