@@ -54,7 +54,7 @@ class ApiClient {
   }
 
   //-------------------------POST REQUESTS------------------------------
-  async getAllCommentsForPost (postId) {
+  async getPostComments (postId) {
     return await this.request({ endpoint: `/posts/${postId}/comments`, method: 'GET' })
   }
 }

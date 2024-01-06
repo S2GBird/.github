@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box'
 import CloseIcon from '@mui/icons-material/Close'
+import apiClient from '../../Services/apiClient'
 
 const comments = [
   {
@@ -68,8 +69,17 @@ const comments = [
   }
 ]
 
-function ViewAllCommentsPopup ( { PostId } ) {
+function ViewAllCommentsPopup ( { postId } ) {
   const [open, setOpen] = useState(false)
+  // const [comments, setComments] = useState([])
+  
+  // function getPostComments(postId) {
+  //   apiClient.getPostComments(postId).then(res => {
+  //     setComments(res.data)
+  //   });
+  // }
+
+  // getPostComments(user.userId)
 
   const popupContainer = {
     position: 'absolute',
