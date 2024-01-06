@@ -30,4 +30,18 @@
 .dialog-text {
   font-family: 'Poppins';
   color: black;
+  background-color: lightgray;
+}
+
+.add-comment-field {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+
+.add-comment-container {
+  background-color: lightgray;
+  margin-top: 0;
 }

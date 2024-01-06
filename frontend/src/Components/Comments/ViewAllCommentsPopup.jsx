@@ -6,6 +6,8 @@ import CloseIcon from '@mui/icons-material/Close'
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
+import { Input } from '@mui/material';
 
 const comments = [
   {
@@ -72,6 +74,7 @@ const comments = [
 
 function ViewAllCommentsPopup ( { postId } ) {
   const [open, setOpen] = useState(false)
+  const [comment, setComment] = useState('')
   // const [comments, setComments] = useState([])
   
   // function getPostComments(postId) {
@@ -86,6 +89,15 @@ function ViewAllCommentsPopup ( { postId } ) {
     setOpen(!open)
   }
 
+  function handleAddComment(event) {
+    if(event.key === 'Enter') {
+      event.preventDefault()
+      console.log('Comment ', comment)
+      setComment('')
+    }
+    // call api to add comment
+  }
+
   return (
     <div>
       <button className={Styles['view-btn']} onClick={handleToggle}>View all comments</button>
@@ -94,6 +106,7 @@ function ViewAllCommentsPopup ( { postId } ) {
         onClose={handleToggle}
         scroll={'paper'}
         aria-labelledby='view-all-comments-popup'
+        maxWidth='md'
       >
         <DialogTitle id='view-all-comments-popup' className={Styles['dialog-text']}>
           <CloseIcon className={Styles['close-btn']} onClick={handleToggle}/>
@@ -108,6 +121,17 @@ function ViewAllCommentsPopup ( { postId } ) {
             )
           }
         </DialogContent>
+        <DialogActions className={Styles['add-comment-container']}>
+          <Input
+            className={Styles['add-comment-field']}
+            placeholder='Add a comment'
+            fullWidth
+            multiline
+            value={comment}
+            onChange={(event) => setComment(event.target.value)}
+            onKeyDown={handleAddComment}
+          />
+        </DialogActions>
       </Dialog>
     </div>
   )
