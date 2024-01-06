@@ -1,4 +1,4 @@
-function AccountInfoPage() {
+  function AccountInfoPage() {
   function showEditPopup() {
     const popup = document.getElementById('editPopup');
     popup.style.display = 'block';
