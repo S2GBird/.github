@@ -1,19 +1,21 @@
 import Styles from './ViewAllCommentsPopup.module.css'
 import Comment from './Comment.jsx'
 import { useState } from 'react';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box'
 import CloseIcon from '@mui/icons-material/Close'
-import apiClient from '../../Services/apiClient'
+// import apiClient from '../../Services/apiClient'
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const comments = [
   {
     username: 'user1',
-    comment: 'comment1'
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
   {
     username: 'user2',
-    comment: 'comment2'
+    comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
   {
     username: 'user3',
@@ -79,19 +81,7 @@ function ViewAllCommentsPopup ( { postId } ) {
   //   });
   // }
 
-  // getPostComments(user.userId)
-
-  const popupContainer = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '35rem',
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    borderRadius: '0.5rem',
-    padding: '1.5rem'
-  }
+  // getPostComments(postId)
 
   function handleToggle() {
     setOpen(!open)
@@ -100,22 +90,26 @@ function ViewAllCommentsPopup ( { postId } ) {
   return (
     <div>
       <button className={Styles['view-btn']} onClick={handleToggle}>View all comments</button>
-      <Modal
+      <Dialog
         open={open}
         onClose={handleToggle}
-        aria-labelledby="view-all-comments-popup"
+        scroll={'paper'}
+        aria-labelledby='view-all-comments-popup'
       >
-        <Box sx={popupContainer}>
-          <CloseIcon className={Styles['close-modal-btn']} onClick={handleToggle}/>
-          <div className={Styles['total-comments']}>123 comments</div>
+        <DialogTitle id='view-all-comments-popup' className={Styles['dialog-text']}>
+          <CloseIcon className={Styles['close-btn']} onClick={handleToggle}/>
+          <div className={Styles['total-comments']}>{`${comments.length} comments`}</div>
+          {/* <div className={Styles['total-comments']}>123 comments</div> */}
+        </DialogTitle>
+        <DialogContent className={Styles['dialog-container']}>
           {
             comments.map((comment, i) =>
               // key is temporary will replace with _id later
               <Comment key={i} username={ comment.username } comment={ comment.comment } />
             )
           }
-        </Box>
-      </Modal>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 };
