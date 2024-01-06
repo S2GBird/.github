@@ -8,7 +8,9 @@ function Comment ( { username, comment } ) {
 
     function handleLike() {
         setLike(!like)
-        // add/remove like from comment
+        // make call to backend to add or remove like from comment
+        // likes dont persist currently so that will have to be fixed later on
+        // need something to check if the comment is liked by the current user already
     }
 
     return (
