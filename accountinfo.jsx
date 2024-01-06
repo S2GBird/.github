@@ -1,49 +1,91 @@
-import AccountInfoCss from './accountinfocss.jsx'; 
-import apiClient from '../../Services/apiClient';
-import { useAuthContext } from '../../Services/authProvider';
-import { useState, memo } from 'react'
+import React, { memo } from 'react';
 
+function AccountInfoPage() {
+  function showEditPopup() {
+    const popup = document.getElementById('editPopup');
+    popup.style.display = 'block';
 
-function AccountInfo() {
-  const [message, setMessage] = useState('')
-  const { user, setUser, globalError, setGlobalError } = useAuthContext() 
+    const nameInput = document.getElementById('editName');
+    const emailInput = document.getElementById('editEmail');
+    const passwordInput = document.getElementById('editPassword');
 
+    nameInput.value = document.querySelector('.profile-name').textContent;
+    emailInput.value = '';
+    passwordInput.value = '';
+  }
 
-  
-    const fetchExampleMessage = async () => {
-    const { data, error } = await apiClient.healthCheck() 
-    if (data) { 
-      setMessage(data) 
-    }
-    if (error) { 
-      console.log(error) 
+  function closeEditPopup() {
+    const popup = document.getElementById('editPopup');
+    popup.style.display = 'none';
+  }
+
+  function saveChanges() {
+    const newName = document.getElementById('editName').value;
+    const newEmail = document.getElementById('editEmail').value;
+    const newPassword = document.getElementById('editPassword').value;
+
+    if (newName && newEmail && newPassword) {
+      document.querySelector('.profile-name').textContent = newName;
+
+      closeEditPopup();
+      alert('Profile updated successfully!');
+    } else {
+      alert('Please fill in all fields.');
     }
   }
 
+  function toggleMenu() {
+    console.log('Toggle Menu Clicked!');
+    const dropdown = document.querySelector('.dropdown-content');
+    const settingsDropdown = document.getElementById('settingsDropdown');
+
+    // Hide settings dropdown if it's visible
+    if (settingsDropdown.style.display === 'block') {
+      settingsDropdown.style.display = 'none';
+    }
+
+    // Toggle the menu dropdown
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function toggleSettings() {
+    const settingsDropdown = document.getElementById('settingsDropdown');
+    const dropdown = document.querySelector('.dropdown-content');
+
+    // Hide menu dropdown if it's visible
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    }
+
+    // Toggle the settings dropdown
+    settingsDropdown.style.display = settingsDropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function toggleVisibility() {
+    const visibilityLabel = document.getElementById('visibilityLabel');
+    const visibilityToggle = document.getElementById('visibilityToggle');
+
+    visibilityLabel.textContent = visibilityToggle.checked ? 'Private' : 'Public';
+  }
 
   return (
-    <div className={AccountInfoCss['account-info']}>
-      <h2>ACCOUNT INFO PAGE</h2>
-      <button onClick={fetchExampleMessage}>Click this button to show message</button>
-      {message && <p>This is my message: {message}</p>}
-
-      {/* HTML content */}
-    <header>
-    <div class="profile-header">
+    <div>
+      {/* HTML code */}
+      <header>
+        <div className="profile-header">
+           <div class="profile-header">
       <div class="profile-info">
         <div class="profile-name">Username</div>
         <div class="profile-actions">
-         </div>
-
-        
+         
+      
+      </div>
       <div class="profile-stats">
         <div class="stat">Posts<br><span>0</span></div>
         <div class="stat">Chirping<br><span>0</span></div>
         <div class="stat">Chirpers<br><span>0</span></div>
       </div>
     </div>
-
-
 
       <div class="menu-icon" onclick="toggleMenu()">
         <div class="bar"></div>
@@ -64,14 +106,19 @@ function AccountInfo() {
           <a href="#">Help</a>
         </div>
       </div>
-  </header>
+        </div>
 
- 
+        <div className="menu-icon" onClick={toggleMenu}>
+          {/* ... (your existing menu icon structure) */}
+        </div>
 
-  
+        <div className="settings-icon" onClick={toggleSettings}>
+          {/* ... (your existing settings icon structure) */}
+        </div>
+      </header>
 
-  <main>
-    <div class="toggle-container">
+      <main>
+         <div class="toggle-container">
       <label class="toggle-label">Profile Visibility:</label>
       <div class="toggle">
         <input type="checkbox" id="visibilityToggle" onchange="toggleVisibility()">
@@ -80,10 +127,6 @@ function AccountInfo() {
       <span id="visibilityLabel">Public</span>
     </div>
 
-
-
-
-    
     <div class="profile-circle">
      
       <img src="bird pixel.jpg" alt="Profile Image">
@@ -104,11 +147,10 @@ function AccountInfo() {
       
       <div class="no-post">No posts yet</div>
     </div>
-  </main>
+      </main>
 
-
-
-  <div id="editPopup" class="popup">
+      <div id="editPopup" className="popup">
+        <div id="editPopup" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closeEditPopup()">&times;</span>
       <h2>Edit Profile</h2>
@@ -124,87 +166,11 @@ function AccountInfo() {
       <button onclick="saveChanges()">Save Changes</button>
     </div>
   </div>
-  </html>
-        
-      
+      </div>
 
-      {/* JavaScript */}
-  <script>
-  function showEditPopup() {
-  const popup = document.getElementById('editPopup');
-  popup.style.display = 'block';
-
-  const nameInput = document.getElementById('editName');
-  const emailInput = document.getElementById('editEmail');
-  const passwordInput = document.getElementById('editPassword');
-
-  
-  nameInput.value = document.querySelector('.profile-name').textContent;
-  emailInput.value = ''; 
-  passwordInput.value = ''; 
-}
-
-function closeEditPopup() {
-  const popup = document.getElementById('editPopup');
-  popup.style.display = 'none';
-}
-
-function saveChanges() {
-  const newName = document.getElementById('editName').value;
-  const newEmail = document.getElementById('editEmail').value;
-  const newPassword = document.getElementById('editPassword').value;
-
-  if (newName && newEmail && newPassword) {
-    document.querySelector('.profile-name').textContent = newName;
-    
-    closeEditPopup();
-    alert('Profile updated successfully!');
-  } else {
-    alert('Please fill in all fields.');
-  }
-}
-
-function toggleMenu() {
-  console.log('Toggle Menu Clicked!');
-  const dropdown = document.querySelector('.dropdown-content');
-  const settingsDropdown = document.getElementById('settingsDropdown');
-
-  // Hide settings dropdown if it's visible
-  if (settingsDropdown.style.display === 'block') {
-    settingsDropdown.style.display = 'none';
-  }
-
-  // Toggle the menu dropdown
-  dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
-}
-
-function toggleSettings() {
-  const settingsDropdown = document.getElementById('settingsDropdown');
-  const dropdown = document.querySelector('.dropdown-content');
-
-  // Hide menu dropdown if it's visible
-  if (dropdown.style.display === 'block') {
-    dropdown.style.display = 'none';
-  }
-
-  // Toggle the settings dropdown
-  settingsDropdown.style.display = (settingsDropdown.style.display === 'block') ? 'none' : 'block';
-}
-
-
-function toggleVisibility() {
-  const visibilityLabel = document.getElementById('visibilityLabel');
-  const visibilityToggle = document.getElementById('visibilityToggle');
-
-  visibilityLabel.textContent = visibilityToggle.checked ? 'Private' : 'Public';
-}
-
-
-
-  <script src="script.js"></script>
- 
-   
+      <script src="script.js"></script>
+    </div>
   );
 }
 
-export default memo(AccountInfo)
+export default memo(AccountInfoPage);
