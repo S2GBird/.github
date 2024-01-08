@@ -112,8 +112,7 @@ main {
   min-width: 160px;
   box-shadow: 0 8px 16px 0 #0003;
   z-index: 1;
-  right: 0;
-  top: 100%;
+  inset: 100% 0;
 }
 
 .dropdown-content a {
@@ -160,8 +159,7 @@ main {
 .popup {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0 0;
   width: 100%;
   height: 100%;
   background-color: #00000080;
@@ -182,8 +180,7 @@ main {
   color: #aaa;
   font-size: 24px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  inset: 10px 10px;
   cursor: pointer;
 }
 
@@ -258,8 +255,7 @@ button:hover {
   box-shadow: 0 8px 16px 0 #0003;
   border-radius: 5px;
   z-index: 2;
-  top: 100%;
-  right: 0;
+  inset: 100% 0;
   padding: 8px 0;
 }
 
@@ -291,10 +287,7 @@ button:hover {
 .toggle-switch {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0 0 0 0;
   background-color: #ccc;
   border-radius: 34px;
   transition: background-color 0.3s;
