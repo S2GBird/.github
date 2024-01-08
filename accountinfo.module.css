@@ -126,6 +126,15 @@ main {
   transition: background-color 0.3s;
 }
 
+.settings-dropdown a {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
@@ -219,6 +228,13 @@ button:hover {
   background-color: #2980b9;
 }
 
+.settings-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  position: relative;
+}
+
 .settings-icon:hover,
 .menu-icon:hover {
   color: #3498db;
@@ -251,25 +267,13 @@ button:hover {
   padding: 8px 0;
 }
 
-.settings-dropdown a {
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  text-decoration: none;
-  color: #333;
-  transition: background-color 0.3s;
-}
+
 
 .settings-dropdown a:hover {
   background-color: #f1f1f1;
 }
 
-.settings-icon {
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-  position: relative;
-}
+
 
 .settings-icon:hover .settings-dropdown {
   display: block;
