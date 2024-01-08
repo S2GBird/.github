@@ -251,7 +251,7 @@ button:hover {
   40%, 60% {
     transform: translateX(5px);
   }
-}
+
 
 .settings-dropdown {
   display: none;
