@@ -34,13 +34,6 @@ header {
   align-items: center;
 }
 
-.drawer-icon,
-.settings-icon {
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-}
-
 .profile-stats {
   display: flex;
   align-items: center;
@@ -116,6 +109,7 @@ main {
 }
 
 .menu-icon:hover .dropdown-content {
+  box-shadow: 0 8px 16px 0 #0003;
   display: block;
 }
 
@@ -243,6 +237,7 @@ button:hover {
 }
 
 .settings-icon:hover .settings-dropdown {
+  box-shadow: 0 8px 16px 0 #0003;
   display: block;
 }
 
@@ -322,6 +317,6 @@ button:hover {
   transform: translateX(26px);
 }
 
-#visibilityLabel {
+#visibility-label {
   margin-left: 5px;
 }
