@@ -24,8 +24,7 @@ header {
 }
 
 .profile-name {
-  font-size: 18px;
-  font-weight: bold;
+  font: bold 18px;
   margin-right: 30px;
 }
 
@@ -143,8 +142,7 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: #333;
-  margin-left: auto;
-  margin-right: 10px;
+  margin:10px auto;
   position: relative;
 }
 
@@ -180,8 +178,6 @@ main {
   width: 80%;
   max-width: 400px;
   position: relative;
-  inset: 10% auto auto 50%;
-  transform: translateX(-50%);
 }
 
 .close {
@@ -284,15 +280,13 @@ button:hover {
 
 
 .toggle-container {
-  margin-bottom: 16px;
+  margin: 16px auto;
   display: inline-flex;
   align-items: center;
-  margin-left: auto;
 }
 
 .toggle-label {
-  margin-right: 5px;
-  margin-left: auto;
+  margin: 5px auto;
 }
 
 .toggle {
@@ -336,4 +330,4 @@ button:hover {
 
 #visibility-label {
   margin-left: 5px;
-}
+}"
