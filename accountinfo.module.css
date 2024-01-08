@@ -159,7 +159,7 @@ main {
 .popup {
   display: none;
   position: fixed;
-  inset: 0 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: #00000080;
@@ -180,7 +180,7 @@ main {
   color: #aaa;
   font-size: 24px;
   position: absolute;
-  inset: 10px 10px;
+  inset: 10px;
   cursor: pointer;
 }
 
@@ -287,7 +287,7 @@ button:hover {
 .toggle-switch {
   position: absolute;
   cursor: pointer;
-  inset: 0 0 0 0;
+  inset: 0;
   background-color: #ccc;
   border-radius: 34px;
   transition: background-color 0.3s;
