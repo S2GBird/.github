@@ -24,7 +24,7 @@ header {
 }
 
 .profile-name {
-  font-weight: bold; /* Changed "font: bold 18px" to "font-weight: bold" */
+  font-weight: bold 18px; 
   margin-right: 30px;
 }
 
@@ -142,7 +142,7 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: #333;
-  margin: 10px auto; /* Added margin property */
+  margin: 10px auto;
   position: relative;
 }
 
