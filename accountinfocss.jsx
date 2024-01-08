@@ -8,8 +8,9 @@ body {
 header {
   background-color: #fff;
   padding: 16px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px #0000001A; 
 }
+
 
 .profile-header {
   display: flex;
