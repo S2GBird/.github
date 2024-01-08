@@ -8,9 +8,8 @@ body {
 header {
   background-color: #fff;
   padding: 16px;
-  box-shadow: 0 0 10px #0000001A; 
+  box-shadow: 0 0 10px #0000001A;
 }
-
 
 .profile-header {
   display: flex;
@@ -34,8 +33,6 @@ header {
   align-items: center;
 }
 
-
-
 .drawer-icon,
 .settings-icon {
   cursor: pointer;
@@ -43,13 +40,10 @@ header {
   color: #333;
 }
 
-
-
-
 .profile-info {
   display: flex;
   align-items: center;
-  margin-right: auto; 
+  margin-right: auto;
 }
 
 .profile-name {
@@ -66,13 +60,12 @@ header {
 .profile-stats {
   display: flex;
   align-items: center;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .profile-stats .stat {
   margin-left: 30px;
 }
-
 
 .stat span {
   font-weight: bold;
@@ -129,21 +122,14 @@ main {
   color: #888;
 }
 
-
-
 .menu-icon {
   cursor: pointer;
   font-size: 24px;
   color: #333;
-  margin-left: auto; 
-  margin-right: 10px; 
+  margin-left: auto;
+  margin-right: 10px;
   position: relative;
 }
-
-
-position: relative;
-}
-
 
 .menu-icon:hover .dropdown-content {
   display: block;
@@ -171,15 +157,14 @@ position: relative;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-size: 14px; 
-  border-bottom: none; 
+  font-size: 14px;
+  border-bottom: none;
   transition: background-color 0.3s;
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
-
 
 .popup {
   display: none;
@@ -248,7 +233,6 @@ button:hover {
   background-color: #2980b9;
 }
 
-
 .settings-icon:hover,
 .menu-icon:hover {
   color: #3498db;
@@ -267,7 +251,6 @@ button:hover {
   }
 }
 
-
 .settings-icon {
   cursor: pointer;
   font-size: 24px;
@@ -284,7 +267,6 @@ button:hover {
   position: absolute;
   background-color: #fff;
   box-shadow: 0px 8px 16px 0px #00000033;
-
   border-radius: 5px;
   z-index: 2;
   top: 100%;
@@ -305,21 +287,17 @@ button:hover {
   background-color: #f1f1f1;
 }
 
-
-
 .toggle-container {
   margin-bottom: 16px;
-  display:inline-flex;
+  display: inline-flex;
   align-items: center;
-  margin-left: auto; 
+  margin-left: auto;
 }
-
 
 .toggle-label {
-  margin-right: 5px; 
-  margin-left: auto; 
+  margin-right: 5px;
+  margin-left: auto;
 }
-
 
 .toggle {
   position: relative;
@@ -327,7 +305,6 @@ button:hover {
   width: 60px;
   height: 40px;
 }
-
 
 .toggle-switch {
   position: absolute;
@@ -341,7 +318,6 @@ button:hover {
   transition: background-color 0.3s;
 }
 
-
 .toggle-switch:before {
   position: absolute;
   content: "";
@@ -354,17 +330,14 @@ button:hover {
   transition: transform 0.3s;
 }
 
-
 #visibilityToggle:checked + .toggle-switch {
-  background-color: #0077b5; 
+  background-color: #0077b5;
 }
-
 
 #visibilityToggle:checked + .toggle-switch:before {
   transform: translateX(26px);
 }
 
-
 #visibilityLabel {
-  margin-left: 5px; 
+  margin-left: 5px;
 }
