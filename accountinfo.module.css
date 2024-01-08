@@ -20,29 +20,6 @@ header {
 .profile-info {
   display: flex;
   align-items: center;
-}
-
-.profile-name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-.profile-actions {
-  display: flex;
-  align-items: center;
-}
-
-.drawer-icon,
-.settings-icon {
-  cursor: pointer;
-  font-size: 24px;
-  color: #333;
-}
-
-.profile-info {
-  display: flex;
-  align-items: center;
   margin-right: auto;
 }
 
@@ -132,6 +109,7 @@ main {
 }
 
 .menu-icon:hover .dropdown-content {
+  box-shadow: 0px 8px 16px 0px #0003;
   display: block;
 }
 
@@ -147,7 +125,7 @@ main {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px #00000033;
+  box-shadow: 0px 8px 16px 0px #0003;
   z-index: 1;
   right: 0;
   top: 100%;
@@ -259,6 +237,7 @@ button:hover {
 }
 
 .settings-icon:hover .settings-dropdown {
+  box-shadow: 0px 8px 16px 0px #0003;
   display: block;
 }
 
@@ -266,7 +245,7 @@ button:hover {
   display: none;
   position: absolute;
   background-color: #fff;
-  box-shadow: 0px 8px 16px 0px #00000033;
+  box-shadow: 0px 8px 16px 0px #0003;
   border-radius: 5px;
   z-index: 2;
   top: 100%;
@@ -338,6 +317,6 @@ button:hover {
   transform: translateX(26px);
 }
 
-#visibilityLabel {
+#visibility-label {
   margin-left: 5px;
 }
