@@ -1,14 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: ;
+  padding: ;
   background-color: #fafafa;
 }
 
 header {
   background-color: #fff;
   padding: 16px;
-  box-shadow: 0 0 10px #0000001A;
+  box-shadow:   10px #0000001A;
 }
 
 .profile-header {
@@ -139,7 +139,7 @@ main {
   width: 30px;
   height: 3px;
   background-color: #333;
-  margin: 6px 0;
+  margin: 6px ;
 }
 
 .dropdown-content {
@@ -149,7 +149,7 @@ main {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px #00000033;
   z-index: 1;
-  right: 0;
+  right: ;
   top: 100%;
 }
 
@@ -169,8 +169,8 @@ main {
 .popup {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: ;
+  left: ;
   width: 100%;
   height: 100%;
   background-color: #00000080;
@@ -181,7 +181,7 @@ main {
   margin: 10% auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px #00000033;
+  box-shadow:   20px #00000033;
   width: 80%;
   max-width: 400px;
   position: relative;
@@ -270,7 +270,7 @@ button:hover {
   border-radius: 5px;
   z-index: 2;
   top: 100%;
-  right: 0;
+  right: ;
   padding: 8px 0;
 }
 
@@ -309,10 +309,10 @@ button:hover {
 .toggle-switch {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: ;
+  left: ;
+  right: ;
+  bottom: ;
   background-color: #ccc;
   border-radius: 34px;
   transition: background-color 0.3s;
