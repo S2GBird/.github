@@ -109,7 +109,7 @@ main {
 }
 
 .menu-icon:hover .dropdown-content {
-  box-shadow: 0px 8px 16px 0px #0003;
+  box-shadow: 0 8px 16px 0 #0003;
   display: block;
 }
 
@@ -125,7 +125,7 @@ main {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px #0003;
+  box-shadow: 0 8px 16px 0 #0003;
   z-index: 1;
   right: 0;
   top: 100%;
@@ -237,7 +237,7 @@ button:hover {
 }
 
 .settings-icon:hover .settings-dropdown {
-  box-shadow: 0px 8px 16px 0px #0003;
+  box-shadow: 0 8px 16px 0 #0003;
   display: block;
 }
 
@@ -245,7 +245,7 @@ button:hover {
   display: none;
   position: absolute;
   background-color: #fff;
-  box-shadow: 0px 8px 16px 0px #0003;
+  box-shadow: 0 8px 16px 0 #0003;
   border-radius: 5px;
   z-index: 2;
   top: 100%;
