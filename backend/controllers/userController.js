@@ -123,7 +123,7 @@ const getFollowersCount = async (req, res) => {
     const { userId } = req.body
     const user = await User.findById(userId)
     if (!user) {
-      res.status(404).json({ message: `user ID ${id} does not exist` })
+      res.status(404).json({ message: `user ID ${userId} does not exist` })
     }
     const followersCount = user.followers.length
     res.status(200).json({ followers: followersCount })
@@ -138,7 +138,7 @@ const getAllFollowers = async (req, res) => {
     const { userId } = req.body
     const user = await User.findById(userId).populate('followers', 'username') // Populate the followers field with usernames
     if (!user) {
-      res.status(404).json({ message: `user ID ${id} does not exist` })
+      res.status(404).json({ message: `user ID ${userId} does not exist` })
     }
     const followers = user.followers
     res.status(200).json({ allFollowers: followers })
