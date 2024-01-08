@@ -74,8 +74,6 @@ header {
 }
 
 
-
-
 .stat span {
   font-weight: bold;
 }
@@ -163,7 +161,7 @@ position: relative;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px #00000033;
   z-index: 1;
   right: 0;
   top: 100%;
@@ -190,7 +188,7 @@ position: relative;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00000080;
 }
 
 .popup-content {
@@ -198,7 +196,7 @@ position: relative;
   margin: 10% auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px #00000033;
   width: 80%;
   max-width: 400px;
   position: relative;
@@ -251,10 +249,6 @@ button:hover {
 }
 
 
-
-
-
-
 .settings-icon:hover,
 .menu-icon:hover {
   color: #3498db;
@@ -274,8 +268,6 @@ button:hover {
 }
 
 
-
-
 .settings-icon {
   cursor: pointer;
   font-size: 24px;
@@ -291,7 +283,8 @@ button:hover {
   display: none;
   position: absolute;
   background-color: #fff;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px #00000033;
+
   border-radius: 5px;
   z-index: 2;
   top: 100%;
