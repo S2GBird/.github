@@ -34,6 +34,13 @@ header {
   align-items: center;
 }
 
+.drawer-icon,
+.settings-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
 .profile-stats {
   display: flex;
   align-items: center;
@@ -109,7 +116,6 @@ main {
 }
 
 .menu-icon:hover .dropdown-content {
-  box-shadow: 0 8px 16px 0 #0003;
   display: block;
 }
 
@@ -237,7 +243,6 @@ button:hover {
 }
 
 .settings-icon:hover .settings-dropdown {
-  box-shadow: 0 8px 16px 0 #0003;
   display: block;
 }
 
@@ -309,11 +314,11 @@ button:hover {
   transition: transform 0.3s;
 }
 
-#visibilityToggle:checked + .toggle-switch {
+#visibility-toggle:checked + .toggle-switch {
   background-color: #0077b5;
 }
 
-#visibilityToggle:checked + .toggle-switch:before {
+#visibility-toggle:checked + .toggle-switch:before {
   transform: translateX(26px);
 }
 
