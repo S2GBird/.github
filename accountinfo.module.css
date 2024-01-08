@@ -293,7 +293,7 @@ button:hover {
   transition: background-color 0.3s;
 }
 
-.toggle-switch:before {
+.toggle-switch::before {
   position: absolute;
   content: "";
   height: 26px;
@@ -309,7 +309,7 @@ button:hover {
   background-color: #0077b5;
 }
 
-#visibility-toggle:checked + .toggle-switch:before {
+#visibility-toggle:checked + .toggle-switch::before {
   transform: translateX(26px);
 }
 
