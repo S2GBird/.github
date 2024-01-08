@@ -24,7 +24,7 @@ header {
 }
 
 .profile-name {
-  font: bold 18px;
+  font-weight: bold; /* Changed "font: bold 18px" to "font-weight: bold" */
   margin-right: 30px;
 }
 
@@ -142,7 +142,7 @@ main {
   cursor: pointer;
   font-size: 24px;
   color: #333;
-  margin:10px auto;
+  margin: 10px auto; /* Added margin property */
   position: relative;
 }
 
@@ -156,8 +156,6 @@ main {
   background-color: #333;
   margin: 6px 0;
 }
-
-
 
 .popup {
   display: none;
@@ -243,16 +241,15 @@ button:hover {
   0%, 100% {
     transform: translateX(0);
   }
-  
+
   20%, 50%, 80% {
     transform: translateX(-5px);
   }
-  
+
   40%, 60% {
     transform: translateX(5px);
   }
 }
-
 
 .settings-dropdown {
   display: none;
@@ -266,19 +263,13 @@ button:hover {
   padding: 8px 0;
 }
 
-
-
 .settings-dropdown a:hover {
   background-color: #f1f1f1;
 }
 
-
-
 .settings-icon:hover .settings-dropdown {
   display: block;
 }
-
-
 
 .toggle-container {
   margin: 16px auto;
