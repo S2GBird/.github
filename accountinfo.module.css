@@ -180,6 +180,8 @@ main {
   width: 80%;
   max-width: 400px;
   position: relative;
+  inset: 10% auto auto 50%;
+  transform: translateX(-50%);
 }
 
 .close {
