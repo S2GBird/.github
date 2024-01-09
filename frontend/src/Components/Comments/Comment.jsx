@@ -13,7 +13,7 @@ function Comment ( { username, comment, likes } ) {
   }
 
   function updateLikes (like) {
-    // make call to backend to add or remove like from comment
+    // make call to backend to add or remove like from comment (isnt created yet)
     // likes dont persist currently so that will have to be fixed later on
     // need something to check if the comment is liked by the current user already
     if (like) {
@@ -22,7 +22,6 @@ function Comment ( { username, comment, likes } ) {
     else {
       setCommentLikes(commentLikes - 1)
     }
-    console.log(commentLikes)
   }
 
   return (
@@ -32,10 +31,10 @@ function Comment ( { username, comment, likes } ) {
           <span><b>{username}</b> {comment}</span>
         </div>
         <div className={Styles['likes-container']}>
-          <div className={Styles['likes']}>{commentLikes === 0 ? '' : commentLikes}</div>
           <div onClick={handleLike}>
             {like === true ? <FavoriteIcon style={{color: 'red'}} /> : <FavoriteBorderIcon />}
           </div>
+          <div className={Styles['likes']}>{commentLikes}</div>
         </div>
       </div>
     </div>
