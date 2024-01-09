@@ -100,6 +100,7 @@ function ViewAllCommentsPopup ( { postId } ) {
 
   function handleToggle() {
     setOpen(!open)
+    setNewComment('')
   }
 
   function handleAddNewComment (event) {
