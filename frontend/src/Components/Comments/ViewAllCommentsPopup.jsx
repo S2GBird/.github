@@ -3,15 +3,10 @@ import Comment from './Comment.jsx'
 import { useEffect, useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close'
 // import apiClient from '../../Services/apiClient'
-import Dialog from '@mui/material/Dialog'
-import DialogContent from '@mui/material/DialogContent'
-import DialogTitle from '@mui/material/DialogTitle'
-import DialogActions from '@mui/material/DialogActions'
-import { Input } from '@mui/material'
+import { Dialog, DialogContent, DialogTitle, DialogActions, Input } from '@mui/material'
 import { useAuthContext } from '../../Services/authProvider'
-import Button from '@mui/material/Button'
 
-const test = [
+const test_comments = [
   {
     username: 'user1',
     comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -113,13 +108,13 @@ function ViewAllCommentsPopup ( { postId } ) {
       console.log('Comment ', newComment)
       // // call api to add comment
       // apiClient.addComment(userId, postId, newComment)
-      test.push({ username: username, comment: newComment, likes: 0 })
+      test_comments.push({ username: username, comment: newComment, likes: 0 })
       setNewComment('')
     }
   }
 
   useEffect(()=>{
-    setComments(test)
+    setComments(test_comments)
     // getPostComments(postId)
   }, [])
 
