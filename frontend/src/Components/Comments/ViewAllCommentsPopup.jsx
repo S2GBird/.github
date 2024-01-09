@@ -1,14 +1,15 @@
 import Styles from './ViewAllCommentsPopup.module.css'
 import Comment from './Comment.jsx'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close'
 // import apiClient from '../../Services/apiClient'
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogActions from '@mui/material/DialogActions';
-import { Input } from '@mui/material';
+import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogActions from '@mui/material/DialogActions'
+import { Input } from '@mui/material'
 import { useAuthContext } from '../../Services/authProvider'
+import Button from '@mui/material/Button'
 
 const test = [
   {
@@ -94,7 +95,6 @@ function ViewAllCommentsPopup ( { postId } ) {
   const { user } = useAuthContext()
   const { userId, username } = user
   const [comments, setComments] = useState([])
-  // const username = 'test_user'
   
   // function getPostComments(postId) {
   //   apiClient.getPostComments(postId).then(res => {
@@ -113,7 +113,7 @@ function ViewAllCommentsPopup ( { postId } ) {
       console.log('Comment ', newComment)
       // // call api to add comment
       // apiClient.addComment(userId, postId, newComment)
-      test.push({ username: username, comment: newComment })
+      test.push({ username: username, comment: newComment, likes: 0 })
       setNewComment('')
     }
   }
@@ -143,6 +143,9 @@ function ViewAllCommentsPopup ( { postId } ) {
             comments.map((comment, i) =>
               // key is temporary will replace with _id later
               <Comment key={i} username={ comment.username } comment={ comment.comment } likes={comment.likes} />
+              // have to get the username of the person who commented for each comment
+              // problem is with how it is structured, it will require an extra call to get each username
+              // and for posts with a lot of commments, it may be inefficient and slow
             )
           }
         </DialogContent>

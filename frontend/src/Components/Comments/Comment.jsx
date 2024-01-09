@@ -1,7 +1,7 @@
 import Styles from './Comment.module.css'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 function Comment ( { username, comment, likes } ) {
   const [like, setLike] = useState(false)
