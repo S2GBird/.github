@@ -4,6 +4,7 @@
   margin-bottom: 1rem;
   margin-top: 1rem;
   gap: 1rem;
+  white-space: pre-line;
 }
 
 .likes-container {
