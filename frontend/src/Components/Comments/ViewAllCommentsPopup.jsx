@@ -1,6 +1,6 @@
 import Styles from './ViewAllCommentsPopup.module.css'
 import Comment from './Comment.jsx'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close'
 // import apiClient from '../../Services/apiClient'
 import Dialog from '@mui/material/Dialog';
@@ -10,7 +10,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { Input } from '@mui/material';
 import { useAuthContext } from '../../Services/authProvider'
 
-const comments = [
+const test = [
   {
     username: 'user1',
     comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -76,8 +76,10 @@ const comments = [
 function ViewAllCommentsPopup ( { postId } ) {
   const [open, setOpen] = useState(false)
   const [newComment, setNewComment] = useState('')
-  const { userId } = useAuthContext()
-  // const [comments, setComments] = useState([])
+  const { user } = useAuthContext()
+  const { userId, username } = user
+  const [comments, setComments] = useState([])
+  // const username = 'test_user'
   
   // function getPostComments(postId) {
   //   apiClient.getPostComments(postId).then(res => {
@@ -85,21 +87,26 @@ function ViewAllCommentsPopup ( { postId } ) {
   //   });
   // }
 
-  // getPostComments(postId)
 
   function handleToggle() {
     setOpen(!open)
   }
 
-  function handleAddNewComment(event) {
+  function handleAddNewComment (event) {
     if(event.keyCode === 13 && !event.shiftKey) {
       event.preventDefault()
       console.log('Comment ', newComment)
       // // call api to add comment
       // apiClient.addComment(userId, postId, newComment)
+      test.push({ username: username, comment: newComment })
       setNewComment('')
     }
   }
+
+  useEffect(()=>{
+    setComments(test)
+    // getPostComments(postId)
+  }, [])
 
   return (
     <div>
