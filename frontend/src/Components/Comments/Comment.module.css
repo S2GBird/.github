@@ -5,3 +5,15 @@
   margin-top: 1rem;
   gap: 1rem;
 }
+
+.likes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.likes {
+  text-align: center;
+  font-size: 0.8rem;
+}
