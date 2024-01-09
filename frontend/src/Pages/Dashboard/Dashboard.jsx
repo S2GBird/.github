@@ -3,6 +3,7 @@ import apiClient from '../../Services/apiClient'
 import { useAuthContext } from '../../Services/authProvider'
 import { useState, memo } from 'react'
 import DashboardStyles from './Dashboard.module.css'
+import { useNavigate } from 'react-router-dom'
 
 function Dashboard () {
   const { user } = useAuthContext()
@@ -11,6 +12,7 @@ function Dashboard () {
   const [email, setEmail] = useState('')
   const [fName, setFName] = useState('')
   const [lName, setLName] = useState('')
+  const navigate = useNavigate()
 
   function getUserInfo(userId) {
     apiClient.getUserInfo(userId).then(res => {
@@ -30,6 +32,7 @@ function Dashboard () {
       <div>Username: { username }</div>
       <div>First Name: { fName }</div>
       <div>Last Name: { lName }</div>
+      <button onClick={() => navigate('/example')}>Example Page</button>
     </div>
   )
 }
