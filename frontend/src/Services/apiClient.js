@@ -57,6 +57,10 @@ class ApiClient {
   async getPostComments (postId) {
     return await this.request({ endpoint: `/posts/${postId}/comments`, method: 'GET' })
   }
+
+  async addComment (userId, postId, comment) {
+    return await this.request({ endpoint: `/posts/${postId}/comments`, method: 'POST', data: { userID: userId, commentText: comment } })
+  }
 }
 
 export default new ApiClient(API_BASE_URL)

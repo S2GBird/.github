@@ -8,6 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import { Input } from '@mui/material';
+import { useAuthContext } from '../../Services/authProvider'
 
 const comments = [
   {
@@ -75,6 +76,7 @@ const comments = [
 function ViewAllCommentsPopup ( { postId } ) {
   const [open, setOpen] = useState(false)
   const [newComment, setNewComment] = useState('')
+  const { userId } = useAuthContext()
   // const [comments, setComments] = useState([])
   
   // function getPostComments(postId) {
@@ -93,9 +95,10 @@ function ViewAllCommentsPopup ( { postId } ) {
     if(event.keyCode === 13 && !event.shiftKey) {
       event.preventDefault()
       console.log('Comment ', newComment)
+      // // call api to add comment
+      // apiClient.addComment(userId, postId, newComment)
       setNewComment('')
     }
-    // call api to add comment
   }
 
   return (
