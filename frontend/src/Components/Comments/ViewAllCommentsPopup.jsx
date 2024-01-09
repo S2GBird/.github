@@ -132,7 +132,6 @@ function ViewAllCommentsPopup ( { postId } ) {
         <DialogTitle id='view-all-comments-popup' className={Styles['dialog-text']}>
           <CloseIcon className={Styles['close-btn']} onClick={handleToggle}/>
           <div className={Styles['total-comments']}>{`${comments.length} comments`}</div>
-          {/* <div className={Styles['total-comments']}>123 comments</div> */}
         </DialogTitle>
         <DialogContent className={Styles['dialog-container']}>
           {
