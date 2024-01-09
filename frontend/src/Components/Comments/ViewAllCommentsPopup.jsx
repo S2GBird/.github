@@ -74,7 +74,7 @@ const comments = [
 
 function ViewAllCommentsPopup ( { postId } ) {
   const [open, setOpen] = useState(false)
-  const [comment, setComment] = useState('')
+  const [newComment, setNewComment] = useState('')
   // const [comments, setComments] = useState([])
   
   // function getPostComments(postId) {
@@ -89,11 +89,11 @@ function ViewAllCommentsPopup ( { postId } ) {
     setOpen(!open)
   }
 
-  function handleAddComment(event) {
+  function handleAddNewComment(event) {
     if(event.keyCode === 13 && !event.shiftKey) {
       event.preventDefault()
-      console.log('Comment ', comment)
-      setComment('')
+      console.log('Comment ', newComment)
+      setNewComment('')
     }
     // call api to add comment
   }
@@ -127,9 +127,9 @@ function ViewAllCommentsPopup ( { postId } ) {
             placeholder='Add a comment'
             fullWidth
             multiline
-            value={comment}
-            onChange={(event) => setComment(event.target.value)}
-            onKeyDown={handleAddComment}
+            value={newComment}
+            onChange={(event) => setNewComment(event.target.value)}
+            onKeyDown={handleAddNewComment}
           />
         </DialogActions>
       </Dialog>
