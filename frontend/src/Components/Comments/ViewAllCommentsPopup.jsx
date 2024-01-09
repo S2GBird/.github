@@ -150,6 +150,7 @@ function ViewAllCommentsPopup ( { postId } ) {
             placeholder='Add a comment'
             fullWidth
             multiline
+            style={ { paddingLeft: '0.2rem', paddingRight: '0.2rem' } }
             value={newComment}
             onChange={(event) => setNewComment(event.target.value)}
             onKeyDown={handleAddNewComment}
