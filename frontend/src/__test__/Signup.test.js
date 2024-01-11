@@ -2,8 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import SignupPage from 'frontend/src/Pages/SignupPage/SignupPage.jsx'
-import { AuthContextProvider } from 'frontend/src/Services/authProvider.jsx'
-import AuthContext from 'frontend/src/Services/authProvider.jsx'
+import AuthContext, { AuthContextProvider } from 'frontend/src/Services/authProvider.jsx'
 import '@testing-library/jest-dom'
 
 describe('SignupPage Component', () => {
@@ -11,9 +10,9 @@ describe('SignupPage Component', () => {
     render(
       <Router>
         <AuthContextProvider value={AuthContext}>
-        <SignupPage />
+          <SignupPage />
         </AuthContextProvider>
-        </Router>
+      </Router>
     )
 
     const firstNameElem = screen.getByLabelText(/Enter first name/i)

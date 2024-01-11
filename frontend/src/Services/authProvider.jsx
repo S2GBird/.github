@@ -1,6 +1,5 @@
-import { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import apiClient from './apiClient'
-import React from 'react';
 const AuthContext = createContext(null)
 
 export const AuthContextProvider = ({ children }) => {
