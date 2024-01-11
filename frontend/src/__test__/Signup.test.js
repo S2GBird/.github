@@ -2,14 +2,18 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import SignupPage from 'frontend/src/Pages/SignupPage/SignupPage.jsx'
+import { AuthContextProvider } from 'frontend/src/Services/authProvider.jsx'
+import AuthContext from 'frontend/src/Services/authProvider.jsx'
 import '@testing-library/jest-dom'
 
 describe('SignupPage Component', () => {
   test('renders sign up form with necessary fields', () => {
     render(
       <Router>
+        <AuthContextProvider value={AuthContext}>
         <SignupPage />
-      </Router>
+        </AuthContextProvider>
+        </Router>
     )
 
     const firstNameElem = screen.getByLabelText(/Enter first name/i)
