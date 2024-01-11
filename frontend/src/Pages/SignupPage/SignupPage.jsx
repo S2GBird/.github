@@ -139,7 +139,8 @@ function SignupPage () {
                     label={
                       <Typography>
                         I have read and accept <span style={inputLabelStyle}>Terms and Conditions</span>
-                      </Typography>}
+                      </Typography>
+}
                   />
                 </InputLabel>
                 <div style={buttonContainer}>

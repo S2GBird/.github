@@ -29,7 +29,7 @@ function LoginPage () {
       // if it matches, user is navigated to dashboard
       apiClient.login(loginInfo).then(res => {
         // console.log('data ', res)
-        if(res.data.success) { 
+        if (res.data.success) {
           // console.log('userId ', res.data.userId)
           // console.log('username ', res.data.username)
           // const user = {
