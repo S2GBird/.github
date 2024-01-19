@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState, memo } from 'react'
 import apiClient from '../../Services/apiClient'
 import { useAuthContext } from '../../Services/authProvider'
-import { useState, memo } from 'react'
 import DashboardStyles from './Dashboard.module.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,6 +11,7 @@ function Dashboard () {
   const [email, setEmail] = useState('')
   const [fName, setFName] = useState('')
   const [lName, setLName] = useState('')
+  
   const navigate = useNavigate()
 
   function getUserInfo(userId) {
@@ -19,7 +19,7 @@ function Dashboard () {
       setEmail(res.data.email)
       setFName(res.data.fName)
       setLName(res.data.lName)
-    });
+    })
   }
 
   getUserInfo(user.userId)

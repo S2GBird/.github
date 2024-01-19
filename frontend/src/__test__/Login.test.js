@@ -2,13 +2,16 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import LoginPage from 'frontend/src/Pages/Login Page/LoginPage.jsx'
+import AuthContext, { AuthContextProvider } from 'frontend/src/Services/authProvider.jsx'
 import '@testing-library/jest-dom'
 
 describe('LoginPage Component', () => {
   test('renders login form with necessary fields', () => {
     const { getByLabelText, getByRole } = render(
       <Router>
-        <LoginPage />
+        <AuthContextProvider value={AuthContext}>
+          <LoginPage />
+        </AuthContextProvider>
       </Router>
     )
 
