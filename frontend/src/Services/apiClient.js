@@ -35,7 +35,6 @@ class ApiClient {
   }
 
   // -------------------------AUTHENTICATION REQUESTS------------------------------
-  // commented out for now until implemented
   async register (userInfo) {
     return await this.request({
       endpoint: '/register',
@@ -52,6 +51,15 @@ class ApiClient {
 
   async getUserInfo (userId) {
     return await this.request({ endpoint: `/users/${userId}`, method: 'GET' })
+  }
+
+  // -------------------------POST/COMMENTS REQUESTS------------------------------
+  async getPostComments (postId) {
+    return await this.request({ endpoint: `/posts/${postId}/comments`, method: 'GET' })
+  }
+
+  async addComment (userId, postId, comment) {
+    return await this.request({ endpoint: `/posts/${postId}/comments`, method: 'POST', data: { userID: userId, commentText: comment } })
   }
 }
 

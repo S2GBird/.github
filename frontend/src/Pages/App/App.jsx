@@ -15,6 +15,7 @@ export default function App () {
           <Routes>
             <Route path='/' element={<LandingPage />} />
             <Route path='/example' element={<ExamplePage />} /> {/** This is an example route, and the style to which future routes should follow. */}
+            <Route path='/signup' element={<SignupPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/signup' element={<SignupPage />} />
             <Route path='/dashboard' element={<Dashboard />} />
