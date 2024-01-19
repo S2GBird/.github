@@ -1,14 +1,24 @@
 import React from 'react'
-import CreatePost from '../CreatePost/CreatePost';
+import { useState } from 'react'
+import Modal from '../CreatePost/CreatePost'
+import CreatePoststyles from '../CreatePost/CreatePost.module.css'
 
 function Post() {
-    return (
-        <div className='title'>
-            <h2>New Post</h2>
-            <CreatePost />
-        </div>
+    const [openModal, setOpenModal] = useState(false)
 
+    return (
+        <div className={CreatePoststyles['text-center']}>
+            <h3>Click to create new post.</h3>
+            <button
+                className={CreatePoststyles['modalBtn']}
+                onClick={() => {
+                    setOpenModal(true)
+                }}
+            >New Post
+            </button>
+            {openModal && <Modal closeModal={setOpenModal} />}
+        </div>
     )
 }
 
-export default Post;
+export default Post

@@ -1,76 +1,83 @@
-import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
+import { useRef, useEffect, useState } from 'react'
 import { TextField } from '@mui/material'
-import CreatePoststyles from '../CreatePost/CreatePost.module.css'
+import CreatePoststyles from './CreatePost.module.css'
 
-function CreatePost(props) {
+function Modal({ closeModal }) {
+    const [image, setImage] = useState(false)
+    const [preview, setPreview] = useState(false)
+    const fileInputRef = useRef(false)
+
     const [caption, setCaption] = useState('')
-    const [img, setImg] = useState('')
-    const [show, setShow] = useState(false)
 
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+
+    useEffect(() => {
+        if (image) {
+            const reader = new FileReader()
+            reader.onloadend = () => {
+                setPreview(reader.result)
+            }
+            reader.readAsDataURL(image)
+        } else {
+            setPreview(null)
+        }
+    }, [image])
 
     return (
-        <>
-            <Button variant="primary" onClick={handleShow}>
-                Launch static backdrop modal
-            </Button>
-
-            <Modal
-                show={show}
-                onHide={handleClose}
-                backdrop="static"
-                keyboard={false}
-                size='xl'
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title>New Post</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <form
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                        }}
-                        id='editmodal'
-
-                    >
-                        <div className="md:flex md:items-center mb-6">
-                            <div className="md:w-2/3">
-                            <TextField style={{ width: '75%', height: '15%' }}
-                             label='Caption' variant='filled' value={caption} onChange={(event) => setCaption(event.target.value)} />
-                            </div>
+         <div className={CreatePoststyles['overlay']}>
+            <div className={CreatePoststyles['modalContainer']}>
+                <div className={CreatePoststyles['closeBtn']}>
+                    <button onClick={() => closeModal(false)}>x</button>
+                </div>
+                <div className={CreatePoststyles['title']}>
+                    <h3>New Post</h3>
+                </div>
+                <div>
+                    <form className={CreatePoststyles['login-form']} >
+                        <div className={CreatePoststyles['img-holder']}>
+                            { preview ? (
+                                <img src={preview} onClick={() => {
+                                    setImage(null)
+                                }} /> 
+                            ) : ( 
+                                <button onClick={(event) => {
+                                    event.preventDefault()
+                                    fileInputRef.current.click()
+                                }}>
+                                    Upload Image
+                                </button> 
+                            )}
+                            <input 
+                                type='file' 
+                                name='image-upload' 
+                                id='input' 
+                                accept='image/*' 
+                                style={{ display: 'none' }} 
+                                ref={fileInputRef}
+                                onChange={(event) => {
+                                    const file = event.target.files[0]
+                                    if (file && file.type.substring(0, 5) == 'image') {
+                                        setImage(file)
+                                    } else {
+                                        setImage(null)
+                                    }
+                                }} />
                         </div>
-                        <br />
-                        <div className="md:flex md:items-center mb-6">
-                            <div className="md:w-1/3">
-                                <label>Image</label>
-                            </div>
-                            <div className="md:w-2/3">
-                                <input
-                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                                    type="file" value={img} onChange={(e) => setImg(e.target.files[0])}                                
-                                />
-                            </div>
-                        </div>
+                        <p>Click image to deselect.</p>
+                        <TextField 
+                            style={{ width: '75%', height: '15%' }} 
+                            id='filled-basic caption' 
+                            label='Caption' 
+                            variant='filled'
+                            value={caption} onChange={(event) => setCaption(event.target.value)} />
                     </form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <button className="bg-slate-400 text-black font-bold py-2 px-4 rounded" onClick={handleClose}>
-                        Cancel
-                    </button>
-                    <button 
-                        className="bg-slate-400 text-black font-bold py-2 px-4 rounded" 
-                        onClick={handleClose}
-                        form='editmodal'
-                    >
-                            Post        
-                    </button>
-                </Modal.Footer>
-            </Modal>
-        </>
-  );
+                </div>
+                <div className={CreatePoststyles['btnContainer']}>
+                    <button className={CreatePoststyles['cancelBtn']} onClick={() => closeModal(false)}>Cancel</button>
+                    <button className={CreatePoststyles['postBtn']}>Post</button>
+                </div>
+            </div>
+        </div>         
+    )
 }
 
-export default CreatePost;
+export default Modal;
