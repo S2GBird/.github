@@ -17,28 +17,28 @@
 }
 
 .notfound-h1 {
-    font-size: 80px;
+    font-size: 7em;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 .notfound-h2 {
-    font-size: 20px;
+    font-size: 1.3em;
     margin-top: 0;
 }
 
 .button-container {
     display: flex;
-    gap: 10px;
+    gap: 1em;
 }
 
 .custom-button {
     background-color: #525453;
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 0.6em 1em;
+    border-radius: 1em;
     border: none;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
 }
