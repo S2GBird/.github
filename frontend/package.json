@@ -46,6 +46,7 @@
       "^.+\\.jsx?$": "babel-jest",
       "^.+\\.css$": "jest-css-modules-transform"
     },
+    "transformIgnorePatterns": ["node_modules/(?!axios)/"],
     "testEnvironment": "jsdom",
     "coverageThreshold": {
       "global": {
@@ -53,7 +54,7 @@
       }
     },
     "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/stylemocks.js",
+      "\\.(jpg|css|less|scss|sass)$": "<rootDir>/__mocks__/stylemocks.js",
       "\\.(svg)$": "<rootDir>/__mocks__/filemocks.js"
     }
   },

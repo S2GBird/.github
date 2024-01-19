@@ -129,7 +129,7 @@ function SignupPage () {
                 <Grid>
                   <InputLabel htmlFor='confirmpassword' style={inputLabelStyle}>Confirm Password</InputLabel>
                   <TextField
-                    id='confirmpassword' type='password' label='Enter password' variant='filled' name='confirmPassword' onChange={handleInput}
+                    id='confirmpassword' type='password' label='Confirm password' variant='filled' name='confirmPassword' onChange={handleInput}
                     value={userInfo.confirmPassword} error={!!error.confirmPassword} helperText={error.confirmPassword} InputProps={{ style: { width: 550 } }}
                   />
                 </Grid>
