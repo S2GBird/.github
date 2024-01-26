@@ -2,6 +2,7 @@ import ExampleStyles from './Example.module.css'
 import apiClient from '../../Services/apiClient'
 import { useAuthContext } from '../../Services/authProvider'
 import { useState, memo } from 'react'
+import ViewAllCommentsPopup from '../../Components/Comments/ViewAllCommentsPopup'
 
 function ExamplePage () {
   const [message, setMessage] = useState('')
@@ -19,10 +20,13 @@ function ExamplePage () {
   }
 
   return (
-    <div className={ExampleStyles['example-page']}> {/** Example on how to attach your css styling to these components */}
-      <h2>HELLO WORLD, THIS IS THE EXAMPLE PAGE</h2>
-      <button onClick={fetchExampleMessage}> Click this button to show message</button>
-      {message && <p>This is my message: {message}</p>}
+    <div>
+      <div className={ExampleStyles['example-page']}> {/** Example on how to attach your css styling to these components */}
+        <h2>HELLO WORLD, THIS IS THE EXAMPLE PAGE</h2>
+        <button onClick={fetchExampleMessage}> Click this button to show message</button>
+        {message && <p>This is my message: {message}</p>}
+      </div>
+      <ViewAllCommentsPopup />
     </div>
   )
 };

@@ -1,7 +1,7 @@
+import React, { useState, memo } from 'react'
 import LoginStyles from './Login.module.css'
 import apiClient from '../../Services/apiClient'
 import { useAuthContext } from '../../Services/authProvider'
-import { useState, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ChirpLogo from '../../Images/ChirpLogo.svg'
 import { TextField, Button } from '@mui/material'
@@ -29,7 +29,7 @@ function LoginPage () {
       // if it matches, user is navigated to dashboard
       apiClient.login(loginInfo).then(res => {
         // console.log('data ', res)
-        if(res.data.success) { 
+        if (res.data.success) {
           // console.log('userId ', res.data.userId)
           // console.log('username ', res.data.username)
           // const user = {
