@@ -104,10 +104,64 @@ const getAllLikesForPost = async (req, res) => {
   }
 }
 
+// Function to add like to a comment
+const addLikeToComment = async (req, res) => {
+  try {
+    const { commentID } = req.params
+    const { userID } = req.body
+
+    const comment = await Comment.findById(commentID);
+    if (!comment) {
+      return res.status(404).json({ message: 'Comment not found' })
+    }
+
+    // Check if user has already liked the comment
+    if (comment.likes.includes(userID)) {
+      return res.status(400).json({ message: 'User already liked this comment' })
+    }
+
+    // Add user's ID to likes array
+    comment.likes.push(userID)
+    await comment.save()
+
+    res.status(200).json({ message: 'Comment liked successfully' })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+// Function to remove like from a comment
+const removeLikeFromComment = async (req, res) => {
+  try {
+    const { commentID } = req.params
+    const { userID } = req.body
+
+    const comment = await Comment.findById(commentID);
+    if (!comment) {
+      return res.status(404).json({ message: 'Comment not found' })
+    }
+
+    // Check if user has not liked the comment
+    if (!comment.likes.includes(userID)) {
+      return res.status(400).json({ message: 'User has not liked this comment' })
+    }
+
+    // Remove user's ID from likes array
+    comment.likes = comment.likes.filter(id => id !== userID)
+    await comment.save()
+
+    res.status(200).json({ message: 'Comment unliked successfully' })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
 module.exports = {
   createPost,
   addComment,
   likePost,
   getAllCommentsForPost,
-  getAllLikesForPost
+  getAllLikesForPost,
+  addLikeToComment,
+  removeLikeFromComment
 }

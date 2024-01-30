@@ -7,5 +7,7 @@ router.route('/posts/:postID/comments').post(postController.addComment)
 router.route('/posts/:postID/likes').post(postController.likePost)
 router.route('/posts/:postID/comments').get(postController.getAllCommentsForPost)
 router.route('/posts/:postID/likes').get(postController.getAllLikesForPost)
+router.route('/comments/:commentID/like').post(postController.addLikeToComment)
+router.route('/comments/:commentID/unlike').post(postController.removeLikeFromComment)
 
 module.exports = router
