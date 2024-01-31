@@ -13,7 +13,7 @@ const createPost = async (req, res) => {
   }
 }
 
-// funtion to check if a post exists
+// function to check if a post exists
 const checkPostExistence = async (postID) => {
   try {
     const post = await Post.findById(postID)
@@ -104,16 +104,28 @@ const getAllLikesForPost = async (req, res) => {
   }
 }
 
+// function to check if a comment exists
+const checkCommentExistence = async (commentID) => {
+  try {
+    const comment = await Comment.findById(commentID)
+    if (!comment) {
+      throw new Error(`Comment with ID ${commentID} not found`)
+    }
+    return comment
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
+
 // Function to add like to a comment
 const addLikeToComment = async (req, res) => {
   try {
     const { commentID } = req.params
     const { userID } = req.body
 
-    const comment = await Comment.findById(commentID);
-    if (!comment) {
-      return res.status(404).json({ message: 'Comment not found' })
-    }
+    // Check if the comment exists
+    const post = await checkCommentExistence(commentID)
+    const comment = await Comment.findById(commentID)
 
     // Check if user has already liked the comment
     if (comment.likes.includes(userID)) {
@@ -136,10 +148,9 @@ const removeLikeFromComment = async (req, res) => {
     const { commentID } = req.params
     const { userID } = req.body
 
-    const comment = await Comment.findById(commentID);
-    if (!comment) {
-      return res.status(404).json({ message: 'Comment not found' })
-    }
+    // Check if the comment exists
+    const post = await checkCommentExistence(commentID)
+    const comment = await Comment.findById(commentID)
 
     // Check if user has not liked the comment
     if (!comment.likes.includes(userID)) {
