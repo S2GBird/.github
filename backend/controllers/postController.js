@@ -124,8 +124,7 @@ const addLikeToComment = async (req, res) => {
     const { userID } = req.body
 
     // Check if the comment exists
-    const post = await checkCommentExistence(commentID)
-    const comment = await Comment.findById(commentID)
+    const comment = await checkCommentExistence(commentID)
 
     // Check if user has already liked the comment
     if (comment.likes.includes(userID)) {
@@ -149,8 +148,7 @@ const removeLikeFromComment = async (req, res) => {
     const { userID } = req.body
 
     // Check if the comment exists
-    const post = await checkCommentExistence(commentID)
-    const comment = await Comment.findById(commentID)
+    const comment = await checkCommentExistence(commentID)
 
     // Check if user has not liked the comment
     if (!comment.likes.includes(userID)) {
