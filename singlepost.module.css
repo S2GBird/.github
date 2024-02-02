@@ -105,7 +105,7 @@ body {
     left: 0;
     width: 100%;
     padding: 0.625rem; /* 10px */
-    box-shadow: 0 0 0.625rem color(rgb(0, 0, 0) / 10%); /* 10px */
+    box-shadow: 0 0 0.625rem color(rgb(0 0 0 / 10%)); /* 10px */
     background-color: #fff;
     z-index: 1;
 }
@@ -152,8 +152,7 @@ body {
     background-color: #fff;
     padding: 1.25rem; /* 20px */
     border-radius: 0.5rem; /* 8px */
-    box-shadow: 0 0 0.625rem color(rgb(0, 0, 0) / 30%); /* 10px */
-
+    box-shadow: 0 0 0.625rem color(rgb(0 0 0 / 10%)); /* 10px */
     overflow: hidden;
 }
 
@@ -211,8 +210,7 @@ body {
     display: none;
     position: fixed;
     background-color: #fff;
-    box-shadow: 0 0 0.625rem color(rgb(0, 0, 0) / 10%); /* 10px */
-
+    box-shadow: 0 0 0.625rem color(rgb(0 0 0 / 10%)); /* 10px */
     border-radius: 0.3125rem; /* 5px */
     z-index: 1;
     padding: 0.625rem; /* 10px */
