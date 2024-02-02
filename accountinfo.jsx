@@ -136,7 +136,7 @@ function AccountInfoPage() {
       </main>
 
       <div id="editPopup" className="popup">
-        <div id="editPopup" className="popup-content">
+        <div className="popup-content">
           <span className="close" onClick={closeEditPopup}>&times;</span>
           <h2>Edit Profile</h2>
           <label htmlFor="editName">Name:</label>
