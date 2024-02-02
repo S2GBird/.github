@@ -69,7 +69,6 @@ function AccountInfoPage() {
   };
 
   return (
-    <>
       {/* HTML code */}
       <header>
         <div className="profile-header">
@@ -151,7 +150,6 @@ function AccountInfoPage() {
           <button onClick={saveChanges}>Save Changes</button>
         </div>
       </div>
-       <script src="script.js"></script>
   );
 };
 
