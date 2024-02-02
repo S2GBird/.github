@@ -68,8 +68,8 @@ function AccountInfoPage() {
     visibilityLabel.textContent = visibilityToggle.checked ? 'Private' : 'Public';
   };
 
- return (
-  <>
+return (
+  <React.Fragment>
     {/* HTML code */}
     <header>
       <div className="profile-header">
@@ -105,8 +105,9 @@ function AccountInfoPage() {
         </div>
       </div>
     </header>
-  </>
+  </React.Fragment>
 );
+
 
       <main>
         <div className="toggle-container">
