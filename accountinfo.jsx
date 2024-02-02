@@ -152,6 +152,6 @@ function AccountInfoPage() {
         </div>
       </div>
   );
-}
+};
 
 export default memo(AccountInfoPage);
