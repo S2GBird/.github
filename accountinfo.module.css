@@ -7,8 +7,8 @@ body {
 
 header {
   background-color: #fff;
-  padding: 16px;
-  box-shadow: 0 0 10px #0000001A;
+  padding: 1rem; /* 16px */
+  box-shadow: 0 0 0.625rem #0000001A; /* was 10px */
 }
 
 .profile-header {
@@ -24,8 +24,9 @@ header {
 }
 
 .profile-name {
-  font-weight: bold 18px; 
-  margin-right: 30px;
+  font-weight: bold;
+  font-size: 1.125rem; /* 18px */
+  margin-right: 1.875rem; /* 30px */
 }
 
 .profile-actions {
@@ -36,7 +37,7 @@ header {
 .drawer-icon,
 .settings-icon {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   color: #333;
 }
 
@@ -47,7 +48,7 @@ header {
 }
 
 .profile-stats .stat {
-  margin-left: 30px;
+  margin-left: 1.875rem; /* 30px */
 }
 
 .stat span {
@@ -55,26 +56,26 @@ header {
 }
 
 main {
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 37.5rem; /* 600px */
+  margin: 1.25rem auto; /* 20px */
   text-align: center;
 }
 
 .profile-circle {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .profile-circle img {
-  width: 150px;
-  height: 150px;
+  width: 9.375rem; /* 150px */
+  height: 9.375rem; /* 150px */
   object-fit: cover;
   border-radius: 50%;
 }
 
 .profile-caption {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 .profile-caption span {
@@ -84,21 +85,21 @@ main {
 .profile-actions-bar {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .edit-profile,
 .share-profile {
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin-right: 10px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 1.25rem;
+  margin-right: 0.625rem;
   background-color: #3498db;
   color: #fff;
 }
 
 .post-section {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .no-post {
@@ -109,25 +110,25 @@ main {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 #0003;
+  min-width: 10rem;
+  box-shadow: 0 0.5rem 1rem 0 #0003;
   z-index: 1;
   inset: 100% 0;
 }
 
 .dropdown-content a {
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-bottom: none;
   transition: background-color 0.3s;
 }
 
 .settings-dropdown a {
   display: block;
-  padding: 10px;
-  font-size: 16px;
+  padding: 0.625rem;
+  font-size: 1rem;
   text-decoration: none;
   color: #333;
   transition: background-color 0.3s;
@@ -139,9 +140,9 @@ main {
 
 .menu-icon {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   color: #333;
-  margin: 10px auto;
+  margin: 0.625rem auto;
   position: relative;
 }
 
@@ -150,10 +151,10 @@ main {
 }
 
 .bar {
-  width: 30px;
-  height: 3px;
+  width: 1.875rem; /* 30px */
+  height: 0.1875rem; /* 3px */
   background-color: #333;
-  margin: 6px 0;
+  margin: 0.375rem 0;
 }
 
 .popup {
@@ -168,19 +169,19 @@ main {
 .popup-content {
   background-color: #fff;
   margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #0003;
+  padding: 1.25rem; /* 20px */
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1.25rem #0003;
   width: 80%;
-  max-width: 400px;
+  max-width: 25rem;
   position: relative;
 }
 
 .close {
   color: #aaa;
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   position: absolute;
-  inset: 10px;
+  inset: 0.625rem;
   cursor: pointer;
 }
 
@@ -191,29 +192,29 @@ main {
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 16px;
+  padding: 1.25rem; /* 10px */
+  margin-bottom: 1rem;
   box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.3125rem;
 }
 
 button {
   background-color: #3498db;
   color: #fff;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
 }
 
@@ -223,7 +224,7 @@ button:hover {
 
 .settings-icon {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
   color: #333;
   position: relative;
 }
@@ -240,11 +241,11 @@ button:hover {
   }
 
   20%, 50%, 80% {
-    transform: translateX(-5px);
+    transform: translateX(-0.3125rem); /* 5px */
   }
 
   40%, 60% {
-    transform: translateX(5px);
+    transform: translateX(0.3125rem); /* 5px */
   }
 }
 
@@ -252,11 +253,11 @@ button:hover {
   display: none;
   position: absolute;
   background-color: #fff;
-  box-shadow: 0 8px 16px 0 #0003;
-  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem 0 #0003;
+  border-radius: 0.3125rem;
   z-index: 2;
   inset: 100% 0;
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }
 
 .settings-dropdown a:hover {
@@ -268,20 +269,20 @@ button:hover {
 }
 
 .toggle-container {
-  margin: 16px auto;
+  margin: 1rem auto;
   display: inline-flex;
   align-items: center;
 }
 
 .toggle-label {
-  margin: 5px auto;
+  margin: 0.3125rem auto;
 }
 
 .toggle {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 40px;
+  width: 3.75rem;
+  height: 2.5rem;
 }
 
 .toggle-switch {
@@ -289,17 +290,17 @@ button:hover {
   cursor: pointer;
   inset: 0;
   background-color: #ccc;
-  border-radius: 34px;
+  border-radius: 2.125rem;
   transition: background-color 0.3s;
 }
 
 .toggle-switch::before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 1.625rem;
+  width: 1.625rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
   background-color: black;
   border-radius: 50%;
   transition: transform 0.3s;
@@ -310,9 +311,9 @@ button:hover {
 }
 
 #visibility-toggle:checked + .toggle-switch::before {
-  transform: translateX(26px);
+  transform: translateX(1.625rem);
 }
 
 #visibility-label {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
