@@ -151,6 +151,7 @@ function AccountInfoPage() {
           <button onClick={saveChanges}>Save Changes</button>
         </div>
       </div>
+       <script src="script.js"></script>
   );
 };
 
