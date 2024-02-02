@@ -69,7 +69,7 @@ function AccountInfoPage() {
   };
 
 return (
-  <React.Fragment>
+  <>
     {/* HTML code */}
     <header>
       <div className="profile-header">
@@ -105,7 +105,6 @@ return (
         </div>
       </div>
     </header>
-  </React.Fragment>
 );
 
 
@@ -153,6 +152,7 @@ return (
           <button onClick={saveChanges}>Save Changes</button>
         </div>
       </div>
+      </>
   );
 };
 
