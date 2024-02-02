@@ -68,43 +68,45 @@ function AccountInfoPage() {
     visibilityLabel.textContent = visibilityToggle.checked ? 'Private' : 'Public';
   };
 
-  return (
-      {/* HTML code */}
-      <header>
-        <div className="profile-header">
-          <div className="profile-info">
-            <div className="profile-name">Username</div>
-            <div className="profile-actions">
-            </div>
+ return (
+  <>
+    {/* HTML code */}
+    <header>
+      <div className="profile-header">
+        <div className="profile-info">
+          <div className="profile-name">Username</div>
+          <div className="profile-actions"></div>
 
-            <div className="profile-stats">
-              <div className="stat">Posts<br /><span>0</span></div>
-              <div className="stat">Chirping<br /><span>0</span></div>
-              <div className="stat">Chirpers<br /><span>0</span></div>
-            </div>
-          </div>
-
-          <div className="menu-icon" onClick={toggleMenu}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="dropdown-content">
-              <a href="#">Activity</a>
-              <a href="#">Favorites</a>
-              <a href="#">Insights</a>
-            </div>
-          </div>
-
-          <div className="settings-icon" onClick={toggleSettings}>
-            <i className="fas fa-cog"></i>
-            <div className="settings-dropdown" id="settingsDropdown">
-              <a href="#">Language</a>
-              <a href="#">Accessibility</a>
-              <a href="#">Help</a>
-            </div>
+          <div className="profile-stats">
+            <div className="stat">Posts<br /><span>0</span></div>
+            <div className="stat">Chirping<br /><span>0</span></div>
+            <div className="stat">Chirpers<br /><span>0</span></div>
           </div>
         </div>
-      </header>
+
+        <div className="menu-icon" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="dropdown-content">
+            <a href="#">Activity</a>
+            <a href="#">Favorites</a>
+            <a href="#">Insights</a>
+          </div>
+        </div>
+
+        <div className="settings-icon" onClick={toggleSettings}>
+          <i className="fas fa-cog"></i>
+          <div className="settings-dropdown" id="settingsDropdown">
+            <a href="#">Language</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Help</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </>
+);
 
       <main>
         <div className="toggle-container">
