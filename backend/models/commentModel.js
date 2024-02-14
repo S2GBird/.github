@@ -11,6 +11,10 @@ const commentSchema = new mongoose.Schema(
       ref: 'User',
       required: [true, 'UserID missing']
     },
+    username: {
+      type: String,
+      required: [true, 'Username missing']
+    },
     postID: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Post',
