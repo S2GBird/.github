@@ -93,10 +93,33 @@ const logout = async (req, res) => {
 const googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] })
 
 // handle google redirect
-const googleAuthRedirect = passport.authenticate('google', {
-  failureRedirect: 'http://localhost:3000/login',
-  successRedirect: 'http://localhost:3000/dashboard'
-})
+const googleAuthRedirect = [
+  passport.authenticate('google', { failureRedirect: process.env.BASE_CLIENT_URL + '/login', failureMessage: true }),
+  async function(req, res) {
+   // console.log(req.user);
+
+    //Handle user object not being populated
+    if (!req.user){
+      res.redirect(process.env.BASE_CLIENT_URL + '/login')
+      //  return res.json({success: false , message: 'Authentication with Google failed.'})
+    }
+
+     // Create JWT with username and userID
+      const token = jwt.sign({ userId: req._id, username: req.user.username }, process.env.SECRET_KEY, { expiresIn: '24h' })
+      const expires = new Date(Date.now() + 24 * 3600000) // 24 hours
+    
+      //Setup cookie header with JWT
+        res.cookie('login_token', token, {
+        httpOnly: true,
+        sameSite: 'None',
+        secure: true,
+        expires
+      })
+    
+      //Redirect to page with user info
+      res.redirect(`/users/${req.user._id}`);
+  }
+];
 
 // generate and send token to user
 const forgotPassword = async (req, res, next) => {
