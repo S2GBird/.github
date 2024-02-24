@@ -1,0 +1,43 @@
+.login-header {
+	background-color: #066add96;
+	display: flex;
+	margin: auto;
+	grid-row: 1;
+}
+
+.login-header-name, .login-header-info, .login-social-media {
+	align-self: auto;
+	text-size-adjust: auto;
+	
+	display: flex;
+	list-style: none;
+	margin: 2px;
+	gap: 2rem;
+	
+}
+
+a {
+	text-decoration: none;
+	color: #ffffff;
+	text-align: center;
+}
+
+.linkContainer {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	position: relative;
+	margin-left: 85%;
+}
+
+.logbnt {
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.login-logo {
+	height: 50px;
+}
