@@ -13,19 +13,19 @@ async function (accessToken, profile, done) {
     const user = await User.findOne({ email: profile.emails[0].value })
 
     // Call 'done' function to signal completion of authentication process
-    // User object is passed and attached to `req.user` object 
+    // User object is passed and attached to `req.user` object
     if (user) {
       done(null, user)
-    }else {
+    } else {
       // Check if Username exist in database
       let googleName = profile.displayName
       let uniqueName = await User.findOne({ username: googleName })
-      //If a user with the same username exists, generate a new username
+      // If a user with the same username exists, generate a new username
       while (uniqueName) {
         googleName = googleName + Math.floor(Math.random() * 1000)
         uniqueName = await User.findOne({ username: googleName })
-      } 
-      
+      }
+
       const newUser = new User({
         username: googleName,
         email: profile.emails[0].value,
@@ -41,7 +41,7 @@ async function (accessToken, profile, done) {
       await newUser.save()
 
       // Call `done` function to signal completion of authentication process
-      // New user object is passed and attached to `req.user` object 
+      // New user object is passed and attached to `req.user` object
       done(null, newUser)
     }
   } catch (error) {
