@@ -165,6 +165,36 @@ const removeLikeFromComment = async (req, res) => {
   }
 }
 
+// Function to check if a post is liked
+const checkIfPostIsLiked = async (req, res) => {
+  try {
+    const { postID, userID } = req.params
+
+    // Check if the post exists
+    const post = await Post.findOne({ _id: postID, likes: userID })
+
+    // Send true if the user liked the post, false otherwise
+    res.status(200).json({ liked: !!post })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+// Function to check if a comment is liked
+const checkIfCommentIsLiked = async (req, res) => {
+  try {
+    const { commentID, userID } = req.params
+
+    // Check if the comment exists
+    const comment = await Comment.findOne({ _id: commentID, likes: userID })
+
+    // Send true if the user liked the comment, false otherwise
+    res.status(200).json({ liked: !!comment })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
 module.exports = {
   createPost,
   addComment,
@@ -172,5 +202,7 @@ module.exports = {
   getAllCommentsForPost,
   getAllLikesForPost,
   addLikeToComment,
-  removeLikeFromComment
+  removeLikeFromComment,
+  checkIfPostIsLiked,
+  checkIfCommentIsLiked
 }
