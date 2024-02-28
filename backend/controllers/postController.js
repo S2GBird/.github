@@ -13,7 +13,7 @@ const createPost = async (req, res) => {
   }
 }
 
-// funtion to check if a post exists
+// function to check if a post exists
 const checkPostExistence = async (postID) => {
   try {
     const post = await Post.findById(postID)
@@ -104,10 +104,105 @@ const getAllLikesForPost = async (req, res) => {
   }
 }
 
+// function to check if a comment exists
+const checkCommentExistence = async (commentID) => {
+  try {
+    const comment = await Comment.findById(commentID)
+    if (!comment) {
+      throw new Error(`Comment with ID ${commentID} not found`)
+    }
+    return comment
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
+
+// Function to add like to a comment
+const addLikeToComment = async (req, res) => {
+  try {
+    const { commentID } = req.params
+    const { userID } = req.body
+
+    // Check if the comment exists
+    const comment = await checkCommentExistence(commentID)
+
+    // Check if user has already liked the comment
+    if (comment.likes.includes(userID)) {
+      return res.status(400).json({ message: 'User already liked this comment' })
+    }
+
+    // Add user's ID to likes array
+    comment.likes.push(userID)
+    await comment.save()
+
+    res.status(200).json({ message: 'Comment liked successfully' })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+// Function to remove like from a comment
+const removeLikeFromComment = async (req, res) => {
+  try {
+    const { commentID } = req.params
+    const { userID } = req.body
+
+    // Check if the comment exists
+    const comment = await checkCommentExistence(commentID)
+
+    // Check if user has not liked the comment
+    if (!comment.likes.includes(userID)) {
+      return res.status(400).json({ message: 'User has not liked this comment' })
+    }
+
+    // Remove user's ID from likes array
+    comment.likes = comment.likes.filter(id => id !== userID)
+    await comment.save()
+
+    res.status(200).json({ message: 'Comment unliked successfully' })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+// Function to check if a post is liked
+const checkIfPostIsLiked = async (req, res) => {
+  try {
+    const { postID, userID } = req.params
+
+    // Check if the post exists
+    const post = await Post.findOne({ _id: postID, likes: userID })
+
+    // Send true if the user liked the post, false otherwise
+    res.status(200).json({ liked: !!post })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
+// Function to check if a comment is liked
+const checkIfCommentIsLiked = async (req, res) => {
+  try {
+    const { commentID, userID } = req.params
+
+    // Check if the comment exists
+    const comment = await Comment.findOne({ _id: commentID, likes: userID })
+
+    // Send true if the user liked the comment, false otherwise
+    res.status(200).json({ liked: !!comment })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
 module.exports = {
   createPost,
   addComment,
   likePost,
   getAllCommentsForPost,
-  getAllLikesForPost
+  getAllLikesForPost,
+  addLikeToComment,
+  removeLikeFromComment,
+  checkIfPostIsLiked,
+  checkIfCommentIsLiked
 }
