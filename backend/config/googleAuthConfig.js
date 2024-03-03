@@ -9,28 +9,39 @@ passport.use(new GoogleOIDCStrategy({
 },
 async function (accessToken, profile, done) {
   try {
-    // check if user exists in database
+    // Check if user exists in database
     const user = await User.findOne({ email: profile.emails[0].value })
 
+    // Call 'done' function to signal completion of authentication process
+    // User object is passed and attached to `req.user` object
     if (user) {
-      // log the user in
       done(null, user)
     } else {
+      // Check if Username exist in database
+      let googleName = profile.displayName
+      let uniqueName = await User.findOne({ username: googleName })
+      // If a user with the same username exists, generate a new username
+      while (uniqueName) {
+        googleName = googleName + Math.floor(Math.random() * 1000)
+        uniqueName = await User.findOne({ username: googleName })
+      }
+
       const newUser = new User({
-        username: profile.displayName,
+        username: googleName,
         email: profile.emails[0].value,
-        fName: profile.name.givenName,
-        lName: profile.name.familyName,
+        firstName: profile.name.givenName,
+        lastName: profile.name.familyName,
         profilePicture: '',
         settings: {
           dark: false
         }
       })
 
-      // save user to the database
+      // Save new user object user to the database
       await newUser.save()
 
-      // log the new user in
+      // Call `done` function to signal completion of authentication process
+      // New user object is passed and attached to `req.user` object
       done(null, newUser)
     }
   } catch (error) {
